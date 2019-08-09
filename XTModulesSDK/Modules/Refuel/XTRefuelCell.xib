@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XTRefuelCellIdentifier" rowHeight="100" id="KGk-i7-Jjw" customClass="XTRefuelCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ixt-cE-IlO" userLabel="Shadow View">
+                        <rect key="frame" x="15" y="5" width="345" height="89.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColorFromeUIColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                <size key="value" width="0.0" height="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                <real key="value" value="0.10000000000000001"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuel_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kno-Y9-4GV" userLabel="Icon Image View">
+                        <rect key="frame" x="25" y="25" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="T6p-5P-K2d"/>
+                            <constraint firstAttribute="width" constant="50" id="XJz-LV-Bl3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100元中石油辽宁加油券" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHg-zG-7uw" userLabel="Name Label">
+                        <rect key="frame" x="85" y="23" width="153" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19" id="cES-hB-ws1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥ 566.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4C-MG-Bf7" userLabel="Amount Label">
+                        <rect key="frame" x="85" y="48" width="85" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" red="0.63529411764705879" green="0.13725490196078433" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btr-s2-HWk" userLabel="Plus Button">
+                        <rect key="frame" x="325" y="37.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="MB3-my-pRO"/>
+                            <constraint firstAttribute="height" constant="25" id="Vzd-mI-KOd"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="count_plus.png"/>
+                        <connections>
+                            <action selector="plusButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="owr-c2-Owi"/>
+                        </connections>
+                    </button>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0R-4I-Y5y" userLabel="Count Label">
+                        <rect key="frame" x="285" y="39" width="40" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="2pV-it-X8p"/>
+                            <constraint firstAttribute="width" constant="40" id="LNK-Zr-1PD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9a-nb-gk3" userLabel="Minus Button">
+                        <rect key="frame" x="260" y="37.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="WDW-EH-xqU"/>
+                            <constraint firstAttribute="height" constant="25" id="vX3-yM-ae9"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="count_minus.png"/>
+                        <connections>
+                            <action selector="minusButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2RU-7V-d3I"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Kno-Y9-4GV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1sA-iQ-OfJ"/>
+                    <constraint firstItem="Z0R-4I-Y5y" firstAttribute="leading" secondItem="G9a-nb-gk3" secondAttribute="trailing" id="41f-dc-ieN"/>
+                    <constraint firstAttribute="trailing" secondItem="Ixt-cE-IlO" secondAttribute="trailing" constant="15" id="6b9-e3-Ub4"/>
+                    <constraint firstItem="btr-s2-HWk" firstAttribute="centerY" secondItem="Z0R-4I-Y5y" secondAttribute="centerY" id="GU9-WH-TWH"/>
+                    <constraint firstItem="G9a-nb-gk3" firstAttribute="centerY" secondItem="Z0R-4I-Y5y" secondAttribute="centerY" id="JtH-oa-ZYl"/>
+                    <constraint firstItem="Z0R-4I-Y5y" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LDp-hA-zYm"/>
+                    <constraint firstItem="RHg-zG-7uw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23" id="UpM-ho-6V1"/>
+                    <constraint firstItem="btr-s2-HWk" firstAttribute="leading" secondItem="Z0R-4I-Y5y" secondAttribute="trailing" id="eX8-tA-2PX"/>
+                    <constraint firstItem="RHg-zG-7uw" firstAttribute="leading" secondItem="Kno-Y9-4GV" secondAttribute="trailing" constant="10" id="fN7-IU-aaD"/>
+                    <constraint firstItem="w4C-MG-Bf7" firstAttribute="top" secondItem="RHg-zG-7uw" secondAttribute="bottom" constant="6" id="i34-8n-kxZ"/>
+                    <constraint firstItem="w4C-MG-Bf7" firstAttribute="leading" secondItem="RHg-zG-7uw" secondAttribute="leading" id="tT8-Mb-ZYs"/>
+                    <constraint firstAttribute="trailing" secondItem="btr-s2-HWk" secondAttribute="trailing" constant="25" id="wSY-Y1-Xx7"/>
+                    <constraint firstItem="Ixt-cE-IlO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="wWg-Fs-OOd"/>
+                    <constraint firstItem="Ixt-cE-IlO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="wY8-AV-TKn"/>
+                    <constraint firstItem="Kno-Y9-4GV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="yvu-xd-P5m"/>
+                    <constraint firstAttribute="bottom" secondItem="Ixt-cE-IlO" secondAttribute="bottom" constant="5" id="zmd-aY-ZQl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="amountLabel" destination="w4C-MG-Bf7" id="fG7-Ea-X6t"/>
+                <outlet property="countLabel" destination="Z0R-4I-Y5y" id="U5B-AT-NDp"/>
+                <outlet property="iconImageView" destination="Kno-Y9-4GV" id="ULA-SJ-KKq"/>
+                <outlet property="minusButton" destination="G9a-nb-gk3" id="7ay-bF-aSc"/>
+                <outlet property="nameLabel" destination="RHg-zG-7uw" id="por-6Z-cgi"/>
+                <outlet property="plusButton" destination="btr-s2-HWk" id="STc-m9-zw9"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="count_minus.png" width="25" height="25"/>
+        <image name="count_plus.png" width="25" height="25"/>
+        <image name="refuel_icon.png" width="50" height="50"/>
+    </resources>
+</document>

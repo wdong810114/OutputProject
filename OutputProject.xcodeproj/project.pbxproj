@@ -1,0 +1,1104 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05566A4D84284F2E3BEA0106 /* libPods-XTModulesSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D2A642B300DD9182AD331F8 /* libPods-XTModulesSDK.a */; };
+		7A4DE55922E55F1D00FDC427 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DE55822E55F1D00FDC427 /* AppDelegate.m */; };
+		7A4DE55C22E55F1D00FDC427 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DE55B22E55F1D00FDC427 /* ViewController.m */; };
+		7A4DE55F22E55F1D00FDC427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DE55D22E55F1D00FDC427 /* Main.storyboard */; };
+		7A4DE56122E55F1F00FDC427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DE56022E55F1F00FDC427 /* Assets.xcassets */; };
+		7A4DE56422E55F1F00FDC427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DE56222E55F1F00FDC427 /* LaunchScreen.storyboard */; };
+		7A4DE56722E55F1F00FDC427 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DE56622E55F1F00FDC427 /* main.m */; };
+		7AB6CA9F22FAB44900F765EE /* XTRefuelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB6CA9C22FAB44900F765EE /* XTRefuelCell.h */; };
+		7AB6CAA022FAB44900F765EE /* XTRefuelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6CA9D22FAB44900F765EE /* XTRefuelCell.m */; };
+		7AB6CAA122FAB44900F765EE /* XTRefuelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB6CA9E22FAB44900F765EE /* XTRefuelCell.xib */; };
+		7AB6CAA422FBFA1A00F765EE /* XTRefuelOrderModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB6CAA222FBFA1A00F765EE /* XTRefuelOrderModel.h */; };
+		7AB6CAA522FBFA1A00F765EE /* XTRefuelOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6CAA322FBFA1A00F765EE /* XTRefuelOrderModel.m */; };
+		7AB6CAA822FBFE2100F765EE /* XTBaseWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB6CAA622FBFE2100F765EE /* XTBaseWebViewController.h */; };
+		7AB6CAA922FBFE2100F765EE /* XTBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6CAA722FBFE2100F765EE /* XTBaseWebViewController.m */; };
+		7AB6CAAC22FC265300F765EE /* XTRefuelTicketsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB6CAAA22FC265300F765EE /* XTRefuelTicketsViewController.h */; };
+		7AB6CAAD22FC265300F765EE /* XTRefuelTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6CAAB22FC265300F765EE /* XTRefuelTicketsViewController.m */; };
+		7AB6CAB022FCFCE200F765EE /* XTRefuelTicketDetailViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB6CAAE22FCFCE200F765EE /* XTRefuelTicketDetailViewController.h */; };
+		7AB6CAB122FCFCE200F765EE /* XTRefuelTicketDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6CAAF22FCFCE200F765EE /* XTRefuelTicketDetailViewController.m */; };
+		7AB6CAB422FCFE0900F765EE /* XTRefuelTicketModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB6CAB222FCFE0900F765EE /* XTRefuelTicketModel.h */; };
+		7AB6CAB522FCFE0900F765EE /* XTRefuelTicketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6CAB322FCFE0900F765EE /* XTRefuelTicketModel.m */; };
+		7AD6ABC022E58C7D00180CA3 /* XTModulesSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABBE22E58C7D00180CA3 /* XTModulesSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7AD6ABC322E58C7D00180CA3 /* XTModulesSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD6ABBC22E58C7D00180CA3 /* XTModulesSDK.framework */; };
+		7AD6ABC422E58C7D00180CA3 /* XTModulesSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD6ABBC22E58C7D00180CA3 /* XTModulesSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7AD6ABD022E58EF000180CA3 /* XTModulesManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABCE22E58EF000180CA3 /* XTModulesManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7AD6ABD122E58EF000180CA3 /* XTModulesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6ABCF22E58EF000180CA3 /* XTModulesManager.m */; };
+		7AD6ABD422E5942600180CA3 /* XTPhoneRechargeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABD222E5942600180CA3 /* XTPhoneRechargeViewController.h */; };
+		7AD6ABD522E5942600180CA3 /* XTPhoneRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6ABD322E5942600180CA3 /* XTPhoneRechargeViewController.m */; };
+		7AD6ABD822E5944C00180CA3 /* XTBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABD622E5944C00180CA3 /* XTBaseViewController.h */; };
+		7AD6ABD922E5944C00180CA3 /* XTBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6ABD722E5944C00180CA3 /* XTBaseViewController.m */; };
+		7AD6ABDC22E594DC00180CA3 /* XTBaseNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABDA22E594DC00180CA3 /* XTBaseNavigationController.h */; };
+		7AD6ABDD22E594DC00180CA3 /* XTBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6ABDB22E594DC00180CA3 /* XTBaseNavigationController.m */; };
+		7AD6ABE122E59C6F00180CA3 /* XTMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABE022E59C6F00180CA3 /* XTMacro.h */; };
+		7AD6ABEB22E5AE0B00180CA3 /* XTModulesSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7AD6ABEA22E5AE0B00180CA3 /* XTModulesSDK.bundle */; };
+		7AD6ABF622E5BEFB00180CA3 /* XTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6ABEE22E5BEFB00180CA3 /* XTAlertView.m */; };
+		7AD6ABF722E5BEFB00180CA3 /* XTAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABEF22E5BEFB00180CA3 /* XTAlertView.h */; };
+		7AD6ABF822E5BEFB00180CA3 /* XTDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6ABF122E5BEFB00180CA3 /* XTDIYHeader.m */; };
+		7AD6ABF922E5BEFB00180CA3 /* XTDIYHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABF222E5BEFB00180CA3 /* XTDIYHeader.h */; };
+		7AD6ABFA22E5BEFB00180CA3 /* XTDIYFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6ABF422E5BEFB00180CA3 /* XTDIYFooter.m */; };
+		7AD6ABFB22E5BEFB00180CA3 /* XTDIYFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABF522E5BEFB00180CA3 /* XTDIYFooter.h */; };
+		7AD6ABFE22E697DD00180CA3 /* XTAppUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABFC22E697DD00180CA3 /* XTAppUtils.h */; };
+		7AD6ABFF22E697DD00180CA3 /* XTAppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6ABFD22E697DD00180CA3 /* XTAppUtils.m */; };
+		7AD6AC0922E7101200180CA3 /* XTApiClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC0722E7101200180CA3 /* XTApiClient.h */; };
+		7AD6AC0A22E7101200180CA3 /* XTApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC0822E7101200180CA3 /* XTApiClient.m */; };
+		7AD6AC0D22E837B600180CA3 /* XTJSONRequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC0B22E837B600180CA3 /* XTJSONRequestSerializer.h */; };
+		7AD6AC0E22E837B600180CA3 /* XTJSONRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC0C22E837B600180CA3 /* XTJSONRequestSerializer.m */; };
+		7AD6AC1022E843DA00180CA3 /* XTClientConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC0F22E843DA00180CA3 /* XTClientConfiguration.h */; };
+		7AD6AC1322E8446500180CA3 /* XTDefaultClientConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC1122E8446500180CA3 /* XTDefaultClientConfiguration.h */; };
+		7AD6AC1422E8446500180CA3 /* XTDefaultClientConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC1222E8446500180CA3 /* XTDefaultClientConfiguration.m */; };
+		7AD6AC1722E846FC00180CA3 /* XTSanitizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC1522E846FC00180CA3 /* XTSanitizer.h */; };
+		7AD6AC1822E846FC00180CA3 /* XTSanitizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC1622E846FC00180CA3 /* XTSanitizer.m */; };
+		7AD6AC1B22E84D0B00180CA3 /* XTModuleObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC1922E84D0B00180CA3 /* XTModuleObject.h */; };
+		7AD6AC1C22E84D0B00180CA3 /* XTModuleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC1A22E84D0B00180CA3 /* XTModuleObject.m */; };
+		7AD6AC1F22E85DDC00180CA3 /* XTPhoneRechargeApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC1D22E85DDC00180CA3 /* XTPhoneRechargeApi.h */; };
+		7AD6AC2022E85DDC00180CA3 /* XTPhoneRechargeApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC1E22E85DDC00180CA3 /* XTPhoneRechargeApi.m */; };
+		7AD6AC2322EAD0C000180CA3 /* XTResponseDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC2122EAD0C000180CA3 /* XTResponseDeserializer.h */; };
+		7AD6AC2422EAD0C000180CA3 /* XTResponseDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC2222EAD0C000180CA3 /* XTResponseDeserializer.m */; };
+		7AD6AC2722EAFA0800180CA3 /* XTPhoneModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC2522EAFA0800180CA3 /* XTPhoneModel.h */; };
+		7AD6AC2822EAFA0800180CA3 /* XTPhoneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC2622EAFA0800180CA3 /* XTPhoneModel.m */; };
+		7AD6AC2B22EAFA1D00180CA3 /* XTPhonePriceModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC2922EAFA1D00180CA3 /* XTPhonePriceModel.h */; };
+		7AD6AC2C22EAFA1D00180CA3 /* XTPhonePriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC2A22EAFA1D00180CA3 /* XTPhonePriceModel.m */; };
+		7AD6AC2F22EE8E7600180CA3 /* XTCommonApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC2D22EE8E7600180CA3 /* XTCommonApi.h */; };
+		7AD6AC3022EE8E7600180CA3 /* XTCommonApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC2E22EE8E7600180CA3 /* XTCommonApi.m */; };
+		7AD6AC3822EFEE0300180CA3 /* XTPhonePriceButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC3622EFEE0300180CA3 /* XTPhonePriceButton.h */; };
+		7AD6AC3922EFEE0300180CA3 /* XTPhonePriceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC3722EFEE0300180CA3 /* XTPhonePriceButton.m */; };
+		7AD6AC3C22F01F3400180CA3 /* XTPhoneRechargeHistoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC3A22F01F3400180CA3 /* XTPhoneRechargeHistoryView.h */; };
+		7AD6AC3D22F01F3400180CA3 /* XTPhoneRechargeHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC3B22F01F3400180CA3 /* XTPhoneRechargeHistoryView.m */; };
+		7AD6AC4022F03CC200180CA3 /* XTUserDefaultsUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC3E22F03CC200180CA3 /* XTUserDefaultsUtils.h */; };
+		7AD6AC4122F03CC200180CA3 /* XTUserDefaultsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC3F22F03CC200180CA3 /* XTUserDefaultsUtils.m */; };
+		7AD6AC4422F12B0600180CA3 /* XTPhoneRechargeOrderModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC4222F12B0600180CA3 /* XTPhoneRechargeOrderModel.h */; };
+		7AD6AC4522F12B0600180CA3 /* XTPhoneRechargeOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC4322F12B0600180CA3 /* XTPhoneRechargeOrderModel.m */; };
+		7AD6AC4822F16EBC00180CA3 /* UIView+XTExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC4622F16EBC00180CA3 /* UIView+XTExtension.h */; };
+		7AD6AC4922F16EBC00180CA3 /* UIView+XTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC4722F16EBC00180CA3 /* UIView+XTExtension.m */; };
+		7AD6AC4E22F2DD7A00180CA3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC4C22F2DD7A00180CA3 /* Reachability.m */; };
+		7AD6AC5122F9251D00180CA3 /* XTRefuelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC4F22F9251D00180CA3 /* XTRefuelViewController.h */; };
+		7AD6AC5222F9251D00180CA3 /* XTRefuelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC5022F9251D00180CA3 /* XTRefuelViewController.m */; };
+		7AD6AC5522F9519E00180CA3 /* XTRefuelGoodsModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC5322F9519E00180CA3 /* XTRefuelGoodsModel.h */; };
+		7AD6AC5622F9519E00180CA3 /* XTRefuelGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC5422F9519E00180CA3 /* XTRefuelGoodsModel.m */; };
+		7AD6AC5922F9672800180CA3 /* XTRefuelApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC5722F9672800180CA3 /* XTRefuelApi.h */; };
+		7AD6AC5A22F9672800180CA3 /* XTRefuelApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC5822F9672800180CA3 /* XTRefuelApi.m */; };
+		7AD6AC5D22F97DCC00180CA3 /* XTRoundCornerCell.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7AD6AC5C22F97DCC00180CA3 /* XTRoundCornerCell.bundle */; };
+		7AD6AC6022F97E0600180CA3 /* XTRoundCornerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC5E22F97E0600180CA3 /* XTRoundCornerCell.h */; };
+		7AD6AC6122F97E0600180CA3 /* XTRoundCornerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC5F22F97E0600180CA3 /* XTRoundCornerCell.m */; };
+		D469779E76225C9B8DA17617 /* libPods-OutputProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFE40A37096E88702D1A130 /* libPods-OutputProject.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7AD6ABC122E58C7D00180CA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A4DE54C22E55F1D00FDC427 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AD6ABBB22E58C7D00180CA3;
+			remoteInfo = XTModulesSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7AD6ABB622E5893100180CA3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7AD6ABC422E58C7D00180CA3 /* XTModulesSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		66173D2FD1BD539C773F7E34 /* Pods-XTModulesSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTModulesSDK.debug.xcconfig"; path = "Target Support Files/Pods-XTModulesSDK/Pods-XTModulesSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		6EFE40A37096E88702D1A130 /* libPods-OutputProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OutputProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A4DE55422E55F1D00FDC427 /* OutputProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OutputProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A4DE55722E55F1D00FDC427 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7A4DE55822E55F1D00FDC427 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7A4DE55A22E55F1D00FDC427 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7A4DE55B22E55F1D00FDC427 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7A4DE55E22E55F1D00FDC427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7A4DE56022E55F1F00FDC427 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7A4DE56322E55F1F00FDC427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7A4DE56522E55F1F00FDC427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A4DE56622E55F1F00FDC427 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7A4DE56D22E563C200FDC427 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		7A4DE56E22E563C200FDC427 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		7AB6CA9C22FAB44900F765EE /* XTRefuelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelCell.h; sourceTree = "<group>"; };
+		7AB6CA9D22FAB44900F765EE /* XTRefuelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelCell.m; sourceTree = "<group>"; };
+		7AB6CA9E22FAB44900F765EE /* XTRefuelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRefuelCell.xib; sourceTree = "<group>"; };
+		7AB6CAA222FBFA1A00F765EE /* XTRefuelOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelOrderModel.h; sourceTree = "<group>"; };
+		7AB6CAA322FBFA1A00F765EE /* XTRefuelOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelOrderModel.m; sourceTree = "<group>"; };
+		7AB6CAA622FBFE2100F765EE /* XTBaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTBaseWebViewController.h; sourceTree = "<group>"; };
+		7AB6CAA722FBFE2100F765EE /* XTBaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTBaseWebViewController.m; sourceTree = "<group>"; };
+		7AB6CAAA22FC265300F765EE /* XTRefuelTicketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelTicketsViewController.h; sourceTree = "<group>"; };
+		7AB6CAAB22FC265300F765EE /* XTRefuelTicketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelTicketsViewController.m; sourceTree = "<group>"; };
+		7AB6CAAE22FCFCE200F765EE /* XTRefuelTicketDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelTicketDetailViewController.h; sourceTree = "<group>"; };
+		7AB6CAAF22FCFCE200F765EE /* XTRefuelTicketDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelTicketDetailViewController.m; sourceTree = "<group>"; };
+		7AB6CAB222FCFE0900F765EE /* XTRefuelTicketModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelTicketModel.h; sourceTree = "<group>"; };
+		7AB6CAB322FCFE0900F765EE /* XTRefuelTicketModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelTicketModel.m; sourceTree = "<group>"; };
+		7AD6ABBC22E58C7D00180CA3 /* XTModulesSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XTModulesSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AD6ABBE22E58C7D00180CA3 /* XTModulesSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTModulesSDK.h; sourceTree = "<group>"; };
+		7AD6ABBF22E58C7D00180CA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AD6ABCE22E58EF000180CA3 /* XTModulesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTModulesManager.h; sourceTree = "<group>"; };
+		7AD6ABCF22E58EF000180CA3 /* XTModulesManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTModulesManager.m; sourceTree = "<group>"; };
+		7AD6ABD222E5942600180CA3 /* XTPhoneRechargeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPhoneRechargeViewController.h; sourceTree = "<group>"; };
+		7AD6ABD322E5942600180CA3 /* XTPhoneRechargeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPhoneRechargeViewController.m; sourceTree = "<group>"; };
+		7AD6ABD622E5944C00180CA3 /* XTBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTBaseViewController.h; sourceTree = "<group>"; };
+		7AD6ABD722E5944C00180CA3 /* XTBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTBaseViewController.m; sourceTree = "<group>"; };
+		7AD6ABDA22E594DC00180CA3 /* XTBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTBaseNavigationController.h; sourceTree = "<group>"; };
+		7AD6ABDB22E594DC00180CA3 /* XTBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTBaseNavigationController.m; sourceTree = "<group>"; };
+		7AD6ABE022E59C6F00180CA3 /* XTMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTMacro.h; sourceTree = "<group>"; };
+		7AD6ABEA22E5AE0B00180CA3 /* XTModulesSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTModulesSDK.bundle; sourceTree = "<group>"; };
+		7AD6ABEE22E5BEFB00180CA3 /* XTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTAlertView.m; sourceTree = "<group>"; };
+		7AD6ABEF22E5BEFB00180CA3 /* XTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTAlertView.h; sourceTree = "<group>"; };
+		7AD6ABF122E5BEFB00180CA3 /* XTDIYHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTDIYHeader.m; sourceTree = "<group>"; };
+		7AD6ABF222E5BEFB00180CA3 /* XTDIYHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTDIYHeader.h; sourceTree = "<group>"; };
+		7AD6ABF422E5BEFB00180CA3 /* XTDIYFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTDIYFooter.m; sourceTree = "<group>"; };
+		7AD6ABF522E5BEFB00180CA3 /* XTDIYFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTDIYFooter.h; sourceTree = "<group>"; };
+		7AD6ABFC22E697DD00180CA3 /* XTAppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTAppUtils.h; sourceTree = "<group>"; };
+		7AD6ABFD22E697DD00180CA3 /* XTAppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTAppUtils.m; sourceTree = "<group>"; };
+		7AD6AC0722E7101200180CA3 /* XTApiClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTApiClient.h; sourceTree = "<group>"; };
+		7AD6AC0822E7101200180CA3 /* XTApiClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTApiClient.m; sourceTree = "<group>"; };
+		7AD6AC0B22E837B600180CA3 /* XTJSONRequestSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTJSONRequestSerializer.h; sourceTree = "<group>"; };
+		7AD6AC0C22E837B600180CA3 /* XTJSONRequestSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTJSONRequestSerializer.m; sourceTree = "<group>"; };
+		7AD6AC0F22E843DA00180CA3 /* XTClientConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTClientConfiguration.h; sourceTree = "<group>"; };
+		7AD6AC1122E8446500180CA3 /* XTDefaultClientConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTDefaultClientConfiguration.h; sourceTree = "<group>"; };
+		7AD6AC1222E8446500180CA3 /* XTDefaultClientConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTDefaultClientConfiguration.m; sourceTree = "<group>"; };
+		7AD6AC1522E846FC00180CA3 /* XTSanitizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTSanitizer.h; sourceTree = "<group>"; };
+		7AD6AC1622E846FC00180CA3 /* XTSanitizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTSanitizer.m; sourceTree = "<group>"; };
+		7AD6AC1922E84D0B00180CA3 /* XTModuleObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTModuleObject.h; sourceTree = "<group>"; };
+		7AD6AC1A22E84D0B00180CA3 /* XTModuleObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTModuleObject.m; sourceTree = "<group>"; };
+		7AD6AC1D22E85DDC00180CA3 /* XTPhoneRechargeApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPhoneRechargeApi.h; sourceTree = "<group>"; };
+		7AD6AC1E22E85DDC00180CA3 /* XTPhoneRechargeApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPhoneRechargeApi.m; sourceTree = "<group>"; };
+		7AD6AC2122EAD0C000180CA3 /* XTResponseDeserializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTResponseDeserializer.h; sourceTree = "<group>"; };
+		7AD6AC2222EAD0C000180CA3 /* XTResponseDeserializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTResponseDeserializer.m; sourceTree = "<group>"; };
+		7AD6AC2522EAFA0800180CA3 /* XTPhoneModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPhoneModel.h; sourceTree = "<group>"; };
+		7AD6AC2622EAFA0800180CA3 /* XTPhoneModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPhoneModel.m; sourceTree = "<group>"; };
+		7AD6AC2922EAFA1D00180CA3 /* XTPhonePriceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPhonePriceModel.h; sourceTree = "<group>"; };
+		7AD6AC2A22EAFA1D00180CA3 /* XTPhonePriceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPhonePriceModel.m; sourceTree = "<group>"; };
+		7AD6AC2D22EE8E7600180CA3 /* XTCommonApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTCommonApi.h; sourceTree = "<group>"; };
+		7AD6AC2E22EE8E7600180CA3 /* XTCommonApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTCommonApi.m; sourceTree = "<group>"; };
+		7AD6AC3622EFEE0300180CA3 /* XTPhonePriceButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPhonePriceButton.h; sourceTree = "<group>"; };
+		7AD6AC3722EFEE0300180CA3 /* XTPhonePriceButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPhonePriceButton.m; sourceTree = "<group>"; };
+		7AD6AC3A22F01F3400180CA3 /* XTPhoneRechargeHistoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPhoneRechargeHistoryView.h; sourceTree = "<group>"; };
+		7AD6AC3B22F01F3400180CA3 /* XTPhoneRechargeHistoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPhoneRechargeHistoryView.m; sourceTree = "<group>"; };
+		7AD6AC3E22F03CC200180CA3 /* XTUserDefaultsUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTUserDefaultsUtils.h; sourceTree = "<group>"; };
+		7AD6AC3F22F03CC200180CA3 /* XTUserDefaultsUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTUserDefaultsUtils.m; sourceTree = "<group>"; };
+		7AD6AC4222F12B0600180CA3 /* XTPhoneRechargeOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPhoneRechargeOrderModel.h; sourceTree = "<group>"; };
+		7AD6AC4322F12B0600180CA3 /* XTPhoneRechargeOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPhoneRechargeOrderModel.m; sourceTree = "<group>"; };
+		7AD6AC4622F16EBC00180CA3 /* UIView+XTExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XTExtension.h"; sourceTree = "<group>"; };
+		7AD6AC4722F16EBC00180CA3 /* UIView+XTExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XTExtension.m"; sourceTree = "<group>"; };
+		7AD6AC4C22F2DD7A00180CA3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		7AD6AC4D22F2DD7A00180CA3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		7AD6AC4F22F9251D00180CA3 /* XTRefuelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelViewController.h; sourceTree = "<group>"; };
+		7AD6AC5022F9251D00180CA3 /* XTRefuelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelViewController.m; sourceTree = "<group>"; };
+		7AD6AC5322F9519E00180CA3 /* XTRefuelGoodsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelGoodsModel.h; sourceTree = "<group>"; };
+		7AD6AC5422F9519E00180CA3 /* XTRefuelGoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelGoodsModel.m; sourceTree = "<group>"; };
+		7AD6AC5722F9672800180CA3 /* XTRefuelApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelApi.h; sourceTree = "<group>"; };
+		7AD6AC5822F9672800180CA3 /* XTRefuelApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelApi.m; sourceTree = "<group>"; };
+		7AD6AC5C22F97DCC00180CA3 /* XTRoundCornerCell.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTRoundCornerCell.bundle; sourceTree = "<group>"; };
+		7AD6AC5E22F97E0600180CA3 /* XTRoundCornerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRoundCornerCell.h; sourceTree = "<group>"; };
+		7AD6AC5F22F97E0600180CA3 /* XTRoundCornerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRoundCornerCell.m; sourceTree = "<group>"; };
+		8D2A642B300DD9182AD331F8 /* libPods-XTModulesSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XTModulesSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9990F23663CA68F2918B6AF8 /* Pods-XTModulesSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTModulesSDK.release.xcconfig"; path = "Target Support Files/Pods-XTModulesSDK/Pods-XTModulesSDK.release.xcconfig"; sourceTree = "<group>"; };
+		B49C10B0969C0397C354A477 /* Pods-OutputProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OutputProject.release.xcconfig"; path = "Target Support Files/Pods-OutputProject/Pods-OutputProject.release.xcconfig"; sourceTree = "<group>"; };
+		D679EFC5CE00061AFC0CC6F3 /* Pods-OutputProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OutputProject.debug.xcconfig"; path = "Target Support Files/Pods-OutputProject/Pods-OutputProject.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A4DE55122E55F1D00FDC427 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AD6ABC322E58C7D00180CA3 /* XTModulesSDK.framework in Frameworks */,
+				D469779E76225C9B8DA17617 /* libPods-OutputProject.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AD6ABB922E58C7D00180CA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05566A4D84284F2E3BEA0106 /* libPods-XTModulesSDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A4DE54B22E55F1D00FDC427 = {
+			isa = PBXGroup;
+			children = (
+				7A4DE55622E55F1D00FDC427 /* OutputProject */,
+				7AD6ABBD22E58C7D00180CA3 /* XTModulesSDK */,
+				7A4DE55522E55F1D00FDC427 /* Products */,
+				AD76E98BA65DAA3486B9B7F1 /* Pods */,
+				7C4A6842DD8601450B89FE6A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7A4DE55522E55F1D00FDC427 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A4DE55422E55F1D00FDC427 /* OutputProject.app */,
+				7AD6ABBC22E58C7D00180CA3 /* XTModulesSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A4DE55622E55F1D00FDC427 /* OutputProject */ = {
+			isa = PBXGroup;
+			children = (
+				7A4DE55722E55F1D00FDC427 /* AppDelegate.h */,
+				7A4DE55822E55F1D00FDC427 /* AppDelegate.m */,
+				7A4DE55A22E55F1D00FDC427 /* ViewController.h */,
+				7A4DE55B22E55F1D00FDC427 /* ViewController.m */,
+				7A4DE55D22E55F1D00FDC427 /* Main.storyboard */,
+				7A4DE56022E55F1F00FDC427 /* Assets.xcassets */,
+				7A4DE56222E55F1F00FDC427 /* LaunchScreen.storyboard */,
+				7A4DE56522E55F1F00FDC427 /* Info.plist */,
+				7A4DE56622E55F1F00FDC427 /* main.m */,
+				7AD6AC4A22F2DD7A00180CA3 /* Vendors */,
+			);
+			path = OutputProject;
+			sourceTree = "<group>";
+		};
+		7AD6ABBD22E58C7D00180CA3 /* XTModulesSDK */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6ABC822E58E5F00180CA3 /* Base */,
+				7AD6ABC922E58E5F00180CA3 /* Modules */,
+				7AD6ABCD22E58E5F00180CA3 /* Utils */,
+				7AD6ABEC22E5BD3900180CA3 /* Tools */,
+				7AD6ABBE22E58C7D00180CA3 /* XTModulesSDK.h */,
+				7AD6ABEA22E5AE0B00180CA3 /* XTModulesSDK.bundle */,
+				7AD6ABBF22E58C7D00180CA3 /* Info.plist */,
+			);
+			path = XTModulesSDK;
+			sourceTree = "<group>";
+		};
+		7AD6ABC822E58E5F00180CA3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6ABDA22E594DC00180CA3 /* XTBaseNavigationController.h */,
+				7AD6ABDB22E594DC00180CA3 /* XTBaseNavigationController.m */,
+				7AD6ABD622E5944C00180CA3 /* XTBaseViewController.h */,
+				7AD6ABD722E5944C00180CA3 /* XTBaseViewController.m */,
+				7AB6CAA622FBFE2100F765EE /* XTBaseWebViewController.h */,
+				7AB6CAA722FBFE2100F765EE /* XTBaseWebViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7AD6ABC922E58E5F00180CA3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6ABCC22E58E5F00180CA3 /* PhoneRecharge */,
+				7AD6ABCA22E58E5F00180CA3 /* Refuel */,
+				7AD6ABCB22E58E5F00180CA3 /* LifePayment */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7AD6ABCA22E58E5F00180CA3 /* Refuel */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6AC4F22F9251D00180CA3 /* XTRefuelViewController.h */,
+				7AD6AC5022F9251D00180CA3 /* XTRefuelViewController.m */,
+				7AB6CA9C22FAB44900F765EE /* XTRefuelCell.h */,
+				7AB6CA9D22FAB44900F765EE /* XTRefuelCell.m */,
+				7AB6CA9E22FAB44900F765EE /* XTRefuelCell.xib */,
+				7AB6CAAA22FC265300F765EE /* XTRefuelTicketsViewController.h */,
+				7AB6CAAB22FC265300F765EE /* XTRefuelTicketsViewController.m */,
+				7AB6CAAE22FCFCE200F765EE /* XTRefuelTicketDetailViewController.h */,
+				7AB6CAAF22FCFCE200F765EE /* XTRefuelTicketDetailViewController.m */,
+			);
+			path = Refuel;
+			sourceTree = "<group>";
+		};
+		7AD6ABCB22E58E5F00180CA3 /* LifePayment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LifePayment;
+			sourceTree = "<group>";
+		};
+		7AD6ABCC22E58E5F00180CA3 /* PhoneRecharge */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6ABD222E5942600180CA3 /* XTPhoneRechargeViewController.h */,
+				7AD6ABD322E5942600180CA3 /* XTPhoneRechargeViewController.m */,
+				7AD6AC3622EFEE0300180CA3 /* XTPhonePriceButton.h */,
+				7AD6AC3722EFEE0300180CA3 /* XTPhonePriceButton.m */,
+				7AD6AC3A22F01F3400180CA3 /* XTPhoneRechargeHistoryView.h */,
+				7AD6AC3B22F01F3400180CA3 /* XTPhoneRechargeHistoryView.m */,
+			);
+			path = PhoneRecharge;
+			sourceTree = "<group>";
+		};
+		7AD6ABCD22E58E5F00180CA3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6ABE022E59C6F00180CA3 /* XTMacro.h */,
+				7AD6ABFC22E697DD00180CA3 /* XTAppUtils.h */,
+				7AD6ABFD22E697DD00180CA3 /* XTAppUtils.m */,
+				7AD6AC3E22F03CC200180CA3 /* XTUserDefaultsUtils.h */,
+				7AD6AC3F22F03CC200180CA3 /* XTUserDefaultsUtils.m */,
+				7AD6AC4622F16EBC00180CA3 /* UIView+XTExtension.h */,
+				7AD6AC4722F16EBC00180CA3 /* UIView+XTExtension.m */,
+				7AD6ABCE22E58EF000180CA3 /* XTModulesManager.h */,
+				7AD6ABCF22E58EF000180CA3 /* XTModulesManager.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7AD6ABEC22E5BD3900180CA3 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6AC0022E70F9900180CA3 /* XTClient */,
+				7AD6ABED22E5BEFB00180CA3 /* XTAlertView */,
+				7AD6ABF022E5BEFB00180CA3 /* XTDIYHeader */,
+				7AD6ABF322E5BEFB00180CA3 /* XTDIYFooter */,
+				7AD6AC5B22F97DCC00180CA3 /* XTRoundCornerCell */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		7AD6ABED22E5BEFB00180CA3 /* XTAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6ABEF22E5BEFB00180CA3 /* XTAlertView.h */,
+				7AD6ABEE22E5BEFB00180CA3 /* XTAlertView.m */,
+			);
+			path = XTAlertView;
+			sourceTree = "<group>";
+		};
+		7AD6ABF022E5BEFB00180CA3 /* XTDIYHeader */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6ABF222E5BEFB00180CA3 /* XTDIYHeader.h */,
+				7AD6ABF122E5BEFB00180CA3 /* XTDIYHeader.m */,
+			);
+			path = XTDIYHeader;
+			sourceTree = "<group>";
+		};
+		7AD6ABF322E5BEFB00180CA3 /* XTDIYFooter */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6ABF522E5BEFB00180CA3 /* XTDIYFooter.h */,
+				7AD6ABF422E5BEFB00180CA3 /* XTDIYFooter.m */,
+			);
+			path = XTDIYFooter;
+			sourceTree = "<group>";
+		};
+		7AD6AC0022E70F9900180CA3 /* XTClient */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6AC0622E70F9900180CA3 /* Api */,
+				7AD6AC0122E70F9900180CA3 /* Core */,
+				7AD6AC0222E70F9900180CA3 /* Models */,
+			);
+			path = XTClient;
+			sourceTree = "<group>";
+		};
+		7AD6AC0122E70F9900180CA3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6AC0722E7101200180CA3 /* XTApiClient.h */,
+				7AD6AC0822E7101200180CA3 /* XTApiClient.m */,
+				7AD6AC0B22E837B600180CA3 /* XTJSONRequestSerializer.h */,
+				7AD6AC0C22E837B600180CA3 /* XTJSONRequestSerializer.m */,
+				7AD6AC0F22E843DA00180CA3 /* XTClientConfiguration.h */,
+				7AD6AC1122E8446500180CA3 /* XTDefaultClientConfiguration.h */,
+				7AD6AC1222E8446500180CA3 /* XTDefaultClientConfiguration.m */,
+				7AD6AC1922E84D0B00180CA3 /* XTModuleObject.h */,
+				7AD6AC1A22E84D0B00180CA3 /* XTModuleObject.m */,
+				7AD6AC2122EAD0C000180CA3 /* XTResponseDeserializer.h */,
+				7AD6AC2222EAD0C000180CA3 /* XTResponseDeserializer.m */,
+				7AD6AC1522E846FC00180CA3 /* XTSanitizer.h */,
+				7AD6AC1622E846FC00180CA3 /* XTSanitizer.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7AD6AC0222E70F9900180CA3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6AC3122EE925600180CA3 /* Common */,
+				7AD6AC0522E70F9900180CA3 /* PhoneRecharge */,
+				7AD6AC0322E70F9900180CA3 /* Refuel */,
+				7AD6AC0422E70F9900180CA3 /* LifePayment */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7AD6AC0322E70F9900180CA3 /* Refuel */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6AC5322F9519E00180CA3 /* XTRefuelGoodsModel.h */,
+				7AD6AC5422F9519E00180CA3 /* XTRefuelGoodsModel.m */,
+				7AB6CAA222FBFA1A00F765EE /* XTRefuelOrderModel.h */,
+				7AB6CAA322FBFA1A00F765EE /* XTRefuelOrderModel.m */,
+				7AB6CAB222FCFE0900F765EE /* XTRefuelTicketModel.h */,
+				7AB6CAB322FCFE0900F765EE /* XTRefuelTicketModel.m */,
+			);
+			path = Refuel;
+			sourceTree = "<group>";
+		};
+		7AD6AC0422E70F9900180CA3 /* LifePayment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LifePayment;
+			sourceTree = "<group>";
+		};
+		7AD6AC0522E70F9900180CA3 /* PhoneRecharge */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6AC2522EAFA0800180CA3 /* XTPhoneModel.h */,
+				7AD6AC2622EAFA0800180CA3 /* XTPhoneModel.m */,
+				7AD6AC2922EAFA1D00180CA3 /* XTPhonePriceModel.h */,
+				7AD6AC2A22EAFA1D00180CA3 /* XTPhonePriceModel.m */,
+				7AD6AC4222F12B0600180CA3 /* XTPhoneRechargeOrderModel.h */,
+				7AD6AC4322F12B0600180CA3 /* XTPhoneRechargeOrderModel.m */,
+			);
+			path = PhoneRecharge;
+			sourceTree = "<group>";
+		};
+		7AD6AC0622E70F9900180CA3 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6AC2D22EE8E7600180CA3 /* XTCommonApi.h */,
+				7AD6AC2E22EE8E7600180CA3 /* XTCommonApi.m */,
+				7AD6AC1D22E85DDC00180CA3 /* XTPhoneRechargeApi.h */,
+				7AD6AC1E22E85DDC00180CA3 /* XTPhoneRechargeApi.m */,
+				7AD6AC5722F9672800180CA3 /* XTRefuelApi.h */,
+				7AD6AC5822F9672800180CA3 /* XTRefuelApi.m */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		7AD6AC3122EE925600180CA3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7AD6AC4A22F2DD7A00180CA3 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6AC4B22F2DD7A00180CA3 /* Reachability */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		7AD6AC4B22F2DD7A00180CA3 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6AC4D22F2DD7A00180CA3 /* Reachability.h */,
+				7AD6AC4C22F2DD7A00180CA3 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		7AD6AC5B22F97DCC00180CA3 /* XTRoundCornerCell */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6AC5C22F97DCC00180CA3 /* XTRoundCornerCell.bundle */,
+				7AD6AC5E22F97E0600180CA3 /* XTRoundCornerCell.h */,
+				7AD6AC5F22F97E0600180CA3 /* XTRoundCornerCell.m */,
+			);
+			path = XTRoundCornerCell;
+			sourceTree = "<group>";
+		};
+		7C4A6842DD8601450B89FE6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EFE40A37096E88702D1A130 /* libPods-OutputProject.a */,
+				8D2A642B300DD9182AD331F8 /* libPods-XTModulesSDK.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD76E98BA65DAA3486B9B7F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D679EFC5CE00061AFC0CC6F3 /* Pods-OutputProject.debug.xcconfig */,
+				B49C10B0969C0397C354A477 /* Pods-OutputProject.release.xcconfig */,
+				66173D2FD1BD539C773F7E34 /* Pods-XTModulesSDK.debug.xcconfig */,
+				9990F23663CA68F2918B6AF8 /* Pods-XTModulesSDK.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7AD6ABB722E58C7D00180CA3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AD6ABD022E58EF000180CA3 /* XTModulesManager.h in Headers */,
+				7AD6AC1F22E85DDC00180CA3 /* XTPhoneRechargeApi.h in Headers */,
+				7AD6AC4822F16EBC00180CA3 /* UIView+XTExtension.h in Headers */,
+				7AD6AC5122F9251D00180CA3 /* XTRefuelViewController.h in Headers */,
+				7AD6ABE122E59C6F00180CA3 /* XTMacro.h in Headers */,
+				7AD6ABF722E5BEFB00180CA3 /* XTAlertView.h in Headers */,
+				7AB6CAA422FBFA1A00F765EE /* XTRefuelOrderModel.h in Headers */,
+				7AD6ABC022E58C7D00180CA3 /* XTModulesSDK.h in Headers */,
+				7AD6AC3C22F01F3400180CA3 /* XTPhoneRechargeHistoryView.h in Headers */,
+				7AD6AC1722E846FC00180CA3 /* XTSanitizer.h in Headers */,
+				7AD6AC0D22E837B600180CA3 /* XTJSONRequestSerializer.h in Headers */,
+				7AD6ABFE22E697DD00180CA3 /* XTAppUtils.h in Headers */,
+				7AD6AC2F22EE8E7600180CA3 /* XTCommonApi.h in Headers */,
+				7AD6AC2722EAFA0800180CA3 /* XTPhoneModel.h in Headers */,
+				7AD6ABF922E5BEFB00180CA3 /* XTDIYHeader.h in Headers */,
+				7AB6CAB422FCFE0900F765EE /* XTRefuelTicketModel.h in Headers */,
+				7AD6AC4022F03CC200180CA3 /* XTUserDefaultsUtils.h in Headers */,
+				7AD6AC3822EFEE0300180CA3 /* XTPhonePriceButton.h in Headers */,
+				7AD6AC1022E843DA00180CA3 /* XTClientConfiguration.h in Headers */,
+				7AD6AC2B22EAFA1D00180CA3 /* XTPhonePriceModel.h in Headers */,
+				7AD6AC5522F9519E00180CA3 /* XTRefuelGoodsModel.h in Headers */,
+				7AD6ABDC22E594DC00180CA3 /* XTBaseNavigationController.h in Headers */,
+				7AD6ABD822E5944C00180CA3 /* XTBaseViewController.h in Headers */,
+				7AB6CA9F22FAB44900F765EE /* XTRefuelCell.h in Headers */,
+				7AB6CAB022FCFCE200F765EE /* XTRefuelTicketDetailViewController.h in Headers */,
+				7AB6CAA822FBFE2100F765EE /* XTBaseWebViewController.h in Headers */,
+				7AB6CAAC22FC265300F765EE /* XTRefuelTicketsViewController.h in Headers */,
+				7AD6ABFB22E5BEFB00180CA3 /* XTDIYFooter.h in Headers */,
+				7AD6ABD422E5942600180CA3 /* XTPhoneRechargeViewController.h in Headers */,
+				7AD6AC1322E8446500180CA3 /* XTDefaultClientConfiguration.h in Headers */,
+				7AD6AC5922F9672800180CA3 /* XTRefuelApi.h in Headers */,
+				7AD6AC0922E7101200180CA3 /* XTApiClient.h in Headers */,
+				7AD6AC6022F97E0600180CA3 /* XTRoundCornerCell.h in Headers */,
+				7AD6AC4422F12B0600180CA3 /* XTPhoneRechargeOrderModel.h in Headers */,
+				7AD6AC2322EAD0C000180CA3 /* XTResponseDeserializer.h in Headers */,
+				7AD6AC1B22E84D0B00180CA3 /* XTModuleObject.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7A4DE55322E55F1D00FDC427 /* OutputProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A4DE56A22E55F1F00FDC427 /* Build configuration list for PBXNativeTarget "OutputProject" */;
+			buildPhases = (
+				DF90745BB4527A3B0094D992 /* [CP] Check Pods Manifest.lock */,
+				7A4DE55022E55F1D00FDC427 /* Sources */,
+				7A4DE55122E55F1D00FDC427 /* Frameworks */,
+				7A4DE55222E55F1D00FDC427 /* Resources */,
+				7AD6ABB622E5893100180CA3 /* Embed Frameworks */,
+				A662E7FF9A5A5836A258D094 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AD6ABC222E58C7D00180CA3 /* PBXTargetDependency */,
+			);
+			name = OutputProject;
+			productName = OutputProject;
+			productReference = 7A4DE55422E55F1D00FDC427 /* OutputProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7AD6ABBB22E58C7D00180CA3 /* XTModulesSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AD6ABC522E58C7D00180CA3 /* Build configuration list for PBXNativeTarget "XTModulesSDK" */;
+			buildPhases = (
+				EE54D51D2CCEBAF9B4793336 /* [CP] Check Pods Manifest.lock */,
+				7AD6ABB722E58C7D00180CA3 /* Headers */,
+				7AD6ABB822E58C7D00180CA3 /* Sources */,
+				7AD6ABB922E58C7D00180CA3 /* Frameworks */,
+				7AD6ABBA22E58C7D00180CA3 /* Resources */,
+				BCFD5A97E31CC1617B00013D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XTModulesSDK;
+			productName = XTModulesSDK;
+			productReference = 7AD6ABBC22E58C7D00180CA3 /* XTModulesSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7A4DE54C22E55F1D00FDC427 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Newsky Payment";
+				TargetAttributes = {
+					7A4DE55322E55F1D00FDC427 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					7AD6ABBB22E58C7D00180CA3 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 7A4DE54F22E55F1D00FDC427 /* Build configuration list for PBXProject "OutputProject" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7A4DE54B22E55F1D00FDC427;
+			productRefGroup = 7A4DE55522E55F1D00FDC427 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A4DE55322E55F1D00FDC427 /* OutputProject */,
+				7AD6ABBB22E58C7D00180CA3 /* XTModulesSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A4DE55222E55F1D00FDC427 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A4DE56422E55F1F00FDC427 /* LaunchScreen.storyboard in Resources */,
+				7A4DE56122E55F1F00FDC427 /* Assets.xcassets in Resources */,
+				7A4DE55F22E55F1D00FDC427 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AD6ABBA22E58C7D00180CA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AD6ABEB22E5AE0B00180CA3 /* XTModulesSDK.bundle in Resources */,
+				7AB6CAA122FAB44900F765EE /* XTRefuelCell.xib in Resources */,
+				7AD6AC5D22F97DCC00180CA3 /* XTRoundCornerCell.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A662E7FF9A5A5836A258D094 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OutputProject/Pods-OutputProject-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OutputProject/Pods-OutputProject-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OutputProject/Pods-OutputProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCFD5A97E31CC1617B00013D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XTModulesSDK/Pods-XTModulesSDK-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XTModulesSDK/Pods-XTModulesSDK-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XTModulesSDK/Pods-XTModulesSDK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF90745BB4527A3B0094D992 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OutputProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE54D51D2CCEBAF9B4793336 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XTModulesSDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A4DE55022E55F1D00FDC427 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A4DE55C22E55F1D00FDC427 /* ViewController.m in Sources */,
+				7A4DE56722E55F1F00FDC427 /* main.m in Sources */,
+				7AD6AC4E22F2DD7A00180CA3 /* Reachability.m in Sources */,
+				7A4DE55922E55F1D00FDC427 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AD6ABB822E58C7D00180CA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AD6AC4522F12B0600180CA3 /* XTPhoneRechargeOrderModel.m in Sources */,
+				7AD6AC5222F9251D00180CA3 /* XTRefuelViewController.m in Sources */,
+				7AB6CAAD22FC265300F765EE /* XTRefuelTicketsViewController.m in Sources */,
+				7AB6CAA922FBFE2100F765EE /* XTBaseWebViewController.m in Sources */,
+				7AB6CAB122FCFCE200F765EE /* XTRefuelTicketDetailViewController.m in Sources */,
+				7AD6AC2822EAFA0800180CA3 /* XTPhoneModel.m in Sources */,
+				7AD6ABFA22E5BEFB00180CA3 /* XTDIYFooter.m in Sources */,
+				7AD6AC1822E846FC00180CA3 /* XTSanitizer.m in Sources */,
+				7AD6AC4922F16EBC00180CA3 /* UIView+XTExtension.m in Sources */,
+				7AD6AC2422EAD0C000180CA3 /* XTResponseDeserializer.m in Sources */,
+				7AD6AC4122F03CC200180CA3 /* XTUserDefaultsUtils.m in Sources */,
+				7AD6AC1422E8446500180CA3 /* XTDefaultClientConfiguration.m in Sources */,
+				7AB6CAB522FCFE0900F765EE /* XTRefuelTicketModel.m in Sources */,
+				7AD6AC2C22EAFA1D00180CA3 /* XTPhonePriceModel.m in Sources */,
+				7AD6ABD522E5942600180CA3 /* XTPhoneRechargeViewController.m in Sources */,
+				7AD6ABD122E58EF000180CA3 /* XTModulesManager.m in Sources */,
+				7AB6CAA022FAB44900F765EE /* XTRefuelCell.m in Sources */,
+				7AD6AC0A22E7101200180CA3 /* XTApiClient.m in Sources */,
+				7AD6ABF822E5BEFB00180CA3 /* XTDIYHeader.m in Sources */,
+				7AB6CAA522FBFA1A00F765EE /* XTRefuelOrderModel.m in Sources */,
+				7AD6AC6122F97E0600180CA3 /* XTRoundCornerCell.m in Sources */,
+				7AD6AC0E22E837B600180CA3 /* XTJSONRequestSerializer.m in Sources */,
+				7AD6ABDD22E594DC00180CA3 /* XTBaseNavigationController.m in Sources */,
+				7AD6AC3922EFEE0300180CA3 /* XTPhonePriceButton.m in Sources */,
+				7AD6AC3D22F01F3400180CA3 /* XTPhoneRechargeHistoryView.m in Sources */,
+				7AD6ABFF22E697DD00180CA3 /* XTAppUtils.m in Sources */,
+				7AD6AC1C22E84D0B00180CA3 /* XTModuleObject.m in Sources */,
+				7AD6ABD922E5944C00180CA3 /* XTBaseViewController.m in Sources */,
+				7AD6AC2022E85DDC00180CA3 /* XTPhoneRechargeApi.m in Sources */,
+				7AD6ABF622E5BEFB00180CA3 /* XTAlertView.m in Sources */,
+				7AD6AC5A22F9672800180CA3 /* XTRefuelApi.m in Sources */,
+				7AD6AC3022EE8E7600180CA3 /* XTCommonApi.m in Sources */,
+				7AD6AC5622F9519E00180CA3 /* XTRefuelGoodsModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7AD6ABC222E58C7D00180CA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AD6ABBB22E58C7D00180CA3 /* XTModulesSDK */;
+			targetProxy = 7AD6ABC122E58C7D00180CA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7A4DE55D22E55F1D00FDC427 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A4DE55E22E55F1D00FDC427 /* Base */,
+				7A4DE56D22E563C200FDC427 /* zh-Hans */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7A4DE56222E55F1F00FDC427 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A4DE56322E55F1F00FDC427 /* Base */,
+				7A4DE56E22E563C200FDC427 /* zh-Hans */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7A4DE56822E55F1F00FDC427 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7A4DE56922E55F1F00FDC427 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A4DE56B22E55F1F00FDC427 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D679EFC5CE00061AFC0CC6F3 /* Pods-OutputProject.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C8RJ2CF978;
+				INFOPLIST_FILE = OutputProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtszkj.happypay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7A4DE56C22E55F1F00FDC427 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B49C10B0969C0397C354A477 /* Pods-OutputProject.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C8RJ2CF978;
+				INFOPLIST_FILE = OutputProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtszkj.happypay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7AD6ABC622E58C7D00180CA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66173D2FD1BD539C773F7E34 /* Pods-XTModulesSDK.debug.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = C8RJ2CF978;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = XTModulesSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtszkj.XTModulesSDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7AD6ABC722E58C7D00180CA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9990F23663CA68F2918B6AF8 /* Pods-XTModulesSDK.release.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = C8RJ2CF978;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = XTModulesSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtszkj.XTModulesSDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A4DE54F22E55F1D00FDC427 /* Build configuration list for PBXProject "OutputProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A4DE56822E55F1F00FDC427 /* Debug */,
+				7A4DE56922E55F1F00FDC427 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A4DE56A22E55F1F00FDC427 /* Build configuration list for PBXNativeTarget "OutputProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A4DE56B22E55F1F00FDC427 /* Debug */,
+				7A4DE56C22E55F1F00FDC427 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AD6ABC522E58C7D00180CA3 /* Build configuration list for PBXNativeTarget "XTModulesSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AD6ABC622E58C7D00180CA3 /* Debug */,
+				7AD6ABC722E58C7D00180CA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7A4DE54C22E55F1D00FDC427 /* Project object */;
+}
