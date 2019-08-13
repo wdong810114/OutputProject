@@ -67,10 +67,18 @@
 #define XTMainWindow  [UIApplication sharedApplication].windows.firstObject
 #define XTNotificationCenter  [NSNotificationCenter defaultCenter]
 #define XTWeakSelf(weakSelf)  __weak typeof(*&self)weakSelf = self
+#define XTIndexPath(row, section)  [NSIndexPath indexPathForRow:row inSection:section]
+#define XTDispatchAsyncOnMainQueue(x)  __weak typeof(self) weakSelf = self; \
+                                       dispatch_async(dispatch_get_main_queue(), ^{ \
+                                           typeof(weakSelf) self = weakSelf; \
+                                           {x} \
+                                       });
 
 #define XTIsReachable [[XTModulesManager sharedManager] isReachable]
 #define XTNetworkUnavailable   @"当前网络不可用"
 
 #define XTDigitalCharacterSet  @"0123456789" // 数字集合
 #define XTPhoneNumberLength    11            // 手机号长度
+
+#define XTPageCapacity  10
 /******* 其它 *******/

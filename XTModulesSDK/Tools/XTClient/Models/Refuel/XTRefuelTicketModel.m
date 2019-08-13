@@ -21,12 +21,12 @@
 
 + (JSONKeyMapper *)keyMapper
 {
-    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{@"ticketId" : @"oiarId", @"goodsName" : @"goodName", @"amount" : @"amount", @"endTime" : @"endTime", @"status" : @"status", @"wbmp" : @"wbmp", @"orderId" : @"orderId"}];
+    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{@"ticketId" : @"OIARID", @"ticketName" : @"GOODNAME", @"amount" : @"AMOUNT", @"endTime" : @"ENDTIME", @"status" : @"STATUS", @"wbmp" : @"WBMP", @"orderId" : @"ORDERID", @"usedTime" : @"USE_TIME", @"usedStation" : @"USE_ADDRESS"}];
 }
 
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-    NSArray *optionalProperties = @[@"ticketId", @"goodsName", @"amount", @"endTime", @"status", @"wbmp", @"orderId"];
+    NSArray *optionalProperties = @[@"ticketId", @"ticketName", @"amount", @"endTime", @"status", @"wbmp", @"orderId", @"usedTime", @"usedStation"];
     return [optionalProperties containsObject:propertyName];
 }
 

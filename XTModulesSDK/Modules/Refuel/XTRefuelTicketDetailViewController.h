@@ -10,4 +10,7 @@
 
 @interface XTRefuelTicketDetailViewController : XTBaseViewController
 
+@property (nonatomic, copy) NSString *ticketId;
+@property (nonatomic, copy) NSString *ticketName;
+
 @end

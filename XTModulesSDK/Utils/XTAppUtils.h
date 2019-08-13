@@ -77,6 +77,28 @@
 
 @end
 
+@interface XTAppUtils (Date)
+
+/**
+ *  格式化时间戳
+ *
+ *  @param timestamp 时间戳
+ *
+ *  @return 格式化后的字符串，yyyy-MM-dd
+ */
++ (NSString *)formatYMDWithTimestamp:(long long)timestamp;
+
+/**
+ *  格式化时间戳
+ *
+ *  @param timestamp 时间戳
+ *
+ *  @return 格式化后的字符串，yyyy-MM-dd HH:mm
+ */
++ (NSString *)formatYMDHMWithTimestamp:(long long)timestamp;
+
+@end
+
 @interface XTAppUtils (UIFactory)
 
 /**

@@ -118,6 +118,9 @@
 }
 
 - (NSURLSessionTask *)postQueryAccountCouponWithPhone:(NSString *)phone
+                                            oilStatus:(NSString *)oilStatus
+                                          currentPage:(NSString *)currentPage
+                                             pageSize:(NSString *)pageSize
                                     completionHandler:(void (^)(NSArray<XTRefuelTicketModel> *output, NSError *error))handler
 {
     NSMutableString *resourcePath = [NSMutableString stringWithFormat:@"/queryAccountCoupon"];
@@ -138,6 +141,18 @@
     if (phone && phone.length > 0) {
         bodyParams[@"phone"] = phone;
         [sortKeys addObject:@"phone"];
+    }
+    if (oilStatus && oilStatus.length > 0) {
+        bodyParams[@"oilStatus"] = oilStatus;
+        [sortKeys addObject:@"oilStatus"];
+    }
+    if (currentPage && currentPage.length > 0) {
+        bodyParams[@"currentPage"] = currentPage;
+        [sortKeys addObject:@"currentPage"];
+    }
+    if (pageSize && pageSize.length > 0) {
+        bodyParams[@"pageSize"] = pageSize;
+        [sortKeys addObject:@"pageSize"];
     }
     id body = [self.apiClient bodyWithBodyParams:bodyParams sortKeys:sortKeys];
     

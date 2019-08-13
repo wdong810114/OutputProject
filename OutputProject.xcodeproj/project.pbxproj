@@ -27,6 +27,9 @@
 		7AB6CAB122FCFCE200F765EE /* XTRefuelTicketDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6CAAF22FCFCE200F765EE /* XTRefuelTicketDetailViewController.m */; };
 		7AB6CAB422FCFE0900F765EE /* XTRefuelTicketModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB6CAB222FCFE0900F765EE /* XTRefuelTicketModel.h */; };
 		7AB6CAB522FCFE0900F765EE /* XTRefuelTicketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6CAB322FCFE0900F765EE /* XTRefuelTicketModel.m */; };
+		7AB6CABD22FD5CA400F765EE /* XTRefuelTicketCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB6CABA22FD5CA400F765EE /* XTRefuelTicketCell.h */; };
+		7AB6CABE22FD5CA400F765EE /* XTRefuelTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6CABB22FD5CA400F765EE /* XTRefuelTicketCell.m */; };
+		7AB6CABF22FD5CA400F765EE /* XTRefuelTicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB6CABC22FD5CA400F765EE /* XTRefuelTicketCell.xib */; };
 		7AD6ABC022E58C7D00180CA3 /* XTModulesSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABBE22E58C7D00180CA3 /* XTModulesSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7AD6ABC322E58C7D00180CA3 /* XTModulesSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD6ABBC22E58C7D00180CA3 /* XTModulesSDK.framework */; };
 		7AD6ABC422E58C7D00180CA3 /* XTModulesSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD6ABBC22E58C7D00180CA3 /* XTModulesSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -144,6 +147,9 @@
 		7AB6CAAF22FCFCE200F765EE /* XTRefuelTicketDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelTicketDetailViewController.m; sourceTree = "<group>"; };
 		7AB6CAB222FCFE0900F765EE /* XTRefuelTicketModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelTicketModel.h; sourceTree = "<group>"; };
 		7AB6CAB322FCFE0900F765EE /* XTRefuelTicketModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelTicketModel.m; sourceTree = "<group>"; };
+		7AB6CABA22FD5CA400F765EE /* XTRefuelTicketCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelTicketCell.h; sourceTree = "<group>"; };
+		7AB6CABB22FD5CA400F765EE /* XTRefuelTicketCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelTicketCell.m; sourceTree = "<group>"; };
+		7AB6CABC22FD5CA400F765EE /* XTRefuelTicketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRefuelTicketCell.xib; sourceTree = "<group>"; };
 		7AD6ABBC22E58C7D00180CA3 /* XTModulesSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XTModulesSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD6ABBE22E58C7D00180CA3 /* XTModulesSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTModulesSDK.h; sourceTree = "<group>"; };
 		7AD6ABBF22E58C7D00180CA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -318,6 +324,9 @@
 				7AB6CA9E22FAB44900F765EE /* XTRefuelCell.xib */,
 				7AB6CAAA22FC265300F765EE /* XTRefuelTicketsViewController.h */,
 				7AB6CAAB22FC265300F765EE /* XTRefuelTicketsViewController.m */,
+				7AB6CABA22FD5CA400F765EE /* XTRefuelTicketCell.h */,
+				7AB6CABB22FD5CA400F765EE /* XTRefuelTicketCell.m */,
+				7AB6CABC22FD5CA400F765EE /* XTRefuelTicketCell.xib */,
 				7AB6CAAE22FCFCE200F765EE /* XTRefuelTicketDetailViewController.h */,
 				7AB6CAAF22FCFCE200F765EE /* XTRefuelTicketDetailViewController.m */,
 			);
@@ -583,6 +592,7 @@
 				7AD6AC4422F12B0600180CA3 /* XTPhoneRechargeOrderModel.h in Headers */,
 				7AD6AC2322EAD0C000180CA3 /* XTResponseDeserializer.h in Headers */,
 				7AD6AC1B22E84D0B00180CA3 /* XTModuleObject.h in Headers */,
+				7AB6CABD22FD5CA400F765EE /* XTRefuelTicketCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +693,7 @@
 			files = (
 				7AD6ABEB22E5AE0B00180CA3 /* XTModulesSDK.bundle in Resources */,
 				7AB6CAA122FAB44900F765EE /* XTRefuelCell.xib in Resources */,
+				7AB6CABF22FD5CA400F765EE /* XTRefuelTicketCell.xib in Resources */,
 				7AD6AC5D22F97DCC00180CA3 /* XTRoundCornerCell.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -818,6 +829,7 @@
 				7AD6ABF622E5BEFB00180CA3 /* XTAlertView.m in Sources */,
 				7AD6AC5A22F9672800180CA3 /* XTRefuelApi.m in Sources */,
 				7AD6AC3022EE8E7600180CA3 /* XTCommonApi.m in Sources */,
+				7AB6CABE22FD5CA400F765EE /* XTRefuelTicketCell.m in Sources */,
 				7AD6AC5622F9519E00180CA3 /* XTRefuelGoodsModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

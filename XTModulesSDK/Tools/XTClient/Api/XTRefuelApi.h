@@ -44,10 +44,16 @@
  *  查询用户的加油券商品列表
  *
  *  @param phone 手机号
+ *  @param oilStatus 加油卷状态（0-未使用 2-已过期 3-已使用 4-未激活）
+ *  @param currentPage 当前页
+ *  @param pageSize 每页显示个数
  *
  *  @return NSArray<XTRefuelTicketModel>*
  */
 - (NSURLSessionTask *)postQueryAccountCouponWithPhone:(NSString *)phone
+                                            oilStatus:(NSString *)oilStatus
+                                          currentPage:(NSString *)currentPage
+                                             pageSize:(NSString *)pageSize
                                     completionHandler:(void (^)(NSArray<XTRefuelTicketModel> *output, NSError *error))handler;
 
 /**

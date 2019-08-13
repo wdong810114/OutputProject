@@ -20,7 +20,7 @@
 /*
  *  商品名称
  */
-@property (nonatomic) NSString *goodsName;
+@property (nonatomic) NSString *ticketName;
 /*
  *  金额
  */
@@ -41,5 +41,13 @@
  *  订单ID
  */
 @property (nonatomic) NSString *orderId;
+/*
+ *  使用日期
+ */
+@property (nonatomic) NSString *usedTime;
+/*
+ *  使用地点
+ */
+@property (nonatomic) NSString *usedStation;
 
 @end

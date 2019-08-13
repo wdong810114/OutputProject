@@ -95,6 +95,32 @@
 
 @end
 
+@implementation XTAppUtils (Date)
+
++ (NSString *)formatYMDWithTimestamp:(long long)timestamp
+{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
+    NSDateComponents *components = [calendar components:unitFlags fromDate:date];
+    
+    return [NSString stringWithFormat:@"%04i-%02i-%02i", (int)components.year, (int)components.month, (int)components.day];
+}
+
++ (NSString *)formatYMDHMWithTimestamp:(long long)timestamp
+{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute;
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
+    NSDateComponents *components = [calendar components:unitFlags fromDate:date];
+    
+    return [NSString stringWithFormat:@"%04i-%02i-%02i %02i:%02i", (int)components.year, (int)components.month, (int)components.day, (int)components.hour, (int)components.minute];
+}
+
+@end
+
 @implementation XTAppUtils (UIFactory)
 
 + (UIButton *)redButtonWithFrame:(CGRect)frame

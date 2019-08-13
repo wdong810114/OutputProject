@@ -12,6 +12,9 @@
 #import "XTAppUtils.h"
 #import "XTModulesManager.h"
 
+#import "XTDIYHeader.h"
+#import "XTDIYFooter.h"
+
 @interface XTBaseViewController : UIViewController
 
 - (void)setLeftBarButtonItem:(SEL)action image:(NSString *)image highlightedImage:(NSString *)highlightedImage;

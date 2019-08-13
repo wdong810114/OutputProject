@@ -267,7 +267,6 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
 {
     if (indexPath.section == 0) {
         XTRefuelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XTRefuelCellIdentifier" forIndexPath:indexPath];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         XTWeakSelf(weakSelf);
         [cell setCountPlusBlock:^{
@@ -605,7 +604,7 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
 - (UIView *)purchaseNoticeView
 {
     if (!_purchaseNoticeView) {
-        NSString *purchaseNotice = @"1、此电子券由中国石油天然气股份有限公司辽宁销售分公司发行，在所属指定加油站通用（仅限辽宁省内使用）。\n\n2、此卡不记名，有效期自购买之日起3年，不挂失补办和退卡、不找零、不兑现，请勿将二维码泄露给他人，因保管不当造成损失后果自负。\n\n3、此卡200元(含)面值以下一次性核销。\n\n4、可以一次购买一张或者多张电子券，可多张叠加使用，不找零。\n\n5、可使用右上角“附近加油站”功能查看可使用的加油站。如遇到不能使用的情况请拨打新天客服电话400-024-9997";
+        NSString *purchaseNotice = @"1、此电子券由中国石油天然气股份有限公司辽宁销售分公司发行，在所属指定加油站通用（仅限辽宁省内使用）。\n\n2、此卡不记名，有效期自购买之日起3年，不挂失补办和退卡、不找零、不兑现，请勿将二维码泄露给他人，因保管不当造成损失后果自负。\n\n3、此卡200元(含)面值以下一次性核销。\n\n4、可以一次购买一张或者多张电子券，可多张叠加使用，不找零。\n\n5、可使用右上角“附近加油站”功能查看可使用的加油站。如遇到不能使用的情况请拨打客服电话400-024-0700";
         CGFloat height = [XTAppUtils sizeOfString:purchaseNotice font:XTFont(12.0) constrainedToSize:CGSizeMake(CGRectGetWidth(self.refuelTableView.bounds) - 50.0, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping].height + 10.0;
         _purchaseNoticeView = [[UIView alloc] initWithFrame:CGRectMake(25.0, 0.0, CGRectGetWidth(self.refuelTableView.bounds) - 50.0, height)];
         _purchaseNoticeView.backgroundColor = [UIColor clearColor];
