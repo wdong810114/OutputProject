@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, XTModuleShowMode)
 
 @interface XTError : NSObject
 
-// 错误编码，0：正常、-1：源视图控制器为空、-2：显示模式是Push，但源视图控制器不在导航控制器中、-3：手机号为空
+// 错误编码，0：正常、-1：源视图控制器为空、-2：显示模式是Push，但源视图控制器不在导航控制器中、-3：盛京通登陆授权为空、-4：手机号为空
 @property (nonatomic, assign) NSInteger code;
 // 错误消息
 @property (nonatomic, copy) NSString *message;
@@ -38,6 +38,7 @@ typedef NS_ENUM(NSInteger, XTModuleShowMode)
 
 @property (nonatomic, weak, readonly) UIViewController *sourceVC;
 @property (nonatomic, assign, readonly) XTModuleShowMode mode;
+@property (nonatomic, copy, readonly) NSString *accessToken;
 @property (nonatomic, copy, readonly) NSString *phone;
 
 + (instancetype)sharedManager;
@@ -54,32 +55,35 @@ typedef NS_ENUM(NSInteger, XTModuleShowMode)
  *
  *  @param sourceVC 源视图控制器
  *  @param mode 模块显示模式
+ *  @param accessToken 盛京通登陆授权
  *  @param phone 手机号
  *
  *  @return 错误信息
  */
-- (XTError *)showPhoneRechargeWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode phone:(NSString *)phone;
+- (XTError *)showPhoneRechargeWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessToken:(NSString *)accessToken phone:(NSString *)phone;
 
 /**
  *  显示特惠加油
  *
  *  @param sourceVC 源视图控制器
  *  @param mode 模块显示模式
+ *  @param accessToken 盛京通登陆授权
  *  @param phone 手机号
  *
  *  @return 错误信息
  */
-- (XTError *)showRefuelWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode phone:(NSString *)phone;
+- (XTError *)showRefuelWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessToken:(NSString *)accessToken phone:(NSString *)phone;
 
 /**
  *  显示生活缴费
  *
  *  @param sourceVC 源视图控制器
  *  @param mode 模块显示模式
+ *  @param accessToken 盛京通登陆授权
  *  @param phone 手机号
  *
  *  @return 错误信息
  */
-- (XTError *)showLifePaymentWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode phone:(NSString *)phone;
+- (XTError *)showLifePaymentWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessToken:(NSString *)accessToken phone:(NSString *)phone;
 
 @end

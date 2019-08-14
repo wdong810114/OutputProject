@@ -44,7 +44,7 @@
  *  查询用户的加油券商品列表
  *
  *  @param phone 手机号
- *  @param oilStatus 加油卷状态（0-未使用 2-已过期 3-已使用 4-未激活）
+ *  @param oilStatus 加油券状态，0：未使用 2：已过期 3：已使用 4：未激活
  *  @param currentPage 当前页
  *  @param pageSize 每页显示个数
  *
@@ -59,11 +59,11 @@
 /**
  *  查询用户的加油券商品详情
  *
- *  @param oiarId 券ID
+ *  @param ticketId 券ID
  *
  *  @return XTRefuelTicketModel*
  */
-- (NSURLSessionTask *)postQueryAccountCouponOrderinfoWithOiarId:(NSString *)oiarId
-                                              completionHandler:(void (^)(XTRefuelTicketModel *output, NSError *error))handler;
+- (NSURLSessionTask *)postQueryAccountCouponOrderinfoWithTicketId:(NSString *)ticketId
+                                                completionHandler:(void (^)(XTRefuelTicketModel *output, NSError *error))handler;
 
 @end

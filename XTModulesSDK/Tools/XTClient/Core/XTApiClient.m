@@ -11,6 +11,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "XTDefaultClientConfiguration.h"
 #import "XTJSONRequestSerializer.h"
+#import "XTModulesManager.h"
 
 NSString * const XTResponseObjectErrorKey = @"XTResponseObjectErrorKey";
 
@@ -64,21 +65,22 @@ NSString * const XTBusinessDataErrorDomain = @"XTBusinessDataErrorDomain";
 
 - (NSDictionary *)bodyWithBodyParams:(NSDictionary *)bodyParams sortKeys:(NSArray *)sortKeys
 {
-    if (sortKeys.count == 0) {
-        return nil;
-    }
-    
-    NSMutableArray *pairs = [[NSMutableArray alloc] init];
-    [sortKeys enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
-        [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, bodyParams[key]]];
-    }];
-    
-    NSString *signString = [pairs componentsJoinedByString:@"&"];
-    signString = [signString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
     NSMutableDictionary *body = [[NSMutableDictionary alloc] init];
     [body addEntriesFromDictionary:bodyParams];
-    body[@"token"] = [self md5String:[self base64String:signString]];
+    if ([XTModulesManager sharedManager].accessToken) {
+        body[@"accessToken"] = [XTModulesManager sharedManager].accessToken;
+    }
+    
+    if (sortKeys.count > 0) {
+        NSMutableArray *pairs = [[NSMutableArray alloc] init];
+        [sortKeys enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
+            [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, bodyParams[key]]];
+        }];
+        
+        NSString *signString = [pairs componentsJoinedByString:@"&"];
+        signString = [signString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        body[@"token"] = [self md5String:[self base64String:signString]];
+    }
     
     return body;
 }

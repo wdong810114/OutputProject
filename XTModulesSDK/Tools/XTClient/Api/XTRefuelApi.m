@@ -172,8 +172,8 @@
                            }];
 }
 
-- (NSURLSessionTask *)postQueryAccountCouponOrderinfoWithOiarId:(NSString *)oiarId
-                                              completionHandler:(void (^)(XTRefuelTicketModel *output, NSError *error))handler
+- (NSURLSessionTask *)postQueryAccountCouponOrderinfoWithTicketId:(NSString *)ticketId
+                                                completionHandler:(void (^)(XTRefuelTicketModel *output, NSError *error))handler
 {
     NSMutableString *resourcePath = [NSMutableString stringWithFormat:@"/queryAccountCouponOrderinfo"];
     
@@ -190,8 +190,8 @@
     
     NSMutableDictionary *bodyParams = [[NSMutableDictionary alloc] init];
     NSMutableArray *sortKeys = [[NSMutableArray alloc] init];
-    if (oiarId && oiarId.length > 0) {
-        bodyParams[@"oiarId"] = oiarId;
+    if (ticketId && ticketId.length > 0) {
+        bodyParams[@"oiarId"] = ticketId;
         [sortKeys addObject:@"oiarId"];
     }
     id body = [self.apiClient bodyWithBodyParams:bodyParams sortKeys:sortKeys];

@@ -47,7 +47,7 @@
         [self showLoading];
         
         XTWeakSelf(weakSelf);
-        [[XTRefuelApi sharedAPI] postQueryAccountCouponOrderinfoWithOiarId:self.ticketId completionHandler:^(XTRefuelTicketModel *output, NSError *error) {
+        [[XTRefuelApi sharedAPI] postQueryAccountCouponOrderinfoWithTicketId:self.ticketId completionHandler:^(XTRefuelTicketModel *output, NSError *error) {
             [weakSelf hideLoading];
             
             if (!error) {
@@ -66,7 +66,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([_model.status integerValue] == 3) { // 已使用
+    if ([_model.status integerValue] == 3) {
         return 5;
     }
     
@@ -173,12 +173,11 @@
         qrCodeImageView.backgroundColor = [UIColor clearColor];
         qrCodeImageView.layer.borderColor = XTBrandGrayColor.CGColor;
         qrCodeImageView.layer.borderWidth = 1.0;
-        if ([_model.status integerValue] == 3) { // 已使用
+        if ([_model.status integerValue] == 3) {
             qrCodeImageView.image = [UIImage imageNamed:XTModulesSDKImage(@"refuel_ticket_used_qrcode")];
         } else {
-            // TODO
-//            NSData *rawData = [[NSData alloc] initWithBase64EncodedString:_model.wbmp options:NSDataBase64DecodingIgnoreUnknownCharacters];
-//            qrCodeImageView.image = [UIImage imageWithData:rawData];
+            NSData *rawData = [[NSData alloc] initWithBase64EncodedString:_model.wbmp options:NSDataBase64DecodingIgnoreUnknownCharacters];
+            qrCodeImageView.image = [UIImage imageWithData:rawData];
         }
         
         [_tableHeaderView addSubview:ticketNameLabel];

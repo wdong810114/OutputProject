@@ -12,6 +12,7 @@
 #import "XTBaseNavigationController.h"
 #import "XTPhoneRechargeViewController.h"
 #import "XTRefuelViewController.h"
+#import "XTLifePaymentViewController.h"
 
 NSString * const XTLifeServicePayDidSuccessNotification = @"XTLifeServicePayDidSuccessNotification";
 
@@ -27,9 +28,10 @@ NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotificati
 
 @property (nonatomic, weak) UIViewController *sourceVC;
 @property (nonatomic, assign) XTModuleShowMode mode;
+@property (nonatomic, copy) NSString *accessToken;
 @property (nonatomic, copy) NSString *phone;
 
-- (XTError *)checkWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode phone:(NSString *)phone;
+- (XTError *)checkWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessToken:(NSString *)accessToken phone:(NSString *)phone;
 
 @end
 
@@ -57,7 +59,7 @@ NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotificati
 }
 
 #pragma mark - Private
-- (XTError *)checkWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode phone:(NSString *)phone
+- (XTError *)checkWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessToken:(NSString *)accessToken phone:(NSString *)phone
 {
     if (!sourceVC) {
         XTError *error = [[XTError alloc] init];
@@ -73,9 +75,16 @@ NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotificati
         return error;
     }
     
-    if (!phone || phone.length == 0) {
+    if (!accessToken || accessToken.length == 0) {
         XTError *error = [[XTError alloc] init];
         error.code = -3;
+        error.message = @"盛京通登陆授权为空";
+        return error;
+    }
+    
+    if (!phone || phone.length == 0) {
+        XTError *error = [[XTError alloc] init];
+        error.code = -4;
         error.message = @"手机号为空";
         return error;
     }
@@ -89,15 +98,16 @@ NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotificati
     return ([self.reachable currentReachabilityStatus] != NotReachable);
 }
 
-- (XTError *)showPhoneRechargeWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode phone:(NSString *)phone
+- (XTError *)showPhoneRechargeWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessToken:(NSString *)accessToken phone:(NSString *)phone
 {
-    XTError *error = [self checkWithSourceVC:sourceVC mode:mode phone:phone];
+    XTError *error = [self checkWithSourceVC:sourceVC mode:mode accessToken:accessToken phone:phone];
     if (error) {
         return error;
     }
     
     self.sourceVC = sourceVC;
     self.mode = mode;
+    self.accessToken = accessToken;
     self.phone = phone;
     
     if (XTModuleShowModePush == mode) {
@@ -115,15 +125,16 @@ NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotificati
     return nil;
 }
 
-- (XTError *)showRefuelWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode phone:(NSString *)phone
+- (XTError *)showRefuelWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessToken:(NSString *)accessToken phone:(NSString *)phone
 {
-    XTError *error = [self checkWithSourceVC:sourceVC mode:mode phone:phone];
+    XTError *error = [self checkWithSourceVC:sourceVC mode:mode accessToken:accessToken phone:phone];
     if (error) {
         return error;
     }
     
     self.sourceVC = sourceVC;
     self.mode = mode;
+    self.accessToken = accessToken;
     self.phone = phone;
     
     if (XTModuleShowModePush == mode) {
@@ -141,8 +152,30 @@ NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotificati
     return nil;
 }
 
-- (XTError *)showLifePaymentWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode phone:(NSString *)phone
+- (XTError *)showLifePaymentWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessToken:(NSString *)accessToken phone:(NSString *)phone
 {
+    XTError *error = [self checkWithSourceVC:sourceVC mode:mode accessToken:accessToken phone:phone];
+    if (error) {
+        return error;
+    }
+    
+    self.sourceVC = sourceVC;
+    self.mode = mode;
+    self.accessToken = accessToken;
+    self.phone = phone;
+    
+    if (XTModuleShowModePush == mode) {
+        XTLifePaymentViewController *vc = [[XTLifePaymentViewController alloc] init];
+        if (sourceVC.navigationController.viewControllers.count == 1) {
+            vc.hidesBottomBarWhenPushed = YES;
+        }
+        [sourceVC.navigationController pushViewController:vc animated:YES];
+    } else {
+        XTLifePaymentViewController *vc = [[XTLifePaymentViewController alloc] init];
+        XTBaseNavigationController *navigationController = [[XTBaseNavigationController alloc] initWithRootViewController:vc];
+        [sourceVC presentViewController:navigationController animated:YES completion:nil];
+    }
+    
     return nil;
 }
 
