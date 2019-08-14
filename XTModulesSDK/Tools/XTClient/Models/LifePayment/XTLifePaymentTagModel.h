@@ -16,10 +16,10 @@
 /*
  *  标签编码
  */
-@property(nonatomic) NSString *tagCode;
+@property (nonatomic) NSString *tagCode;
 /*
  *  标签名称
  */
-@property(nonatomic) NSString *tagName;
+@property (nonatomic) NSString *tagName;
 
 @end

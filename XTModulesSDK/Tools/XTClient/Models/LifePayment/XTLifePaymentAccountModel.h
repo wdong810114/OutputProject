@@ -32,22 +32,22 @@
 /*
  *  城市编码
  */
-@property(nonatomic) NSString *cityCode;
+@property (nonatomic) NSString *cityCode;
 /*
  *  城市名称
  */
-@property(nonatomic) NSString *cityName;
+@property (nonatomic) NSString *cityName;
 /*
  *  缴费公司编码
  */
-@property(nonatomic) NSString *companyCode;
+@property (nonatomic) NSString *companyCode;
 /*
  *  缴费公司名称
  */
-@property(nonatomic) NSString *companyName;
+@property (nonatomic) NSString *companyName;
 /*
  *  标签名称
  */
-@property(nonatomic) NSString *tagName;
+@property (nonatomic) NSString *tagName;
 
 @end

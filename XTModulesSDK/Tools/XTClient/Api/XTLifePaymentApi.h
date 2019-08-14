@@ -10,6 +10,10 @@
 
 #import "XTLifePaymentAccountModel.h"
 #import "XTLifePaymentTagModel.h"
+#import "XTLifePaymentPayBillModel.h"
+#import "XTLifePaymentOrderModel.h"
+#import "XTLifePaymentCompanyModel.h"
+#import "XTLifePaymentCityModel.h"
 
 @class XTApiClient;
 
@@ -92,5 +96,63 @@
  *  @return NSArray<XTLifePaymentTagModel>*
  */
 - (NSURLSessionTask *)postGetTagsWithCompletionHandler:(void (^)(NSArray<XTLifePaymentTagModel> *output, NSError *error))handler;
+
+/**
+ *  查询缴费账户信息
+ *
+ *  @param accountNo 账户号
+ *  @param companyCode 缴费公司编码
+ *  @param cityCode 城市编码
+ *  @param accountType 账户类型，1：水费 2：电费 3：燃气费
+ *
+ *  @return XTLifePaymentPayBillModel*
+ */
+- (NSURLSessionTask *)postQueryAccountInfoWithAccountNo:(NSString *)accountNo
+                                            companyCode:(NSString *)companyCode
+                                               cityCode:(NSString *)cityCode
+                                            accountType:(NSString *)accountType
+                                      completionHandler:(void (^)(XTLifePaymentPayBillModel *output, NSError *error))handler;
+
+/**
+ *  生活缴费下单
+ *
+ *  @param accountNo 账户号
+ *  @param phone 手机号
+ *  @param companyCode 缴费公司编码
+ *  @param cityCode 城市编码
+ *  @param accountType 账户类型，1：水费 2：电费 3：燃气费
+ *  @param accountAddress 账户地址
+ *  @param amount 缴费金额
+ *
+ *  @return XTLifePaymentOrderModel*
+ */
+- (NSURLSessionTask *)postGetLifePaymentOrderWithAccountNo:(NSString *)accountNo
+                                                     phone:(NSString *)phone
+                                               companyCode:(NSString *)companyCode
+                                                  cityCode:(NSString *)cityCode
+                                               accountType:(NSString *)accountType
+                                            accountAddress:(NSString *)accountAddress
+                                                    amount:(NSString *)amount
+                                         completionHandler:(void (^)(XTLifePaymentOrderModel *output, NSError *error))handler;
+
+/**
+ *  查询缴费公司
+ *
+ *  @param cityCode 城市编码
+ *
+ *  @return NSArray<XTLifePaymentCompanyModel>*
+ */
+- (NSURLSessionTask *)postGetCompaniesWithCityCode:(NSString *)cityCode
+                                 completionHandler:(void (^)(NSArray<XTLifePaymentCompanyModel> *output, NSError *error))handler;
+
+/**
+ *  查询缴费开通城市
+ *
+ *  @param companyType 缴费公司类型，1：水费 2：电费 3：煤气费
+ *
+ *  @return NSArray<XTLifePaymentCityModel>*
+ */
+- (NSURLSessionTask *)postGetCitiesWithCompanyType:(NSString *)companyType
+                                 completionHandler:(void (^)(NSArray<XTLifePaymentCityModel> *output, NSError *error))handler;
 
 @end
