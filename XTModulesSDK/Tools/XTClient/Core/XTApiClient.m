@@ -67,8 +67,11 @@ NSString * const XTBusinessDataErrorDomain = @"XTBusinessDataErrorDomain";
 {
     NSMutableDictionary *body = [[NSMutableDictionary alloc] init];
     [body addEntriesFromDictionary:bodyParams];
-    if ([XTModulesManager sharedManager].accessToken) {
-        body[@"accessToken"] = [XTModulesManager sharedManager].accessToken;
+    if ([XTModulesManager sharedManager].accessKey) {
+        body[@"accessKey"] = [XTModulesManager sharedManager].accessKey;
+    }
+    if ([XTModulesManager sharedManager].userId) {
+        body[@"userId"] = [XTModulesManager sharedManager].userId;
     }
     
     if (sortKeys.count > 0) {

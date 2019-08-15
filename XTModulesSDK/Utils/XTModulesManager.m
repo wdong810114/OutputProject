@@ -28,10 +28,11 @@ NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotificati
 
 @property (nonatomic, weak) UIViewController *sourceVC;
 @property (nonatomic, assign) XTModuleShowMode mode;
-@property (nonatomic, copy) NSString *accessToken;
+@property (nonatomic, copy) NSString *accessKey;
+@property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) NSString *phone;
 
-- (XTError *)checkWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessToken:(NSString *)accessToken phone:(NSString *)phone;
+- (XTError *)checkWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessKey:(NSString *)accessKey userId:(NSString *)userId phone:(NSString *)phone;
 
 @end
 
@@ -59,7 +60,7 @@ NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotificati
 }
 
 #pragma mark - Private
-- (XTError *)checkWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessToken:(NSString *)accessToken phone:(NSString *)phone
+- (XTError *)checkWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessKey:(NSString *)accessKey userId:(NSString *)userId phone:(NSString *)phone
 {
     if (!sourceVC) {
         XTError *error = [[XTError alloc] init];
@@ -75,16 +76,23 @@ NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotificati
         return error;
     }
     
-    if (!accessToken || accessToken.length == 0) {
+    if (!accessKey || accessKey.length == 0) {
         XTError *error = [[XTError alloc] init];
         error.code = -3;
-        error.message = @"盛京通登陆授权为空";
+        error.message = @"盛京通设备签名为空";
+        return error;
+    }
+    
+    if (!userId || userId.length == 0) {
+        XTError *error = [[XTError alloc] init];
+        error.code = -4;
+        error.message = @"盛京通用户ID为空";
         return error;
     }
     
     if (!phone || phone.length == 0) {
         XTError *error = [[XTError alloc] init];
-        error.code = -4;
+        error.code = -5;
         error.message = @"手机号为空";
         return error;
     }
@@ -98,16 +106,17 @@ NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotificati
     return ([self.reachable currentReachabilityStatus] != NotReachable);
 }
 
-- (XTError *)showPhoneRechargeWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessToken:(NSString *)accessToken phone:(NSString *)phone
+- (XTError *)showPhoneRechargeWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessKey:(NSString *)accessKey userId:(NSString *)userId phone:(NSString *)phone
 {
-    XTError *error = [self checkWithSourceVC:sourceVC mode:mode accessToken:accessToken phone:phone];
+    XTError *error = [self checkWithSourceVC:sourceVC mode:mode accessKey:accessKey userId:userId phone:phone];
     if (error) {
         return error;
     }
     
     self.sourceVC = sourceVC;
     self.mode = mode;
-    self.accessToken = accessToken;
+    self.accessKey = accessKey;
+    self.userId = userId;
     self.phone = phone;
     
     if (XTModuleShowModePush == mode) {
@@ -125,16 +134,17 @@ NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotificati
     return nil;
 }
 
-- (XTError *)showRefuelWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessToken:(NSString *)accessToken phone:(NSString *)phone
+- (XTError *)showRefuelWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessKey:(NSString *)accessKey userId:(NSString *)userId phone:(NSString *)phone
 {
-    XTError *error = [self checkWithSourceVC:sourceVC mode:mode accessToken:accessToken phone:phone];
+    XTError *error = [self checkWithSourceVC:sourceVC mode:mode accessKey:accessKey userId:userId phone:phone];
     if (error) {
         return error;
     }
     
     self.sourceVC = sourceVC;
     self.mode = mode;
-    self.accessToken = accessToken;
+    self.accessKey = accessKey;
+    self.userId = userId;
     self.phone = phone;
     
     if (XTModuleShowModePush == mode) {
@@ -152,16 +162,17 @@ NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotificati
     return nil;
 }
 
-- (XTError *)showLifePaymentWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessToken:(NSString *)accessToken phone:(NSString *)phone
+- (XTError *)showLifePaymentWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessKey:(NSString *)accessKey userId:(NSString *)userId phone:(NSString *)phone
 {
-    XTError *error = [self checkWithSourceVC:sourceVC mode:mode accessToken:accessToken phone:phone];
+    XTError *error = [self checkWithSourceVC:sourceVC mode:mode accessKey:accessKey userId:userId phone:phone];
     if (error) {
         return error;
     }
     
     self.sourceVC = sourceVC;
     self.mode = mode;
-    self.accessToken = accessToken;
+    self.accessKey = accessKey;
+    self.userId = userId;
     self.phone = phone;
     
     if (XTModuleShowModePush == mode) {

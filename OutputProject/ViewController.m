@@ -32,17 +32,17 @@
 #pragma mark - Action
 - (void)phoneRecharge
 {
-    [[XTModulesManager sharedManager] showPhoneRechargeWithSourceVC:self mode:XTModuleShowModePresent accessToken:@"123456" phone:@"18640048241"];
+    [[XTModulesManager sharedManager] showPhoneRechargeWithSourceVC:self mode:XTModuleShowModePresent accessKey:@"123456" userId:@"111111" phone:@"18640048241"];
 }
 
 - (void)refuel
 {
-    [[XTModulesManager sharedManager] showRefuelWithSourceVC:self mode:XTModuleShowModePresent accessToken:@"123456" phone:@"18640048241"];
+    [[XTModulesManager sharedManager] showRefuelWithSourceVC:self mode:XTModuleShowModePresent accessKey:@"123456" userId:@"111111" phone:@"18640048241"];
 }
 
 - (void)lifePayment
 {
-    [[XTModulesManager sharedManager] showLifePaymentWithSourceVC:self mode:XTModuleShowModePresent accessToken:@"123456" phone:@"18640048241"];
+    [[XTModulesManager sharedManager] showLifePaymentWithSourceVC:self mode:XTModuleShowModePresent accessKey:@"123456" userId:@"111111" phone:@"18640048241"];
 }
 
 #pragma mark - Getter
