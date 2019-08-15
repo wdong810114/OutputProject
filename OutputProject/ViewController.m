@@ -16,6 +16,10 @@
 @property (nonatomic, strong) UIButton *refuelButton;
 @property (nonatomic, strong) UIButton *lifePaymentButton;
 
+@property (nonatomic, copy) NSString *accessKey;
+@property (nonatomic, copy) NSString *userId;
+@property (nonatomic, copy) NSString *phone;
+
 @end
 
 @implementation ViewController
@@ -23,6 +27,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.accessKey = @"5f2e4b6b-65e9-4fa5-9811-fdc2c1a5a60e";
+    self.userId = @"35144088568690929158";
+    self.phone = @"18640048241";
     
     [self.view addSubview:self.phoneRechargeButton];
     [self.view addSubview:self.refuelButton];
@@ -32,17 +40,17 @@
 #pragma mark - Action
 - (void)phoneRecharge
 {
-    [[XTModulesManager sharedManager] showPhoneRechargeWithSourceVC:self mode:XTModuleShowModePresent accessKey:@"123456" userId:@"111111" phone:@"18640048241"];
+    [[XTModulesManager sharedManager] showPhoneRechargeWithSourceVC:self mode:XTModuleShowModePresent accessKey:self.accessKey userId:self.userId phone:self.phone];
 }
 
 - (void)refuel
 {
-    [[XTModulesManager sharedManager] showRefuelWithSourceVC:self mode:XTModuleShowModePresent accessKey:@"123456" userId:@"111111" phone:@"18640048241"];
+    [[XTModulesManager sharedManager] showRefuelWithSourceVC:self mode:XTModuleShowModePresent accessKey:self.accessKey userId:self.userId phone:self.phone];
 }
 
 - (void)lifePayment
 {
-    [[XTModulesManager sharedManager] showLifePaymentWithSourceVC:self mode:XTModuleShowModePresent accessKey:@"123456" userId:@"111111" phone:@"18640048241"];
+    [[XTModulesManager sharedManager] showLifePaymentWithSourceVC:self mode:XTModuleShowModePresent accessKey:self.accessKey userId:self.userId phone:self.phone];
 }
 
 #pragma mark - Getter

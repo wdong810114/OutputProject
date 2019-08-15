@@ -179,7 +179,9 @@ static CGFloat const XTTabViewHeight = 50.0;
                 if ([currentPage integerValue] == 1) {
                     [ticketsArray removeAllObjects];
                 }
-                [ticketsArray addObjectsFromArray:output];
+                if (output && output.count > 0) {
+                    [ticketsArray addObjectsFromArray:output];
+                }
                 
                 if (ticketsArray.count > 0) {
                     ticketsTableView.tableHeaderView = nil;
