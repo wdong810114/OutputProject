@@ -30,6 +30,14 @@
  */
 @property (nonatomic) NSString *accountAddress;
 /*
+ *  标签编码
+ */
+@property (nonatomic) NSString *tagCode;
+/*
+ *  标签名称
+ */
+@property (nonatomic) NSString *tagName;
+/*
  *  城市编码
  */
 @property (nonatomic) NSString *cityCode;
@@ -45,9 +53,5 @@
  *  缴费公司名称
  */
 @property (nonatomic) NSString *companyName;
-/*
- *  标签名称
- */
-@property (nonatomic) NSString *tagName;
 
 @end

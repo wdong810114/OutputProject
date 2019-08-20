@@ -40,7 +40,7 @@
  *  新增缴费账户
  *
  *  @param accountNo 账户号
- *  @param tagName 标签名称
+ *  @param tagCode 标签编码
  *  @param accountType 账户类型，1：水费 2：电费 3：燃气费
  *  @param cityCode 城市编码
  *  @param companyCode 缴费公司编码
@@ -49,7 +49,7 @@
  *  @return XTModuleObject*
  */
 - (NSURLSessionTask *)postAddAccountWithAccountNo:(NSString *)accountNo
-                                          tagName:(NSString *)tagName
+                                          tagCode:(NSString *)tagCode
                                       accountType:(NSString *)accountType
                                          cityCode:(NSString *)cityCode
                                       companyCode:(NSString *)companyCode
@@ -60,7 +60,7 @@
  *  修改缴费账户
  *
  *  @param uuid 唯一标识
- *  @param tagName 标签名称
+ *  @param tagCode 标签编码
  *  @param accountAddress 账户地址
  *  @param accountNo 账户号
  *  @param accountType 账户类型，1：水费 2：电费 3：燃气费
@@ -71,7 +71,7 @@
  *  @return XTModuleObject*
  */
 - (NSURLSessionTask *)postEditAccountWithUUID:(NSString *)uuid
-                                      tagName:(NSString *)tagName
+                                      tagCode:(NSString *)tagCode
                                accountAddress:(NSString *)accountAddress
                                     accountNo:(NSString *)accountNo
                                   accountType:(NSString *)accountType

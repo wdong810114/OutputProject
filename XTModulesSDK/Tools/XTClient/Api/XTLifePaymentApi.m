@@ -84,7 +84,7 @@
 }
 
 - (NSURLSessionTask *)postAddAccountWithAccountNo:(NSString *)accountNo
-                                          tagName:(NSString *)tagName
+                                          tagCode:(NSString *)tagCode
                                       accountType:(NSString *)accountType
                                          cityCode:(NSString *)cityCode
                                       companyCode:(NSString *)companyCode
@@ -110,9 +110,9 @@
         bodyParams[@"account"] = accountNo;
         [sortKeys addObject:@"account"];
     }
-    if (tagName && tagName.length > 0) {
-        bodyParams[@"nickname"] = tagName;
-        [sortKeys addObject:@"nickname"];
+    if (tagCode && tagCode.length > 0) {
+        bodyParams[@"tagCode"] = tagCode;
+        [sortKeys addObject:@"tagCode"];
     }
     if (accountType && accountType.length > 0) {
         bodyParams[@"type"] = accountType;
@@ -149,7 +149,7 @@
 }
 
 - (NSURLSessionTask *)postEditAccountWithUUID:(NSString *)uuid
-                                      tagName:(NSString *)tagName
+                                      tagCode:(NSString *)tagCode
                                accountAddress:(NSString *)accountAddress
                                     accountNo:(NSString *)accountNo
                                   accountType:(NSString *)accountType
@@ -177,9 +177,9 @@
         bodyParams[@"uuid"] = uuid;
         [sortKeys addObject:@"uuid"];
     }
-    if (tagName && tagName.length > 0) {
-        bodyParams[@"nickname"] = tagName;
-        [sortKeys addObject:@"nickname"];
+    if (tagCode && tagCode.length > 0) {
+        bodyParams[@"tagCode"] = tagCode;
+        [sortKeys addObject:@"tagCode"];
     }
     if (accountAddress && accountAddress.length > 0) {
         bodyParams[@"address"] = accountAddress;

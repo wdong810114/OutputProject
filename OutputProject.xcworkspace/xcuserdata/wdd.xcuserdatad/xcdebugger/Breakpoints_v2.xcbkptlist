@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XTModulesSDK/Tools/XTClient/Api/XTLifePaymentApi.m"
-            timestampString = "587958077.359163"
+            filePath = "XTModulesSDK/Modules/LifePayment/LifePaymentAccount/XTLifePaymentAccountViewController.m"
+            timestampString = "587961502.317881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "-postEditAccountWithUUID:tagName:accountAddress:accountNo:accountType:cityCode:companyCode:phone:completionHandler:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XTModulesSDK/Tools/XTClient/Api/XTLifePaymentApi.m"
-            timestampString = "587958077.359256"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "-postEditAccountWithUUID:tagName:accountAddress:accountNo:accountType:cityCode:companyCode:phone:completionHandler:"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "-nextButtonClicked"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

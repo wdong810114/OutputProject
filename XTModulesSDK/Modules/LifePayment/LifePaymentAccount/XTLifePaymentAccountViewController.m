@@ -91,7 +91,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
         [self showLoading];
         
         NSString *uuid = self.accountModel.uuid;
-        NSString *tagName = self.accountModel.tagName;
+        NSString *tagCode = self.accountModel.tagCode;
         NSString *accountAddress = self.accountModel.accountAddress;
         NSString *accountNo = self.accountModel.accountNo;
         NSString *accountType = nil;
@@ -115,7 +115,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
         
         XTWeakSelf(weakSelf);
         if (self.isEdit) {
-            [[XTLifePaymentApi sharedAPI] postEditAccountWithUUID:uuid tagName:tagName accountAddress:accountAddress accountNo:accountNo accountType:accountType cityCode:cityCode companyCode:companyCode phone:phone completionHandler:^(XTModuleObject *output, NSError *error) {
+            [[XTLifePaymentApi sharedAPI] postEditAccountWithUUID:uuid tagCode:tagCode accountAddress:accountAddress accountNo:accountNo accountType:accountType cityCode:cityCode companyCode:companyCode phone:phone completionHandler:^(XTModuleObject *output, NSError *error) {
                 [weakSelf hideLoading];
                 
                 if (!error) {
@@ -124,7 +124,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
             }];
         } else {
             XTWeakSelf(weakSelf);
-            [[XTLifePaymentApi sharedAPI] postAddAccountWithAccountNo:accountNo tagName:tagName accountType:accountType cityCode:cityCode companyCode:companyCode phone:phone completionHandler:^(XTModuleObject *output, NSError *error) {
+            [[XTLifePaymentApi sharedAPI] postAddAccountWithAccountNo:accountNo tagCode:tagCode accountType:accountType cityCode:cityCode companyCode:companyCode phone:phone completionHandler:^(XTModuleObject *output, NSError *error) {
                 [weakSelf hideLoading];
                 
                 if (!error) {
@@ -197,6 +197,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
                     
                     if (!weakSelf.isEdit) {
                         XTLifePaymentTagModel *model = _tagArray[0];
+                        weakSelf.accountModel.tagCode = model.tagCode;
                         weakSelf.accountModel.tagName = model.tagName;
                     }
                 }
@@ -282,7 +283,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
         return NO;
     }
     
-    if (XTStringIsEmpty(self.accountModel.tagName)) {
+    if (XTStringIsEmpty(self.accountModel.tagCode)) {
         [self showToastWithText:@"请选择标签"];
         return NO;
     }
@@ -393,7 +394,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
             
             __block NSUInteger index = 0;
             [_tagArray enumerateObjectsUsingBlock:^(XTLifePaymentTagModel *model, NSUInteger idx, BOOL *stop) {
-                if ([self.accountModel.tagName isEqualToString:model.tagName]) {
+                if ([self.accountModel.tagCode isEqualToString:model.tagCode]) {
                     index = idx;
                     *stop = YES;
                 }
@@ -418,7 +419,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
             
             __block NSUInteger index = 0;
             [_companyArray enumerateObjectsUsingBlock:^(XTLifePaymentCompanyModel *model, NSUInteger idx, BOOL *stop) {
-                if ([self.accountModel.companyName isEqualToString:model.companyName]) {
+                if ([self.accountModel.companyCode isEqualToString:model.companyCode]) {
                     index = idx;
                     *stop = YES;
                 }
@@ -448,6 +449,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
 {
     if (XTTagsPickerTag == _currentPicker.tag) {
         XTLifePaymentTagModel *model = _tagArray[_pickerSelectedTagIndex];
+        self.accountModel.tagCode = model.tagCode;
         self.accountModel.tagName = model.tagName;
         
         [self.mainTableView reloadRowsAtIndexPaths:@[XTIndexPath(0, 0)] withRowAnimation:UITableViewRowAnimationNone];
