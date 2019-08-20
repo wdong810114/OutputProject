@@ -41,7 +41,7 @@
             }
             
             if (subview.subviews.count <= 2) {
-                UIView *divider = [[UIView alloc] initWithFrame:CGRectMake(67.0, (CGRectGetHeight(self.manageView.frame) - 20.0) / 2, 1.0, 20.0)];
+                UIView *divider = [[UIView alloc] initWithFrame:CGRectMake(67.0, (CGRectGetHeight(self.manageView.bounds) - 20.0) / 2, 1.0, 20.0)];
                 divider.backgroundColor = XTBrandBlueColor;
                 [subview addSubview:divider];
             }
@@ -95,7 +95,7 @@
         _manageView = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.contentView.bounds) - 135.0, 0.0, 135.0, CGRectGetHeight(self.contentView.bounds))];
         _manageView.backgroundColor = [UIColor clearColor];
         
-        UIButton *editButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 67.0, CGRectGetHeight(_manageView.frame))];
+        UIButton *editButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 67.0, CGRectGetHeight(_manageView.bounds))];
         editButton.backgroundColor = [UIColor clearColor];
         editButton.titleLabel.font = XTFont(14.0);
         [editButton setTitleColor:XTBrandBlueColor forState:UIControlStateNormal];
@@ -103,15 +103,15 @@
         [editButton setTitle:@"编辑" forState:UIControlStateNormal];
         [editButton addTarget:self action:@selector(editButtonClicked) forControlEvents:UIControlEventTouchUpInside];
 
-        UIView *divider = [[UIView alloc] initWithFrame:CGRectMake(67.0, (CGRectGetHeight(_manageView.frame) - 20.0) / 2, 1.0, 20.0)];
+        UIView *divider = [[UIView alloc] initWithFrame:CGRectMake(67.0, (CGRectGetHeight(_manageView.bounds) - 20.0) / 2, 1.0, 20.0)];
         divider.backgroundColor = XTBrandBlueColor;
         
-        UIButton *deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(68.0, 0.0, 67.0, CGRectGetHeight(_manageView.frame))];
+        UIButton *deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(68.0, 0.0, 67.0, CGRectGetHeight(_manageView.bounds))];
         deleteButton.backgroundColor = [UIColor clearColor];
         deleteButton.titleLabel.font = XTFont(14.0);
         [deleteButton setTitleColor:XTBrandBlueColor forState:UIControlStateNormal];
         [deleteButton setTitleColor:[XTBrandBlueColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
-        [deleteButton setTitle:@"编辑" forState:UIControlStateNormal];
+        [deleteButton setTitle:@"删除" forState:UIControlStateNormal];
         [deleteButton addTarget:self action:@selector(deleteButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         
         [_manageView addSubview:editButton];

@@ -144,9 +144,9 @@ NSString * const XTBusinessDataErrorDomain = @"XTBusinessDataErrorDomain";
         
         id jsonObject = data;
         if (jsonObject && [jsonObject isKindOfClass:[NSDictionary class]]) {
-            NSInteger code = [jsonObject[@"rtCode"] integerValue];
-            if (code >= 18001 && code <= 18018) {
+            if ([jsonObject[@"rtCode"] hasPrefix:@"1"]) {
                 id businessData = jsonObject[@"rtData"];
+                NSLog(@"businessData: %@", businessData);
                 if (businessData) {
                     NSError *serializationError;
                     id response = [weakSelf.responseDeserializer deserialize:businessData class:responseType error:&serializationError];
@@ -155,6 +155,7 @@ NSString * const XTBusinessDataErrorDomain = @"XTBusinessDataErrorDomain";
                     completionBlock(nil, nil);
                 }
             } else {
+                NSInteger code = [jsonObject[@"rtCode"] integerValue];
                 id businessMessage = jsonObject[@"rtMessage"] ? : @"业务错误";
                 NSDictionary *userInfo = @{NSLocalizedDescriptionKey : businessMessage};
                 NSError *businessDataError = [NSError errorWithDomain:XTBusinessDataErrorDomain code:code userInfo:userInfo];
@@ -237,10 +238,11 @@ NSString * const XTBusinessDataErrorDomain = @"XTBusinessDataErrorDomain";
 
 - (NSString *)base64String:(NSString *)string
 {
-    // ISO8859-1编码
-    NSData *data = [string dataUsingEncoding:CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingISOLatin1)];
+//    // ISO8859-1编码
+//    NSStringEncoding encoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingISOLatin1);
+    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
     
-    return [data base64EncodedStringWithOptions:0];
+    return [data base64EncodedStringWithOptions:(NSDataBase64EncodingOptions)0];
 }
 
 - (NSString *)md5String:(NSString *)string
