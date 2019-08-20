@@ -54,6 +54,14 @@
 		7A78CE5D230A46E2000741F2 /* ActionSheetCustomPickerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A78CE56230A46E2000741F2 /* ActionSheetCustomPickerDelegate.h */; };
 		7A78CE5E230A46E2000741F2 /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A78CE57230A46E2000741F2 /* SWActionSheet.m */; };
 		7A78CE5F230A46E2000741F2 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A78CE58230A46E2000741F2 /* AbstractActionSheetPicker.m */; };
+		7A78CE63230B97D5000741F2 /* XTLifePaymentCityListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A78CE61230B97D5000741F2 /* XTLifePaymentCityListViewController.h */; };
+		7A78CE64230B97D5000741F2 /* XTLifePaymentCityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A78CE62230B97D5000741F2 /* XTLifePaymentCityListViewController.m */; };
+		7A78CE68230BCC30000741F2 /* XTLifePaymentCityListItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A78CE65230BCC30000741F2 /* XTLifePaymentCityListItemCell.h */; };
+		7A78CE69230BCC30000741F2 /* XTLifePaymentCityListItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A78CE66230BCC30000741F2 /* XTLifePaymentCityListItemCell.m */; };
+		7A78CE6A230BCC30000741F2 /* XTLifePaymentCityListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A78CE67230BCC30000741F2 /* XTLifePaymentCityListItemCell.xib */; };
+		7A78CE6E230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A78CE6B230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.h */; };
+		7A78CE6F230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A78CE6C230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.m */; };
+		7A78CE70230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A78CE6D230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.xib */; };
 		7AB6CA9F22FAB44900F765EE /* XTRefuelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB6CA9C22FAB44900F765EE /* XTRefuelCell.h */; };
 		7AB6CAA022FAB44900F765EE /* XTRefuelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6CA9D22FAB44900F765EE /* XTRefuelCell.m */; };
 		7AB6CAA122FAB44900F765EE /* XTRefuelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB6CA9E22FAB44900F765EE /* XTRefuelCell.xib */; };
@@ -214,6 +222,14 @@
 		7A78CE56230A46E2000741F2 /* ActionSheetCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPickerDelegate.h; sourceTree = "<group>"; };
 		7A78CE57230A46E2000741F2 /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWActionSheet.m; sourceTree = "<group>"; };
 		7A78CE58230A46E2000741F2 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
+		7A78CE61230B97D5000741F2 /* XTLifePaymentCityListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTLifePaymentCityListViewController.h; sourceTree = "<group>"; };
+		7A78CE62230B97D5000741F2 /* XTLifePaymentCityListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTLifePaymentCityListViewController.m; sourceTree = "<group>"; };
+		7A78CE65230BCC30000741F2 /* XTLifePaymentCityListItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTLifePaymentCityListItemCell.h; sourceTree = "<group>"; };
+		7A78CE66230BCC30000741F2 /* XTLifePaymentCityListItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTLifePaymentCityListItemCell.m; sourceTree = "<group>"; };
+		7A78CE67230BCC30000741F2 /* XTLifePaymentCityListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentCityListItemCell.xib; sourceTree = "<group>"; };
+		7A78CE6B230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTLifePaymentCityListSupplementaryHeaderView.h; sourceTree = "<group>"; };
+		7A78CE6C230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTLifePaymentCityListSupplementaryHeaderView.m; sourceTree = "<group>"; };
+		7A78CE6D230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentCityListSupplementaryHeaderView.xib; sourceTree = "<group>"; };
 		7AB6CA9C22FAB44900F765EE /* XTRefuelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelCell.h; sourceTree = "<group>"; };
 		7AB6CA9D22FAB44900F765EE /* XTRefuelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelCell.m; sourceTree = "<group>"; };
 		7AB6CA9E22FAB44900F765EE /* XTRefuelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRefuelCell.xib; sourceTree = "<group>"; };
@@ -406,6 +422,21 @@
 			path = Pickers;
 			sourceTree = "<group>";
 		};
+		7A78CE60230B977F000741F2 /* LifePaymentCityList */ = {
+			isa = PBXGroup;
+			children = (
+				7A78CE61230B97D5000741F2 /* XTLifePaymentCityListViewController.h */,
+				7A78CE62230B97D5000741F2 /* XTLifePaymentCityListViewController.m */,
+				7A78CE65230BCC30000741F2 /* XTLifePaymentCityListItemCell.h */,
+				7A78CE66230BCC30000741F2 /* XTLifePaymentCityListItemCell.m */,
+				7A78CE67230BCC30000741F2 /* XTLifePaymentCityListItemCell.xib */,
+				7A78CE6B230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.h */,
+				7A78CE6C230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.m */,
+				7A78CE6D230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.xib */,
+			);
+			path = LifePaymentCityList;
+			sourceTree = "<group>";
+		};
 		7AD6ABBD22E58C7D00180CA3 /* XTModulesSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +505,7 @@
 				7A46A92023050E30001A6C70 /* XTLifePaymentAccountCell.xib */,
 				7A3D9698230545CE00AF0B97 /* LifePaymentAccount */,
 				7A3D969D23054F5C00AF0B97 /* LifePaymentPayBill */,
+				7A78CE60230B977F000741F2 /* LifePaymentCityList */,
 			);
 			path = LifePayment;
 			sourceTree = "<group>";
@@ -713,6 +745,7 @@
 				7A46A92123050E30001A6C70 /* XTLifePaymentAccountCell.h in Headers */,
 				7A3D96A023054F9300AF0B97 /* XTLifePaymentPayBillViewController.h in Headers */,
 				7AD6AC4822F16EBC00180CA3 /* UIView+XTExtension.h in Headers */,
+				7A78CE68230BCC30000741F2 /* XTLifePaymentCityListItemCell.h in Headers */,
 				7AD6AC5122F9251D00180CA3 /* XTRefuelViewController.h in Headers */,
 				7A78CE332306A3F5000741F2 /* XTLifePaymentAccountTagCell.h in Headers */,
 				7AD6ABE122E59C6F00180CA3 /* XTMacro.h in Headers */,
@@ -762,7 +795,9 @@
 				7AD6AC1B22E84D0B00180CA3 /* XTModuleObject.h in Headers */,
 				7AB6CABD22FD5CA400F765EE /* XTRefuelTicketCell.h in Headers */,
 				7A78CE3F2306A432000741F2 /* XTLifePaymentAccountNoCell.h in Headers */,
+				7A78CE6E230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.h in Headers */,
 				7A78CE5D230A46E2000741F2 /* ActionSheetCustomPickerDelegate.h in Headers */,
+				7A78CE63230B97D5000741F2 /* XTLifePaymentCityListViewController.h in Headers */,
 				7A46A91D2304F55D001A6C70 /* XTLifePaymentConstants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -867,7 +902,9 @@
 				7AB6CAA122FAB44900F765EE /* XTRefuelCell.xib in Resources */,
 				7A78CE412306A432000741F2 /* XTLifePaymentAccountNoCell.xib in Resources */,
 				7A46A92323050E30001A6C70 /* XTLifePaymentAccountCell.xib in Resources */,
+				7A78CE6A230BCC30000741F2 /* XTLifePaymentCityListItemCell.xib in Resources */,
 				7AB6CABF22FD5CA400F765EE /* XTRefuelTicketCell.xib in Resources */,
+				7A78CE70230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.xib in Resources */,
 				7AD6AC5D22F97DCC00180CA3 /* XTRoundCornerCell.bundle in Resources */,
 				7A78CE3B2306A415000741F2 /* XTLifePaymentAccountCompanyCell.xib in Resources */,
 			);
@@ -974,6 +1011,7 @@
 			files = (
 				7AD6AC4522F12B0600180CA3 /* XTPhoneRechargeOrderModel.m in Sources */,
 				7AD6AC5222F9251D00180CA3 /* XTRefuelViewController.m in Sources */,
+				7A78CE64230B97D5000741F2 /* XTLifePaymentCityListViewController.m in Sources */,
 				7AB6CAAD22FC265300F765EE /* XTRefuelTicketsViewController.m in Sources */,
 				7A46A90B23039FFB001A6C70 /* XTLifePaymentTagModel.m in Sources */,
 				7A46A92223050E30001A6C70 /* XTLifePaymentAccountCell.m in Sources */,
@@ -986,6 +1024,7 @@
 				7AD6AC1822E846FC00180CA3 /* XTSanitizer.m in Sources */,
 				7A78CE402306A432000741F2 /* XTLifePaymentAccountNoCell.m in Sources */,
 				7AD6AC4922F16EBC00180CA3 /* UIView+XTExtension.m in Sources */,
+				7A78CE6F230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.m in Sources */,
 				7AD6AC2422EAD0C000180CA3 /* XTResponseDeserializer.m in Sources */,
 				7AD6AC4122F03CC200180CA3 /* XTUserDefaultsUtils.m in Sources */,
 				7AD6AC1422E8446500180CA3 /* XTDefaultClientConfiguration.m in Sources */,
@@ -997,6 +1036,7 @@
 				7A46A9072302A6B6001A6C70 /* XTLifePaymentAccountModel.m in Sources */,
 				7A46A9132303E332001A6C70 /* XTLifePaymentOrderModel.m in Sources */,
 				7AB6CAA022FAB44900F765EE /* XTRefuelCell.m in Sources */,
+				7A78CE69230BCC30000741F2 /* XTLifePaymentCityListItemCell.m in Sources */,
 				7A78CE3A2306A415000741F2 /* XTLifePaymentAccountCompanyCell.m in Sources */,
 				7AD6AC0A22E7101200180CA3 /* XTApiClient.m in Sources */,
 				7AD6ABF822E5BEFB00180CA3 /* XTDIYHeader.m in Sources */,

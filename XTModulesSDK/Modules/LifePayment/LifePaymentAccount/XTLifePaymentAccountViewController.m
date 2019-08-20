@@ -14,12 +14,13 @@
 #import "XTLifePaymentAccountTagCell.h"
 #import "XTLifePaymentAccountCompanyCell.h"
 #import "XTLifePaymentAccountNoCell.h"
+#import "XTLifePaymentCityListViewController.h"
 #import "XTLifePaymentPayBillViewController.h"
 
 static NSInteger const XTTagsPickerTag = 1001;
 static NSInteger const XTCompaniesPickerTag = 1002;
 
-@interface XTLifePaymentAccountViewController () <UITableViewDataSource, UITableViewDelegate, ActionSheetCustomPickerDelegate, XTLifePaymentAccountNoCellDelegate>
+@interface XTLifePaymentAccountViewController () <UITableViewDataSource, UITableViewDelegate, ActionSheetCustomPickerDelegate, XTLifePaymentAccountNoCellDelegate, XTLifePaymentCityListViewControllerDelegate>
 
 @property (nonatomic, strong) UITableView *mainTableView;
 @property (nonatomic, strong) UIView *tableHeaderView;
@@ -76,7 +77,10 @@ static NSInteger const XTCompaniesPickerTag = 1002;
 
 - (void)locationButtonClicked
 {
-    // TODO
+    XTLifePaymentCityListViewController *vc = [[XTLifePaymentCityListViewController alloc] init];
+    vc.delegate = self;
+    vc.lifePaymentType = self.lifePaymentType;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)nextButtonClicked
@@ -279,7 +283,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
 - (BOOL)checkValidity
 {
     if (XTStringIsEmpty(self.accountModel.accountNo)) {
-        [self showToastWithText:@"请填写缴费账户"];
+        [self showToastWithText:@"请填写用户编号"];
         return NO;
     }
     
@@ -293,9 +297,11 @@ static NSInteger const XTCompaniesPickerTag = 1002;
         return NO;
     }
     
-    if (!_isProtocolChecked) {
-        [self showToastWithText:@"请同意缴费协议"];
-        return NO;
+    if (!self.isEdit) {
+        if (!_isProtocolChecked) {
+            [self showToastWithText:@"请同意缴费协议"];
+            return NO;
+        }
     }
     
     return YES;
@@ -509,6 +515,23 @@ static NSInteger const XTCompaniesPickerTag = 1002;
     self.accountModel.accountNo = accountNo;
 }
 
+#pragma mark - XTLifePaymentCityListViewControllerDelegate
+- (void)lifePaymentCityListViewController:(XTLifePaymentCityListViewController *)lifePaymentCityListViewController didSelectCityModel:(XTLifePaymentCityModel *)cityModel
+{
+    [self.navigationController popToViewController:self animated:YES];
+    
+    if (XTIsReachable) {
+        self.accountModel.cityCode = cityModel.cityCode;
+        self.accountModel.cityName = cityModel.cityName;
+        
+        [self setRightBarButtonItem:@selector(locationButtonClicked) title:self.accountModel.cityName];
+        
+        [self requestData];
+    } else {
+        [self showToastWithText:XTNetworkUnavailable];
+    }
+}
+
 #pragma mark - Getter
 - (UITableView *)mainTableView
 {
@@ -610,6 +633,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
         
         UIView *protocolView = [[UIView alloc] initWithFrame:CGRectMake((CGRectGetWidth(_tableFooterView.bounds) - width) / 2, CGRectGetMaxY(nextButton.frame), width, constrainedToSize.height)];
         protocolView.backgroundColor = [UIColor clearColor];
+        protocolView.hidden = self.isEdit;
         
         UIButton *agreeButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 22.0, CGRectGetHeight(protocolView.bounds))];
         agreeButton.backgroundColor = [UIColor clearColor];
@@ -636,8 +660,8 @@ static NSInteger const XTCompaniesPickerTag = 1002;
         [protocolView addSubview:tipLabel];
         [protocolView addSubview:protocolButton];
         
-        [_tableFooterView addSubview:protocolView];
         [_tableFooterView addSubview:nextButton];
+        [_tableFooterView addSubview:protocolView];
     }
     
     return _tableFooterView;
