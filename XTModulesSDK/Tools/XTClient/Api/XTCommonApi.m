@@ -8,8 +8,6 @@
 
 #import "XTCommonApi.h"
 
-#import "XTApiClient.h"
-
 @implementation XTCommonApi
 
 + (instancetype)sharedAPI

@@ -8,8 +8,6 @@
 
 #import "XTRefuelApi.h"
 
-#import "XTApiClient.h"
-
 @implementation XTRefuelApi
 
 + (instancetype)sharedAPI

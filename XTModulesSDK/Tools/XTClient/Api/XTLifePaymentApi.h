@@ -8,14 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "XTApiClient.h"
 #import "XTLifePaymentAccountModel.h"
 #import "XTLifePaymentTagModel.h"
 #import "XTLifePaymentPayBillModel.h"
 #import "XTLifePaymentOrderModel.h"
 #import "XTLifePaymentCompanyModel.h"
 #import "XTLifePaymentCityModel.h"
-
-@class XTApiClient;
 
 @interface XTLifePaymentApi : NSObject
 

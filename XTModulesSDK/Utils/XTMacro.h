@@ -76,6 +76,7 @@
 
 #define XTIsReachable [[XTModulesManager sharedManager] isReachable]
 #define XTNetworkUnavailable   @"当前网络不可用"
+#define XTUserTokenInvalidErrorCode  21014
 
 #define XTPhoneNumberLength    11             // 手机号长度
 #define XTDigitalCharacterSet  @"0123456789"  // 数字集合

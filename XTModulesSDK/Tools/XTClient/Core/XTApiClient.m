@@ -11,6 +11,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "XTDefaultClientConfiguration.h"
 #import "XTJSONRequestSerializer.h"
+#import "XTMacro.h"
 #import "XTModulesManager.h"
 
 NSString * const XTResponseObjectErrorKey = @"XTResponseObjectErrorKey";
@@ -156,10 +157,14 @@ NSString * const XTBusinessDataErrorDomain = @"XTBusinessDataErrorDomain";
                 }
             } else {
                 NSInteger code = [jsonObject[@"rtCode"] integerValue];
-                id businessMessage = jsonObject[@"rtMessage"] ? : @"业务错误";
+                id businessMessage = jsonObject[@"rtMessage"] ? : @"业务数据请求错误";
                 NSDictionary *userInfo = @{NSLocalizedDescriptionKey : businessMessage};
                 NSError *businessDataError = [NSError errorWithDomain:XTBusinessDataErrorDomain code:code userInfo:userInfo];
                 completionBlock(nil, businessDataError);
+                
+                if (XTUserTokenInvalidErrorCode == code) {
+                    [XTNotificationCenter postNotificationName:XTUserTokenInvalidNotification object:nil];
+                }
             }
         } else {
             NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Received response [%@] is not an object of type NSDictionary", nil), jsonObject];

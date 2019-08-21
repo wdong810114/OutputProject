@@ -37,5 +37,13 @@
  *  是否欠费
  */
 @property (nonatomic) NSString *isInArrears;
+/*
+ *  新天返回码
+ */
+@property (nonatomic) NSString *code;
+/*
+ *  新天返回信息
+ */
+@property (nonatomic) NSString *message;
 
 @end

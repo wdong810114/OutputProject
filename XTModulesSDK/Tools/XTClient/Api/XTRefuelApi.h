@@ -8,11 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import "XTApiClient.h"
 #import "XTRefuelGoodsModel.h"
 #import "XTRefuelOrderModel.h"
 #import "XTRefuelTicketModel.h"
-
-@class XTApiClient;
 
 @interface XTRefuelApi : NSObject
 

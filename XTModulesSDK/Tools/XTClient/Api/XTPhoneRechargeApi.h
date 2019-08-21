@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#import "XTApiClient.h"
 #import "XTPhoneModel.h"
 #import "XTPhoneRechargeOrderModel.h"
-
-@class XTApiClient;
 
 @interface XTPhoneRechargeApi : NSObject
 

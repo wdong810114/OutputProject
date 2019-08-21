@@ -137,9 +137,16 @@
             
             if (!error) {
                 _payBillModel = output;
-                [weakSelf.mainTableView reloadData];
+                
+                if (_payBillModel.code.integerValue == 0) {
+                    [weakSelf.mainTableView reloadData];
+                } else {
+                    [weakSelf showErrorAlertWithMessage:_payBillModel.message];
+                }
             } else {
-                [weakSelf showErrorAlertWithMessage:nil];
+                if (error.domain == XTBusinessDataErrorDomain && error.code != XTUserTokenInvalidErrorCode) {
+                    [weakSelf showErrorAlertWithMessage:error.userInfo[NSLocalizedDescriptionKey]];
+                }
             }
         }];
     } else {

@@ -8,8 +8,6 @@
 
 #import "XTLifePaymentApi.h"
 
-#import "XTApiClient.h"
-
 @implementation XTLifePaymentApi
 
 + (instancetype)sharedAPI

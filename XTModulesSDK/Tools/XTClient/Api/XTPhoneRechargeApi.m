@@ -8,8 +8,6 @@
 
 #import "XTPhoneRechargeApi.h"
 
-#import "XTApiClient.h"
-
 @implementation XTPhoneRechargeApi
 
 + (instancetype)sharedAPI
