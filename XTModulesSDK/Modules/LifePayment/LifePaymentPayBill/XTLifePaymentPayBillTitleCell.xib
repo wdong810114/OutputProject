@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="XTLifePaymentPayBillTitleCellIdentifier" rowHeight="55" id="KGk-i7-Jjw" userLabel="XTLifePaymentPayBillTitleCell" customClass="XTLifePaymentPayBillTitleCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="life_payment_water.png" translatesAutoresizingMaskIntoConstraints="NO" id="9XD-Or-D6W" userLabel="Type Image View">
+                        <rect key="frame" x="15" y="11.5" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="L0R-bN-8Rd"/>
+                            <constraint firstAttribute="height" constant="32" id="vEc-f1-HI4"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水费" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gv-Rg-EX4" userLabel="Type Label">
+                        <rect key="frame" x="62" y="12" width="29" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtF-U6-rsv" userLabel="No Label">
+                        <rect key="frame" x="62" y="29.5" width="44" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="wtF-U6-rsv" secondAttribute="bottom" constant="10" id="5dd-P1-cX5"/>
+                    <constraint firstItem="4Gv-Rg-EX4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="CpP-QD-HUa"/>
+                    <constraint firstItem="9XD-Or-D6W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="R1a-Q9-aNd"/>
+                    <constraint firstItem="wtF-U6-rsv" firstAttribute="leading" secondItem="9XD-Or-D6W" secondAttribute="trailing" constant="15" id="c3R-pN-yRN"/>
+                    <constraint firstItem="9XD-Or-D6W" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ffx-4c-0yN"/>
+                    <constraint firstItem="4Gv-Rg-EX4" firstAttribute="leading" secondItem="9XD-Or-D6W" secondAttribute="trailing" constant="15" id="olR-Y4-rge"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="noLabel" destination="wtF-U6-rsv" id="bxb-rq-i0I"/>
+                <outlet property="typeImageView" destination="9XD-Or-D6W" id="dSz-7G-zMi"/>
+                <outlet property="typeLabel" destination="4Gv-Rg-EX4" id="vQ2-JZ-gJF"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="life_payment_water.png" width="40" height="40"/>
+    </resources>
+</document>

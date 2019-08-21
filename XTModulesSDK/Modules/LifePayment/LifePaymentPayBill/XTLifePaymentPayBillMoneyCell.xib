@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="XTLifePaymentPayBillMoneyCellIdentifier" rowHeight="50" id="KGk-i7-Jjw" userLabel="XTLifePaymentPayBillMoneyCell" customClass="XTLifePaymentPayBillMoneyCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="充值金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lje-Dv-Doi" userLabel="Money Label">
+                        <rect key="frame" x="15" y="16.5" width="58" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入缴费金额 (最低30元)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Iw-QK-JJt" userLabel="Money Text Field">
+                        <rect key="frame" x="93" y="0.0" width="267" height="49.5"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                        <connections>
+                            <action selector="textFieldEditingChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="uuU-rK-4cm"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="gwf-xg-EpV"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Lje-Dv-Doi" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="25T-Pn-K6l"/>
+                    <constraint firstItem="4Iw-QK-JJt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="GGd-53-lL7"/>
+                    <constraint firstAttribute="trailing" secondItem="4Iw-QK-JJt" secondAttribute="trailing" constant="15" id="IDb-sU-OXw"/>
+                    <constraint firstItem="Lje-Dv-Doi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="LpG-0R-DEI"/>
+                    <constraint firstItem="4Iw-QK-JJt" firstAttribute="leading" secondItem="Lje-Dv-Doi" secondAttribute="trailing" constant="20" id="VbS-IN-0XO"/>
+                    <constraint firstAttribute="bottom" secondItem="4Iw-QK-JJt" secondAttribute="bottom" id="dwf-aN-2X4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="moneyTextField" destination="4Iw-QK-JJt" id="bU0-r1-OG9"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

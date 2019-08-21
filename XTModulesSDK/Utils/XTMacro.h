@@ -77,8 +77,9 @@
 #define XTIsReachable [[XTModulesManager sharedManager] isReachable]
 #define XTNetworkUnavailable   @"当前网络不可用"
 
-#define XTDigitalCharacterSet  @"0123456789" // 数字集合
-#define XTPhoneNumberLength    11            // 手机号长度
+#define XTPhoneNumberLength    11             // 手机号长度
+#define XTDigitalCharacterSet  @"0123456789"  // 数字集合
+#define XTDecimalCharacterSet  @"0123456789." // 小数集合
 
 #define XTPageCapacity  10
 /******* 其它 *******/

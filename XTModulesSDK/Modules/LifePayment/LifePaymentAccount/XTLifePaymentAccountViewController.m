@@ -563,10 +563,10 @@ static NSInteger const XTCompaniesPickerTag = 1002;
         _tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(self.mainTableView.bounds), 120.0)];
         _tableHeaderView.backgroundColor = [UIColor whiteColor];
         
-        UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake((CGRectGetWidth(_tableHeaderView.bounds) - 36.0) / 2, 38.0, 36.0, 36.0)];
-        iconImageView.backgroundColor = [UIColor clearColor];
+        UIImageView *typeImageView = [[UIImageView alloc] initWithFrame:CGRectMake((CGRectGetWidth(_tableHeaderView.bounds) - 36.0) / 2, 38.0, 36.0, 36.0)];
+        typeImageView.backgroundColor = [UIColor clearColor];
         
-        UILabel *typeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(iconImageView.frame) + 10.0, CGRectGetWidth(_tableHeaderView.bounds), 25.0)];
+        UILabel *typeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(typeImageView.frame) + 10.0, CGRectGetWidth(_tableHeaderView.bounds), 25.0)];
         typeLabel.backgroundColor = [UIColor clearColor];
         typeLabel.font = XTFont(18.0);
         typeLabel.textAlignment = NSTextAlignmentCenter;
@@ -575,19 +575,19 @@ static NSInteger const XTCompaniesPickerTag = 1002;
         switch (self.lifePaymentType) {
             case XTLifePaymentTypeWater:
             {
-                iconImageView.image = [UIImage imageNamed:XTModulesSDKImage(@"life_payment_water")];
+                typeImageView.image = [UIImage imageNamed:XTModulesSDKImage(@"life_payment_water")];
                 typeLabel.text = @"水费";
             }
                 break;
             case XTLifePaymentTypeElectric:
             {
-                iconImageView.image = [UIImage imageNamed:XTModulesSDKImage(@"life_payment_electric")];
+                typeImageView.image = [UIImage imageNamed:XTModulesSDKImage(@"life_payment_electric")];
                 typeLabel.text = @"电费";
             }
                 break;
             case XTLifePaymentTypeGas:
             {
-                iconImageView.image = [UIImage imageNamed:XTModulesSDKImage(@"life_payment_gas")];
+                typeImageView.image = [UIImage imageNamed:XTModulesSDKImage(@"life_payment_gas")];
                 typeLabel.text = @"燃气费";
             }
                 break;
@@ -596,7 +596,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
                 break;
         }
         
-        [_tableHeaderView addSubview:iconImageView];
+        [_tableHeaderView addSubview:typeImageView];
         [_tableHeaderView addSubview:typeLabel];
     }
     
