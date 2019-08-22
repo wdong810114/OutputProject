@@ -14,12 +14,6 @@
 - (void)prepare
 {
     [super prepare];
-    
-    [self setTitle:@"上拉加载更多" forState:MJRefreshStateIdle];
-    [self setTitle:@"释放加载更多" forState:MJRefreshStatePulling];
-    [self setTitle:@"加载中..." forState:MJRefreshStateRefreshing];
-    [self setTitle:@"加载中..." forState:MJRefreshStateWillRefresh];
-    [self setTitle:@"已是最后一页" forState:MJRefreshStateNoMoreData];
 }
 
 @end

@@ -184,12 +184,7 @@
         circleImageView.backgroundColor = [UIColor clearColor];
         circleImageView.image = [UIImage imageNamed:XTModulesSDKImage(@"loading_circle")];
         
-        UIImageView *logoImageView = [[UIImageView alloc] initWithFrame:customView.bounds];
-        logoImageView.backgroundColor = [UIColor clearColor];
-        logoImageView.image = [UIImage imageNamed:XTModulesSDKImage(@"loading_logo")];
-        
         [customView addSubview:circleImageView];
-        [customView addSubview:logoImageView];
         
         NSLayoutConstraint *customViewWidthConstraint = [NSLayoutConstraint constraintWithItem:customView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:30.0];
         NSLayoutConstraint *customViewHeightConstraint = [NSLayoutConstraint constraintWithItem:customView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:30.0];

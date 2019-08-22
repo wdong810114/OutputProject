@@ -7,10 +7,8 @@
 //
 //  下拉刷新
 
-#import <MJRefresh/MJRefreshStateHeader.h>
+#import <MJRefresh/MJRefreshNormalHeader.h>
 
-@interface XTDIYHeader : MJRefreshStateHeader
-
-@property (nonatomic, weak, readonly) UIImageView *gifView;
+@interface XTDIYHeader : MJRefreshNormalHeader
 
 @end

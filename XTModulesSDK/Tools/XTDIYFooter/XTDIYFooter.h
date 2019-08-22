@@ -7,8 +7,8 @@
 //
 //  上拉加载更多
 
-#import <MJRefresh/MJRefreshBackNormalFooter.h>
+#import <MJRefresh/MJRefreshAutoNormalFooter.h>
 
-@interface XTDIYFooter : MJRefreshBackNormalFooter
+@interface XTDIYFooter : MJRefreshAutoNormalFooter
 
 @end

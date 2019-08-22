@@ -382,6 +382,7 @@ static CGFloat const XTTabViewHeight = 50.0;
                 _pageNumberDictionary[@(index)] = @(dataSource.count / XTPageCapacity + 1);
                 [self requestTickets:index];
             }];
+            ticketsTableView.mj_footer.hidden = YES;
             if (@available(iOS 11.0, *)) {
                 ticketsTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
             }
