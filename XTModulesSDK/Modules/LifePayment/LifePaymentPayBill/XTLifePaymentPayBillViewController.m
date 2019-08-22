@@ -12,6 +12,7 @@
 #import "XTLifePaymentPayBillTitleCell.h"
 #import "XTLifePaymentPayBillContentCell.h"
 #import "XTLifePaymentPayBillMoneyCell.h"
+#import "XTOrder.h"
 
 @interface XTLifePaymentPayBillViewController () <UITableViewDataSource, UITableViewDelegate, XTLifePaymentPayBillMoneyCellDelegate>
 
@@ -99,8 +100,12 @@
                 XTOrder *order = [[XTOrder alloc] init];
                 order.orderType = orderType;
                 order.orderId = output.orderId;
-                order.amount = amount;
-                [XTNotificationCenter postNotificationName:XTLifeServicePlaceOrderDidSuccessNotification object:order];
+                order.orderAmount = amount;
+                
+                id object = [XTModulesManager sharedManager].sourceVC;
+                NSDictionary *userInfo = [order toDictionary];
+                
+                [XTNotificationCenter postNotificationName:XTLifeServicePlaceOrderDidSuccessNotification object:object userInfo:userInfo];
             }
         }];
     } else {

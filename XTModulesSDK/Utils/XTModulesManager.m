@@ -18,10 +18,6 @@ NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotificati
 NSString * const XTLifeServicePlaceOrderDidSuccessNotification = @"XTLifeServicePlaceOrderDidSuccessNotification";
 NSString * const XTLifeServicePayDidSuccessNotification = @"XTLifeServicePayDidSuccessNotification";
 
-@implementation XTOrder
-
-@end
-
 @implementation XTError
 
 @end

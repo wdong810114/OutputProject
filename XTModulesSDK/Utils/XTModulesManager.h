@@ -15,10 +15,16 @@
 extern NSString * const XTUserTokenInvalidNotification;
 /**
  *  生活服务下单成功通知
+ *  调起生活服务模块的sourceVC需注册此通知，模块内下单成功后会将订单相关信息发送通知给sourceVC。
+ *  订单相关信息的结构如下：
+ *  @{@"orderType" : 订单类型, // 0：话费充值 1：特惠加油 2：水费 3：电费 4：燃气费
+ *    @"orderId" : 订单ID,
+ *    @"orderAmount" : 订单金额}
  */
 extern NSString * const XTLifeServicePlaceOrderDidSuccessNotification;
 /**
  *  生活服务支付成功通知
+ *  App端完成支付相关操作后，需发送此通知给模块。
  */
 extern NSString * const XTLifeServicePayDidSuccessNotification;
 
@@ -27,23 +33,6 @@ typedef NS_ENUM(NSInteger, XTModuleShowMode)
     XTModuleShowModePush = 0,
     XTModuleShowModePresent
 };
-
-@interface XTOrder : NSObject
-
-/**
- *  订单类型，0：话费充值 1：特惠加油 2：水费 3：电费 4：燃气费 -1：错误类型
- */
-@property (nonatomic, assign) NSInteger orderType;
-/**
- *  订单ID
- */
-@property (nonatomic, copy) NSString *orderId;
-/**
- *  金额
- */
-@property (nonatomic, copy) NSString *amount;
-
-@end
 
 @interface XTError : NSObject
 

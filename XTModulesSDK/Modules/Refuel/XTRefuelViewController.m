@@ -13,6 +13,7 @@
 #import "XTRoundCornerCell.h"
 #import "XTBaseWebViewController.h"
 #import "XTRefuelTicketsViewController.h"
+#import "XTOrder.h"
 
 typedef NS_ENUM(NSInteger, XTCountOperateType)
 {
@@ -127,8 +128,12 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
                     XTOrder *order = [[XTOrder alloc] init];
                     order.orderType = 1;
                     order.orderId = output.orderId;
-                    order.amount = [NSString stringWithFormat:@"%.2f", [weakSelf calculateTotalAmount]];
-                    [XTNotificationCenter postNotificationName:XTLifeServicePlaceOrderDidSuccessNotification object:order];
+                    order.orderAmount = [NSString stringWithFormat:@"%.2f", [weakSelf calculateTotalAmount]];
+                    
+                    id object = [XTModulesManager sharedManager].sourceVC;
+                    NSDictionary *userInfo = [order toDictionary];
+                    
+                    [XTNotificationCenter postNotificationName:XTLifeServicePlaceOrderDidSuccessNotification object:object userInfo:userInfo];
                 }
             }];
         } else {

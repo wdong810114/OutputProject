@@ -38,6 +38,8 @@
 		7A4DE56122E55F1F00FDC427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DE56022E55F1F00FDC427 /* Assets.xcassets */; };
 		7A4DE56422E55F1F00FDC427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DE56222E55F1F00FDC427 /* LaunchScreen.storyboard */; };
 		7A4DE56722E55F1F00FDC427 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DE56622E55F1F00FDC427 /* main.m */; };
+		7A770994230E7692001996A1 /* XTOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A770992230E7692001996A1 /* XTOrder.h */; };
+		7A770995230E7692001996A1 /* XTOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A770993230E7692001996A1 /* XTOrder.m */; };
 		7A78CE332306A3F5000741F2 /* XTLifePaymentAccountTagCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A78CE302306A3F5000741F2 /* XTLifePaymentAccountTagCell.h */; };
 		7A78CE342306A3F5000741F2 /* XTLifePaymentAccountTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A78CE312306A3F5000741F2 /* XTLifePaymentAccountTagCell.m */; };
 		7A78CE352306A3F5000741F2 /* XTLifePaymentAccountTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A78CE322306A3F5000741F2 /* XTLifePaymentAccountTagCell.xib */; };
@@ -215,6 +217,8 @@
 		7A4DE56622E55F1F00FDC427 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A4DE56D22E563C200FDC427 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		7A4DE56E22E563C200FDC427 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		7A770992230E7692001996A1 /* XTOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTOrder.h; sourceTree = "<group>"; };
+		7A770993230E7692001996A1 /* XTOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTOrder.m; sourceTree = "<group>"; };
 		7A78CE302306A3F5000741F2 /* XTLifePaymentAccountTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTLifePaymentAccountTagCell.h; sourceTree = "<group>"; };
 		7A78CE312306A3F5000741F2 /* XTLifePaymentAccountTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTLifePaymentAccountTagCell.m; sourceTree = "<group>"; };
 		7A78CE322306A3F5000741F2 /* XTLifePaymentAccountTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentAccountTagCell.xib; sourceTree = "<group>"; };
@@ -560,6 +564,8 @@
 				7AD6AC3F22F03CC200180CA3 /* XTUserDefaultsUtils.m */,
 				7AD6AC4622F16EBC00180CA3 /* UIView+XTExtension.h */,
 				7AD6AC4722F16EBC00180CA3 /* UIView+XTExtension.m */,
+				7A770992230E7692001996A1 /* XTOrder.h */,
+				7A770993230E7692001996A1 /* XTOrder.m */,
 				7AD6ABCE22E58EF000180CA3 /* XTModulesManager.h */,
 				7AD6ABCF22E58EF000180CA3 /* XTModulesManager.m */,
 			);
@@ -783,6 +789,7 @@
 				7AD6ABC022E58C7D00180CA3 /* XTModulesSDK.h in Headers */,
 				7AD6AC3C22F01F3400180CA3 /* XTPhoneRechargeHistoryView.h in Headers */,
 				7AD6AC1722E846FC00180CA3 /* XTSanitizer.h in Headers */,
+				7A770994230E7692001996A1 /* XTOrder.h in Headers */,
 				7AD6AC0D22E837B600180CA3 /* XTJSONRequestSerializer.h in Headers */,
 				7A78CE5A230A46E2000741F2 /* SWActionSheet.h in Headers */,
 				7AD6ABFE22E697DD00180CA3 /* XTAppUtils.h in Headers */,
@@ -1080,6 +1087,7 @@
 				7AD6AC6122F97E0600180CA3 /* XTRoundCornerCell.m in Sources */,
 				7AD6AC0E22E837B600180CA3 /* XTJSONRequestSerializer.m in Sources */,
 				7AD6ABDD22E594DC00180CA3 /* XTBaseNavigationController.m in Sources */,
+				7A770995230E7692001996A1 /* XTOrder.m in Sources */,
 				7AD6AC3922EFEE0300180CA3 /* XTPhonePriceButton.m in Sources */,
 				7AD6AC3D22F01F3400180CA3 /* XTPhoneRechargeHistoryView.m in Sources */,
 				7A46A9032302A5BD001A6C70 /* XTLifePaymentApi.m in Sources */,

@@ -13,6 +13,7 @@
 #import "XTPhoneRechargeApi.h"
 #import "XTPhonePriceButton.h"
 #import "XTPhoneRechargeHistoryView.h"
+#import "XTOrder.h"
 
 @interface XTPhoneRechargeViewController () <UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate, CNContactPickerDelegate, XTPhoneRechargeHistoryViewDelegate>
 
@@ -203,8 +204,12 @@
                 XTOrder *order = [[XTOrder alloc] init];
                 order.orderType = 0;
                 order.orderId = output.orderId;
-                order.amount = realAmount;
-                [XTNotificationCenter postNotificationName:XTLifeServicePlaceOrderDidSuccessNotification object:order];
+                order.orderAmount = realAmount;
+                
+                id object = [XTModulesManager sharedManager].sourceVC;
+                NSDictionary *userInfo = [order toDictionary];
+                
+                [XTNotificationCenter postNotificationName:XTLifeServicePlaceOrderDidSuccessNotification object:object userInfo:userInfo];
             }
         }];
     } else {
