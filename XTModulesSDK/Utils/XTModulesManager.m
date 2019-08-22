@@ -14,9 +14,13 @@
 #import "XTRefuelViewController.h"
 #import "XTLifePaymentViewController.h"
 
+NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotification";
+NSString * const XTLifeServicePlaceOrderDidSuccessNotification = @"XTLifeServicePlaceOrderDidSuccessNotification";
 NSString * const XTLifeServicePayDidSuccessNotification = @"XTLifeServicePayDidSuccessNotification";
 
-NSString * const XTUserTokenInvalidNotification = @"XTUserTokenInvalidNotification";
+@implementation XTOrder
+
+@end
 
 @implementation XTError
 

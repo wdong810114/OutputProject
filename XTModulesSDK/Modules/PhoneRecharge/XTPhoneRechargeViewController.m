@@ -200,7 +200,11 @@
             [weakSelf hideLoading];
             
             if (!error) {
-                NSLog(@"orderId: %@", output.orderId);
+                XTOrder *order = [[XTOrder alloc] init];
+                order.orderType = 0;
+                order.orderId = output.orderId;
+                order.amount = realAmount;
+                [XTNotificationCenter postNotificationName:XTLifeServicePlaceOrderDidSuccessNotification object:order];
             }
         }];
     } else {

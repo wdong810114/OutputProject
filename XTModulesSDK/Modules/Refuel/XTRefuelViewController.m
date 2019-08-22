@@ -124,7 +124,11 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
                 [weakSelf hideLoading];
                 
                 if (!error) {
-                    NSLog(@"orderId: %@", output.orderId);
+                    XTOrder *order = [[XTOrder alloc] init];
+                    order.orderType = 1;
+                    order.orderId = output.orderId;
+                    order.amount = [NSString stringWithFormat:@"%.2f", [weakSelf calculateTotalAmount]];
+                    [XTNotificationCenter postNotificationName:XTLifeServicePlaceOrderDidSuccessNotification object:order];
                 }
             }];
         } else {

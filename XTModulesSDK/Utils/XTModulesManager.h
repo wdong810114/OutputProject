@@ -10,20 +10,40 @@
 #import <UIKit/UIKit.h>
 
 /**
- *  生活服务支付成功通知
- */
-extern NSString * const XTLifeServicePayDidSuccessNotification;
-
-/**
  *  用户令牌失效通知
  */
 extern NSString * const XTUserTokenInvalidNotification;
+/**
+ *  生活服务下单成功通知
+ */
+extern NSString * const XTLifeServicePlaceOrderDidSuccessNotification;
+/**
+ *  生活服务支付成功通知
+ */
+extern NSString * const XTLifeServicePayDidSuccessNotification;
 
 typedef NS_ENUM(NSInteger, XTModuleShowMode)
 {
     XTModuleShowModePush = 0,
     XTModuleShowModePresent
 };
+
+@interface XTOrder : NSObject
+
+/**
+ *  订单类型，0：话费充值 1：特惠加油 2：水费 3：电费 4：燃气费 -1：错误类型
+ */
+@property (nonatomic, assign) NSInteger orderType;
+/**
+ *  订单ID
+ */
+@property (nonatomic, copy) NSString *orderId;
+/**
+ *  金额
+ */
+@property (nonatomic, copy) NSString *amount;
+
+@end
 
 @interface XTError : NSObject
 

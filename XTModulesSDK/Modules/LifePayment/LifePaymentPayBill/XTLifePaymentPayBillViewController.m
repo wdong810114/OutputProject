@@ -64,15 +64,25 @@
         NSString *companyCode = self.accountModel.companyCode;
         NSString *cityCode = self.accountModel.cityCode;
         NSString *accountType = nil;
+        NSInteger orderType = -1;
         switch (self.lifePaymentType) {
             case XTLifePaymentTypeWater:
+            {
                 accountType = @"1";
+                orderType = 2;
+            }
                 break;
             case XTLifePaymentTypeElectric:
+            {
                 accountType = @"2";
+                orderType = 3;
+            }
                 break;
             case XTLifePaymentTypeGas:
+            {
                 accountType = @"3";
+                orderType = 4;
+            }
                 break;
                 
             default:
@@ -86,7 +96,11 @@
             [weakSelf hideLoading];
             
             if (!error) {
-                NSLog(@"orderId: %@", output.orderId);
+                XTOrder *order = [[XTOrder alloc] init];
+                order.orderType = orderType;
+                order.orderId = output.orderId;
+                order.amount = amount;
+                [XTNotificationCenter postNotificationName:XTLifeServicePlaceOrderDidSuccessNotification object:order];
             }
         }];
     } else {

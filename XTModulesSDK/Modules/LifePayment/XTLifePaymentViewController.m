@@ -136,6 +136,8 @@ static CGFloat const XTTabViewHeight = 116.0;
         }
     }
     [self.navigationController setViewControllers:vcArray];
+    
+    [self requestData];
 }
 
 #pragma mark - Private
