@@ -62,8 +62,8 @@
 {
     [super setHighlighted:highlighted];
     
-    self.backgroundColor = highlighted ? XTBrandBlueColor : [UIColor clearColor];
-    self.facePriceLabel.textColor = highlighted ? [UIColor whiteColor] : XTBrandBlueColor;
+    self.backgroundColor = highlighted ? XTBrandRedColor : [UIColor clearColor];
+    self.facePriceLabel.textColor = highlighted ? [UIColor whiteColor] : XTBrandRedColor;
     self.salePriceLabel.textColor = self.facePriceLabel.textColor;
 }
 
@@ -72,8 +72,8 @@
     [super setEnabled:enabled];
     
     if (enabled) {
-        self.layer.borderColor = XTBrandBlueColor.CGColor;
-        self.facePriceLabel.textColor = XTBrandBlueColor;
+        self.layer.borderColor = XTBrandRedColor.CGColor;
+        self.facePriceLabel.textColor = XTBrandRedColor;
     } else {
         self.layer.borderColor = XTBrandGrayColor.CGColor;
         self.facePriceLabel.textColor = XTBrandGrayColor;

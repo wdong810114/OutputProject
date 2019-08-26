@@ -99,8 +99,8 @@
     UIButton *actionButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(customView.bounds), CGRectGetHeight(customView.bounds))];
     actionButton.backgroundColor = [UIColor clearColor];
     actionButton.titleLabel.font = XTFont(16.0);
-    [actionButton setTitleColor:XTBrandBlueColor forState:UIControlStateNormal];
-    [actionButton setTitleColor:[XTBrandBlueColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
+    [actionButton setTitleColor:XTBrandRedColor forState:UIControlStateNormal];
+    [actionButton setTitleColor:[XTBrandRedColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
     [actionButton setTitle:title forState:UIControlStateNormal];
     [actionButton addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     [customView addSubview:actionButton];
@@ -119,8 +119,8 @@
     UIButton *actionButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(customView.bounds), CGRectGetHeight(customView.bounds))];
     actionButton.backgroundColor = [UIColor clearColor];
     actionButton.titleLabel.font = XTFont(16.0);
-    [actionButton setTitleColor:XTBrandBlueColor forState:UIControlStateNormal];
-    [actionButton setTitleColor:[XTBrandBlueColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
+    [actionButton setTitleColor:XTBrandRedColor forState:UIControlStateNormal];
+    [actionButton setTitleColor:[XTBrandRedColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
     [actionButton setTitle:title forState:UIControlStateNormal];
     [actionButton addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     [customView addSubview:actionButton];

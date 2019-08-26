@@ -554,18 +554,18 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
         CGFloat titleWidth = [XTAppUtils sizeOfString:@"附近加油站"
                                                  font:XTFont(14.0)
                                     constrainedToSize:CGSizeMake(200.0, 25.0)].width;
-        CGFloat buttonWidth = titleWidth + 5.0 + 14.0;
+        CGFloat buttonWidth = titleWidth + 5.0 + 20.0;
         
         UIButton *nearbyButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(_tableHeaderView.bounds) - 15.0 - buttonWidth, CGRectGetMaxY(bannerImageView.frame) + 12.0, buttonWidth, 25.0)];
         nearbyButton.backgroundColor = [UIColor clearColor];
         nearbyButton.adjustsImageWhenHighlighted = NO;
         nearbyButton.titleLabel.font = XTFont(14.0);
-        [nearbyButton setTitleColor:XTBrandBlueColor forState:UIControlStateNormal];
+        [nearbyButton setTitleColor:XTBrandRedColor forState:UIControlStateNormal];
         [nearbyButton setTitle:@"附近加油站" forState:UIControlStateNormal];
         [nearbyButton setImage:[UIImage imageNamed:XTModulesSDKImage(@"refuel_nearby_station")] forState:UIControlStateNormal];
         [nearbyButton addTarget:self action:@selector(nearbyButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         nearbyButton.imageEdgeInsets = UIEdgeInsetsMake(0.0, titleWidth + 2.5, 0.0, -(titleWidth + 2.5));
-        nearbyButton.titleEdgeInsets = UIEdgeInsetsMake(0.0, -(14.0 + 2.5), 0.0, 14.0 + 2.5);
+        nearbyButton.titleEdgeInsets = UIEdgeInsetsMake(0.0, -(20.0 + 2.5), 0.0, 20.0 + 2.5);
         
         [_tableHeaderView addSubview:bannerImageView];
         [_tableHeaderView addSubview:nearbyButton];
@@ -590,11 +590,12 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
         UILabel *totalAmountLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(totalLabel.frame), 0.0, CGRectGetWidth(_bottomView.bounds) - CGRectGetMaxX(totalLabel.frame) - 120.0 - 15.0, CGRectGetHeight(_bottomView.bounds))];
         totalAmountLabel.backgroundColor = [UIColor clearColor];
         totalAmountLabel.font = XTFont(24.0);
-        totalAmountLabel.textColor = XTBrandRedColor;
+        totalAmountLabel.textColor = XTColorFromHex(0xA22327);
         totalAmountLabel.text = @"¥ 0.00";
         self.totalAmountLabel = totalAmountLabel;
         
         UIButton *purchaseButton = [XTAppUtils redButtonWithFrame:CGRectMake(CGRectGetWidth(_bottomView.bounds) - 120.0, 0.0, 120.0, 49.0)];
+        purchaseButton.titleLabel.font = XTFont(16.0);
         [purchaseButton setTitle:@"立即购买" forState:UIControlStateNormal];
         [purchaseButton addTarget:self action:@selector(purchaseButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         

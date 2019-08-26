@@ -69,6 +69,32 @@ static NSInteger const XTCompaniesPickerTag = 1002;
     [self requestData];
 }
 
+- (void)setRightBarButtonItem:(SEL)action title:(NSString *)title
+{
+    UIImage *locationNormalImage = [UIImage imageNamed:XTModulesSDKImage(@"life_payment_location_n")];
+    UIImage *locationHighlightedImage = [UIImage imageNamed:XTModulesSDKImage(@"life_payment_location_h")];
+    CGFloat width = [XTAppUtils sizeOfString:title font:XTFont(16.0) constrainedToSize:CGSizeMake(100.0, 44.0)].width + 5.0 + locationNormalImage.size.width;
+    
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, width, 44.0)];
+    customView.backgroundColor = [UIColor clearColor];
+    
+    UIButton *actionButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(customView.bounds), CGRectGetHeight(customView.bounds))];
+    actionButton.backgroundColor = [UIColor clearColor];
+    actionButton.titleLabel.font = XTFont(16.0);
+    [actionButton setTitleColor:XTBrandRedColor forState:UIControlStateNormal];
+    [actionButton setTitleColor:[XTBrandRedColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
+    [actionButton setTitle:title forState:UIControlStateNormal];
+    [actionButton setImage:locationNormalImage forState:UIControlStateNormal];
+    [actionButton setImage:locationHighlightedImage forState:UIControlStateHighlighted];
+    [actionButton addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    [actionButton setTitleEdgeInsets:UIEdgeInsetsMake(0.0, -actionButton.imageView.image.size.width - 2.5, 0.0, actionButton.imageView.image.size.width + 2.5)];
+    [actionButton setImageEdgeInsets:UIEdgeInsetsMake(0.0, actionButton.titleLabel.bounds.size.width + 2.5, 0.0, -actionButton.titleLabel.bounds.size.width - 2.5)];
+    [customView addSubview:actionButton];
+    
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:customView];
+    self.navigationItem.rightBarButtonItems = @[rightButtonItem];
+}
+
 #pragma mark - Button
 - (void)backButtonClicked
 {
@@ -155,32 +181,6 @@ static NSInteger const XTCompaniesPickerTag = 1002;
 }
 
 #pragma mark - Private
-- (void)setRightBarButtonItem:(SEL)action title:(NSString *)title
-{
-    UIImage *locationNormalImage = [UIImage imageNamed:XTModulesSDKImage(@"life_payment_location_n")];
-    UIImage *locationHighlightedImage = [UIImage imageNamed:XTModulesSDKImage(@"life_payment_location_h")];
-    CGFloat width = [XTAppUtils sizeOfString:title font:XTFont(16.0) constrainedToSize:CGSizeMake(100.0, 44.0)].width + 5.0 + locationNormalImage.size.width;
-    
-    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, width, 44.0)];
-    customView.backgroundColor = [UIColor clearColor];
-    
-    UIButton *actionButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(customView.bounds), CGRectGetHeight(customView.bounds))];
-    actionButton.backgroundColor = [UIColor clearColor];
-    actionButton.titleLabel.font = XTFont(16.0);
-    [actionButton setTitleColor:XTBrandBlueColor forState:UIControlStateNormal];
-    [actionButton setTitleColor:[XTBrandBlueColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
-    [actionButton setTitle:title forState:UIControlStateNormal];
-    [actionButton setImage:locationNormalImage forState:UIControlStateNormal];
-    [actionButton setImage:locationHighlightedImage forState:UIControlStateHighlighted];
-    [actionButton addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
-    [actionButton setTitleEdgeInsets:UIEdgeInsetsMake(0.0, -actionButton.imageView.image.size.width - 2.5, 0.0, actionButton.imageView.image.size.width + 2.5)];
-    [actionButton setImageEdgeInsets:UIEdgeInsetsMake(0.0, actionButton.titleLabel.bounds.size.width + 2.5, 0.0, -actionButton.titleLabel.bounds.size.width - 2.5)];
-    [customView addSubview:actionButton];
-    
-    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:customView];
-    self.navigationItem.rightBarButtonItems = @[rightButtonItem];
-}
-
 - (void)requestData
 {
     if (XTIsReachable) {
@@ -608,13 +608,9 @@ static NSInteger const XTCompaniesPickerTag = 1002;
     if (!_tableFooterView) {
         _tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(self.mainTableView.bounds), 147.0)];
         _tableFooterView.backgroundColor = [UIColor clearColor];
-        
-        UIButton *nextButton = [[UIButton alloc] initWithFrame:CGRectMake(20.0, 65.0, CGRectGetWidth(_tableFooterView.bounds) - 20.0 * 2, 45.0)];
-        nextButton.backgroundColor = [UIColor clearColor];
-        [nextButton setBackgroundImage:[XTAppUtils imageWithColor:XTBrandBlueColor] forState:UIControlStateNormal];
-        [nextButton setBackgroundImage:[XTAppUtils imageWithColor:[XTBrandBlueColor colorWithAlphaComponent:0.8]] forState:UIControlStateHighlighted];
+                
+        UIButton *nextButton = [XTAppUtils redButtonWithFrame:CGRectMake(20.0, 65.0, CGRectGetWidth(_tableFooterView.bounds) - 20.0 * 2, 45.0)];
         nextButton.titleLabel.font = XTFont(18.0);
-        [nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [nextButton setTitle:@"下一步" forState:UIControlStateNormal];
         [nextButton addTarget:self action:@selector(nextButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         
@@ -651,8 +647,8 @@ static NSInteger const XTCompaniesPickerTag = 1002;
         UIButton *protocolButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(tipLabel.frame), 0.0, protocolWidth, CGRectGetHeight(protocolView.bounds))];
         protocolButton.backgroundColor = [UIColor clearColor];
         protocolButton.titleLabel.font = XTFont(12.0);
-        [protocolButton setTitleColor:XTColorFromHex(0xE02829) forState:UIControlStateNormal];
-        [protocolButton setTitleColor:[XTColorFromHex(0xE02829) colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
+        [protocolButton setTitleColor:XTBrandRedColor forState:UIControlStateNormal];
+        [protocolButton setTitleColor:[XTBrandRedColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
         [protocolButton setTitle:@"《缴费服务协议》" forState:UIControlStateNormal];
         [protocolButton addTarget:self action:@selector(protocolButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         

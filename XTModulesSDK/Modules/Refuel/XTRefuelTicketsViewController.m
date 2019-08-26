@@ -331,7 +331,7 @@ static CGFloat const XTTabViewHeight = 50.0;
             tabItemButton.tag = XTTabItemButtonTagBase + idx;
             tabItemButton.titleLabel.font = XTFont(14.0);
             [tabItemButton setTitleColor:XTBrandLightBlackColor forState:UIControlStateNormal];
-            [tabItemButton setTitleColor:XTBrandBlueColor forState:UIControlStateSelected];
+            [tabItemButton setTitleColor:XTBrandRedColor forState:UIControlStateSelected];
             [tabItemButton setTitle:buttonTitle forState:UIControlStateNormal];
             [tabItemButton addTarget:self action:@selector(tabItemButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [_tabView addSubview:tabItemButton];
@@ -339,7 +339,7 @@ static CGFloat const XTTabViewHeight = 50.0;
         }];
         
         self.indicatorView = [[UIView alloc] initWithFrame:CGRectMake(0.0, CGRectGetHeight(_tabView.bounds) - 2.0, CGRectGetWidth(_tabView.bounds) / self.tabItemButtonArray.count, 2.0)];
-        self.indicatorView.backgroundColor = XTBrandBlueColor;
+        self.indicatorView.backgroundColor = XTBrandRedColor;
         [_tabView addSubview:self.indicatorView];
     }
     

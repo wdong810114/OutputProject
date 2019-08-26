@@ -145,6 +145,8 @@ static CGFloat const XTTabViewHeight = 116.0;
 {
     [self.view addSubview:self.tabView];
     [self.view addSubview:self.mainScrollView];
+    
+    [self switchTabWithTabItemButtonTag:_selectedTabItemButtonTag];
 }
 
 - (UIView *)generateTableHeaderView
@@ -161,8 +163,8 @@ static CGFloat const XTTabViewHeight = 116.0;
     UIButton *manageButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(tableHeaderView.bounds) - 58.0, 0.0, 58.0, CGRectGetHeight(tableHeaderView.bounds))];
     manageButton.backgroundColor = [UIColor clearColor];
     manageButton.titleLabel.font = XTFont(14.0);
-    [manageButton setTitleColor:XTBrandBlueColor forState:UIControlStateNormal];
-    [manageButton setTitleColor:[XTBrandBlueColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
+    [manageButton setTitleColor:XTBrandRedColor forState:UIControlStateNormal];
+    [manageButton setTitleColor:[XTBrandRedColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
     [manageButton setTitle:@"管理" forState:UIControlStateNormal];
     [manageButton addTarget:self action:@selector(manageButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     
@@ -436,7 +438,7 @@ static CGFloat const XTTabViewHeight = 116.0;
             tabItemButton.tag = XTTabItemButtonTagBase + idx;
             tabItemButton.titleLabel.font = XTFont(14.0);
             [tabItemButton setTitleColor:XTBrandLightBlackColor forState:UIControlStateNormal];
-            [tabItemButton setTitleColor:XTBrandBlueColor forState:UIControlStateSelected];
+            [tabItemButton setTitleColor:XTBrandRedColor forState:UIControlStateSelected];
             [tabItemButton setTitle:buttonTitle forState:UIControlStateNormal];
             [tabItemButton setImage:[UIImage imageNamed:XTModulesSDKImage(buttonNormalImageNameArray[idx])] forState:UIControlStateNormal];
             [tabItemButton setImage:[UIImage imageNamed:XTModulesSDKImage(buttonSelectedImageNameArray[idx])] forState:UIControlStateSelected];
@@ -448,7 +450,7 @@ static CGFloat const XTTabViewHeight = 116.0;
         }];
         
         self.indicatorView = [[UIView alloc] initWithFrame:CGRectMake(0.0, CGRectGetHeight(_tabView.bounds) - 2.0, CGRectGetWidth(_tabView.bounds) / self.tabItemButtonArray.count, 2.0)];
-        self.indicatorView.backgroundColor = XTBrandBlueColor;
+        self.indicatorView.backgroundColor = XTBrandRedColor;
         [_tabView addSubview:self.indicatorView];
     }
     

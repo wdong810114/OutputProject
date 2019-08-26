@@ -44,8 +44,7 @@
 #define XTBrandLightBlackColor  XTColorFromHex(0x4D4D4D) // 品牌浅黑
 #define XTBrandGrayColor        XTColorFromHex(0xA2A2A2) // 品牌灰
 #define XTBrandLightGrayColor   XTColorFromHex(0xE8E8E8) // 品牌浅灰
-#define XTBrandRedColor         XTColorFromHex(0xA22327) // 品牌红
-#define XTBrandBlueColor        XTColorFromHex(0x4A8CFF) // 品牌蓝
+#define XTBrandRedColor         XTColorFromHex(0xE0282A) // 品牌红
 
 #define XTViewBGColor     XTColorFromHex(0xF6F6F6) // 视图背景颜色
 #define XTSeparatorColor  XTColorFromHex(0xE8E8E8) // 分割线颜色

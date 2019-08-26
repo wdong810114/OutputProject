@@ -128,9 +128,9 @@
     UIButton *button = [[UIButton alloc] initWithFrame:frame];
     button.backgroundColor = [UIColor clearColor];
     
-    [button setBackgroundImage:[XTAppUtils imageWithColor:XTColorFromHex(0xE02829)] forState:UIControlStateNormal];
-    [button setBackgroundImage:[XTAppUtils imageWithColor:[XTColorFromHex(0xE02829) colorWithAlphaComponent:0.8]] forState:UIControlStateHighlighted];
-    [button setBackgroundImage:[XTAppUtils imageWithColor:[XTColorFromHex(0xE02829) colorWithAlphaComponent:0.4]] forState:UIControlStateDisabled];
+    [button setBackgroundImage:[XTAppUtils imageWithColor:XTBrandRedColor] forState:UIControlStateNormal];
+    [button setBackgroundImage:[XTAppUtils imageWithColor:[XTBrandRedColor colorWithAlphaComponent:0.8]] forState:UIControlStateHighlighted];
+    [button setBackgroundImage:[XTAppUtils imageWithColor:[XTBrandRedColor colorWithAlphaComponent:0.4]] forState:UIControlStateDisabled];
     
     button.titleLabel.font = XTFont(16.0);
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

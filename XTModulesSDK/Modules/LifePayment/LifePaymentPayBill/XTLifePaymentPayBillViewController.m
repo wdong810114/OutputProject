@@ -212,12 +212,8 @@
     messageLabel.textColor = XTColorFromHex(0xCCCCCC);
     messageLabel.text = message;
     
-    UIButton *knowButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, CGRectGetHeight(contentView.bounds) - 40.0, CGRectGetWidth(contentView.bounds), 40.0)];
-    knowButton.backgroundColor = [UIColor clearColor];
-    [knowButton setBackgroundImage:[XTAppUtils imageWithColor:XTBrandBlueColor] forState:UIControlStateNormal];
-    [knowButton setBackgroundImage:[XTAppUtils imageWithColor:[XTBrandBlueColor colorWithAlphaComponent:0.8]] forState:UIControlStateHighlighted];
+    UIButton *knowButton = [XTAppUtils redButtonWithFrame:CGRectMake(0.0, CGRectGetHeight(contentView.bounds) - 40.0, CGRectGetWidth(contentView.bounds), 40.0)];
     knowButton.titleLabel.font = XTFont(14.0);
-    [knowButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [knowButton setTitle:@"我知道了" forState:UIControlStateNormal];
     [knowButton addTarget:self action:@selector(knowButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     
@@ -407,13 +403,8 @@
 - (UIButton *)nextButton
 {
     if (!_nextButton) {
-        _nextButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, XTNonTopLevelViewHeight - 45.0, XTMainScreenWidth, 45.0)];
-        _nextButton.backgroundColor = [UIColor clearColor];
-        [_nextButton setBackgroundImage:[XTAppUtils imageWithColor:XTBrandBlueColor] forState:UIControlStateNormal];
-        [_nextButton setBackgroundImage:[XTAppUtils imageWithColor:[XTBrandBlueColor colorWithAlphaComponent:0.8]] forState:UIControlStateHighlighted];
-        [_nextButton setBackgroundImage:[XTAppUtils imageWithColor:[XTBrandBlueColor colorWithAlphaComponent:0.4]] forState:UIControlStateDisabled];
+        _nextButton = [XTAppUtils redButtonWithFrame:CGRectMake(0.0, XTNonTopLevelViewHeight - 45.0, XTMainScreenWidth, 45.0)];
         _nextButton.titleLabel.font = XTFont(18.0);
-        [_nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_nextButton setTitle:@"下一步" forState:UIControlStateNormal];
         [_nextButton addTarget:self action:@selector(nextButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         _nextButton.enabled = NO;

@@ -248,7 +248,7 @@
     if (!_estimatedProgressView) {
         _estimatedProgressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0.0, 0.0, XTMainScreenWidth, 2.0)];
         _estimatedProgressView.backgroundColor = [UIColor clearColor];
-        _estimatedProgressView.progressTintColor = XTBrandBlueColor;
+        _estimatedProgressView.progressTintColor = XTBrandRedColor;
         _estimatedProgressView.trackTintColor = [UIColor clearColor];
         _estimatedProgressView.transform = CGAffineTransformMakeScale(1.0, 1.5);
         _estimatedProgressView.alpha = 0.0;
@@ -279,6 +279,7 @@
         tipLabel.text = @"网络无法连接";
         
         UIButton *reloadButton = [XTAppUtils redButtonWithFrame:CGRectMake((CGRectGetWidth(contentView.bounds) - 100.0) / 2, CGRectGetMaxY(tipLabel.frame) + 20.0, 100.0, 45.0)];
+        reloadButton.titleLabel.font = XTFont(16.0);
         [reloadButton setTitle:@"重新加载" forState:UIControlStateNormal];
         [reloadButton addTarget:self action:@selector(reloadButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         
