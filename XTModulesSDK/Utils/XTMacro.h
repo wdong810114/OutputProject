@@ -84,7 +84,7 @@
                                        });
 
 #define XTIsReachable [[XTModulesManager sharedManager] isReachable]
-#define XTNetworkUnavailable   @"当前网络不可用"
+#define XTNetworkUnavailable   @"网络加载失败，请稍后再试"
 #define XTUserTokenInvalidErrorCode  21014
 
 #define XTPhoneNumberLength    11             // 手机号长度

@@ -233,17 +233,11 @@
     
     MBProgressHUD *toastView = [MBProgressHUD showHUDAddedTo:XTMainWindow animated:YES];
     toastView.mode = MBProgressHUDModeText;
-    toastView.label.font = XTFont(16.0);
-    toastView.label.textColor = [UIColor whiteColor];
+    toastView.label.font = [UIFont fontWithName:@"Heiti SC" size:15.0];
     toastView.label.text = text;
-    toastView.margin = 15.0;
     toastView.removeFromSuperViewOnHide = YES;
-    toastView.bezelView.color = [UIColor colorWithWhite:0.0 alpha:0.8];
-    toastView.bezelView.layer.masksToBounds = YES;
-    toastView.bezelView.layer.cornerRadius = 6.0;
-    toastView.offset = CGPointMake(toastView.offset.x, CGRectGetHeight(XTMainWindow.bounds) / 2 - 160.0);
     
-    [toastView hideAnimated:YES afterDelay:1.5];
+    [toastView hideAnimated:YES afterDelay:1.2];
 }
 
 @end
