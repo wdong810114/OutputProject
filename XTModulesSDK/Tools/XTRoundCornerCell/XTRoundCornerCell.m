@@ -46,7 +46,7 @@ NSString * XTRoundCornerCellIdentifier = @"XTRoundCornerCellIdentifier";
     
     UIImage *shadowImage = nil;
     
-#if (XTIsModulesOutput == YES)
+#if XTIsModulesOutput
     switch (self.roundCornerCellType) {
         case XTRoundCornerCellTypeSingle:
             shadowImage = [UIImage imageNamed:XTModulesSDKImage(@"cell_shadow_single")];

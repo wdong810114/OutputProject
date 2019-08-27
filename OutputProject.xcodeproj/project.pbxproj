@@ -130,7 +130,6 @@
 		7A770B012314C0F0001996A1 /* cell_shadow_single@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AF92314C0F0001996A1 /* cell_shadow_single@3x.png */; };
 		7A770B022314C0F0001996A1 /* cell_shadow_top@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AFA2314C0F0001996A1 /* cell_shadow_top@3x.png */; };
 		7A770B032314C0F0001996A1 /* cell_shadow_bottom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AFB2314C0F0001996A1 /* cell_shadow_bottom@3x.png */; };
-		7A770B092314C52C001996A1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A770B082314C52C001996A1 /* Info.plist */; };
 		7A770B0F2314CE39001996A1 /* XTRoundCornerCell.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A770B0E2314CE39001996A1 /* XTRoundCornerCell.bundle */; };
 		7A770B112314CEC1001996A1 /* XTModulesSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A770B102314CEC1001996A1 /* XTModulesSDK.bundle */; };
 		7A78CE332306A3F5000741F2 /* XTLifePaymentAccountTagCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A78CE302306A3F5000741F2 /* XTLifePaymentAccountTagCell.h */; };
@@ -1256,7 +1255,6 @@
 				7A770AA82314BB5C001996A1 /* refuel_ticket_used_qrcode@2x.png in Resources */,
 				7A770AA92314BB5C001996A1 /* select_contact@2x.png in Resources */,
 				7A770AAA2314BB5C001996A1 /* refuel_icon@3x.png in Resources */,
-				7A770B092314C52C001996A1 /* Info.plist in Resources */,
 				7A770AAB2314BB5C001996A1 /* refuel_instruction02@3x.png in Resources */,
 				7A770AAC2314BB5C001996A1 /* refuel_instruction04@3x.png in Resources */,
 				7A770AAD2314BB5C001996A1 /* data_empty@3x.png in Resources */,

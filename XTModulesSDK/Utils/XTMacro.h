@@ -6,7 +6,7 @@
 //  Copyright © 2019年 Newsky Payment. All rights reserved.
 //
 
-#define XTIsModulesOutput  NO // 是否模块外放
+#define XTIsModulesOutput  0 // 是否模块外放
 
 /******* 屏幕尺寸 *******/
 #define XTMainScreenBounds  [UIScreen mainScreen].bounds // 屏幕界限
@@ -63,7 +63,7 @@
 /******* 效验对象是否是空 *******/
 
 /******* 其它 *******/
-#if (XTIsModulesOutput == YES)
+#if XTIsModulesOutput
     #define XTModulesSDKBundle  [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"XTModulesSDKBundle" withExtension:@"bundle"]]
     #define XTModulesSDKNib(name)  [UINib nibWithNibName:name bundle:XTModulesSDKBundle]
     #define XTModulesSDKImage(name)  [[[NSBundle mainBundle] pathForResource:@"XTModulesSDKBundle" ofType:@"bundle"] stringByAppendingPathComponent:name]

@@ -97,6 +97,15 @@ NSString * const XTLifeServicePayDidSuccessNotification = @"XTLifeServicePayDidS
         return error;
     }
     
+#if XTIsModulesOutput
+    if (!self.host || self.host.length == 0) {
+        XTError *error = [[XTError alloc] init];
+        error.code = -99;
+        error.message = @"接口地址未设置";
+        return error;
+    }
+#endif
+    
     return nil;
 }
 
@@ -164,6 +173,13 @@ NSString * const XTLifeServicePayDidSuccessNotification = @"XTLifeServicePayDidS
 
 - (XTError *)showLifePaymentWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessKey:(NSString *)accessKey userId:(NSString *)userId phone:(NSString *)phone
 {
+    {
+        XTError *error = [[XTError alloc] init];
+        error.code = -100;
+        error.message = @"生活缴费功能暂时无法使用";
+        return error;
+    }
+    
     XTError *error = [self checkWithSourceVC:sourceVC mode:mode accessKey:accessKey userId:userId phone:phone];
     if (error) {
         return error;

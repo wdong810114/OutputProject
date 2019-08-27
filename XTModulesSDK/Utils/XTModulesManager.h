@@ -44,6 +44,8 @@ typedef NS_ENUM(NSInteger, XTModuleShowMode)
  *  -3：盛京通设备签名为空
  *  -4：盛京通用户ID为空
  *  -5：手机号为空
+ *  -99：接口地址未设置
+ *  -100：其它
  */
 @property (nonatomic, assign) NSInteger code;
 /**
@@ -60,6 +62,8 @@ typedef NS_ENUM(NSInteger, XTModuleShowMode)
 @property (nonatomic, copy, readonly) NSString *accessKey;
 @property (nonatomic, copy, readonly) NSString *userId;
 @property (nonatomic, copy, readonly) NSString *phone;
+
+@property (nonatomic, copy) NSString *host;
 
 + (instancetype)sharedManager;
 

@@ -8,6 +8,9 @@
 
 #import "XTDefaultClientConfiguration.h"
 
+#import "XTMacro.h"
+#import "XTModulesManager.h"
+
 @interface XTDefaultClientConfiguration ()
 
 @property (nonatomic, strong) NSMutableDictionary *mutableDefaultHeaders;
@@ -31,7 +34,11 @@
 {
     self = [super init];
     if (self) {
+#if XTIsModulesOutput
+        _host = [XTModulesManager sharedManager].host;
+#else
         _host = @"http://221.180.167.192/AppExternal/LifeService";
+#endif
         
         _mutableDefaultHeaders = [NSMutableDictionary dictionary];
     }
@@ -41,14 +48,12 @@
 
 - (NSDictionary *)defaultHeaders
 {
-// Added by wangdongdong--Start
+#if XTIsModulesOutput
     [self setDefaultHeaderValue:@"App Store" forKey:@"channel"];
-//    [self setDefaultHeaderValue:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] forKey:@"version"];
-//    [self setDefaultHeaderValue:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"] forKey:@"build"];
-    [self setDefaultHeaderValue:@"1.9.3" forKey:@"version"];
-    [self setDefaultHeaderValue:@"2019051701" forKey:@"build"];
+    [self setDefaultHeaderValue:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] forKey:@"version"];
+    [self setDefaultHeaderValue:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"] forKey:@"build"];
     [self setDefaultHeaderValue:@"iOS" forKey:@"platform"];
-// Added by wangdongdong--End
+#endif
     
     return [self.mutableDefaultHeaders copy];
 }
