@@ -143,8 +143,8 @@
         _mainCollectionView.alwaysBounceVertical = YES;
         _mainCollectionView.dataSource = self;
         _mainCollectionView.delegate = self;
-        [_mainCollectionView registerNib:[UINib nibWithNibName:XTModulesSDKResource(@"XTLifePaymentCityListSupplementaryHeaderView") bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"XTLifePaymentCityListSupplementaryHeaderViewIdentifier"];
-        [_mainCollectionView registerNib:[UINib nibWithNibName:XTModulesSDKResource(@"XTLifePaymentCityListItemCell") bundle:nil] forCellWithReuseIdentifier:@"XTLifePaymentCityListItemCellIdentifier"];
+        [_mainCollectionView registerNib:XTModulesSDKNib(@"XTLifePaymentCityListSupplementaryHeaderView") forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"XTLifePaymentCityListSupplementaryHeaderViewIdentifier"];
+        [_mainCollectionView registerNib:XTModulesSDKNib(@"XTLifePaymentCityListItemCell") forCellWithReuseIdentifier:@"XTLifePaymentCityListItemCellIdentifier"];
     }
     
     return _mainCollectionView;

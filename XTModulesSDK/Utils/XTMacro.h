@@ -6,6 +6,8 @@
 //  Copyright © 2019年 Newsky Payment. All rights reserved.
 //
 
+#define XTIsModulesOutput  NO // 是否模块外放
+
 /******* 屏幕尺寸 *******/
 #define XTMainScreenBounds  [UIScreen mainScreen].bounds // 屏幕界限
 #define XTMainScreenSize    XTMainScreenBounds.size      // 屏幕大小
@@ -61,8 +63,16 @@
 /******* 效验对象是否是空 *******/
 
 /******* 其它 *******/
-#define XTModulesSDKResource(name) [@"Frameworks/XTModulesSDK.framework" stringByAppendingPathComponent:name]
-#define XTModulesSDKImage(name)  [XTModulesSDKResource(@"XTModulesSDK.bundle") stringByAppendingPathComponent:name]
+#if (XTIsModulesOutput == YES)
+    #define XTModulesSDKBundle  [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"XTModulesSDKBundle" withExtension:@"bundle"]]
+    #define XTModulesSDKNib(name)  [UINib nibWithNibName:name bundle:XTModulesSDKBundle]
+    #define XTModulesSDKImage(name)  [[[NSBundle mainBundle] pathForResource:@"XTModulesSDKBundle" ofType:@"bundle"] stringByAppendingPathComponent:name]
+#else
+    #define XTModulesSDKResource(name) [@"Frameworks/XTModulesSDK.framework" stringByAppendingPathComponent:name]
+    #define XTModulesSDKNib(name)  [UINib nibWithNibName:XTModulesSDKResource(name) bundle:nil]
+    #define XTModulesSDKImage(name)  [XTModulesSDKResource(@"XTModulesSDK.bundle") stringByAppendingPathComponent:name]
+#endif
+
 #define XTMainWindow  [UIApplication sharedApplication].windows.firstObject
 #define XTNotificationCenter  [NSNotificationCenter defaultCenter]
 #define XTWeakSelf(weakSelf)  __weak typeof(*&self)weakSelf = self

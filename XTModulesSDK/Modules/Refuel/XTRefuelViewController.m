@@ -532,7 +532,7 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
         if (@available(iOS 11.0, *)) {
             _refuelTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
-        [_refuelTableView registerNib:[UINib nibWithNibName:XTModulesSDKResource(@"XTRefuelCell") bundle:nil] forCellReuseIdentifier:@"XTRefuelCellIdentifier"];
+        [_refuelTableView registerNib:XTModulesSDKNib(@"XTRefuelCell") forCellReuseIdentifier:@"XTRefuelCellIdentifier"];
         _refuelTableView.hidden = YES;
     }
     

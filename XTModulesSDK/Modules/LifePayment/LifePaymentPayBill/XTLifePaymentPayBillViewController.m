@@ -392,9 +392,9 @@
         if (@available(iOS 11.0, *)) {
             _mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
-        [_mainTableView registerNib:[UINib nibWithNibName:XTModulesSDKResource(@"XTLifePaymentPayBillTitleCell") bundle:nil] forCellReuseIdentifier:@"XTLifePaymentPayBillTitleCellIdentifier"];
-        [_mainTableView registerNib:[UINib nibWithNibName:XTModulesSDKResource(@"XTLifePaymentPayBillContentCell") bundle:nil] forCellReuseIdentifier:@"XTLifePaymentPayBillContentCellIdentifier"];
-        [_mainTableView registerNib:[UINib nibWithNibName:XTModulesSDKResource(@"XTLifePaymentPayBillMoneyCell") bundle:nil] forCellReuseIdentifier:@"XTLifePaymentPayBillMoneyCellIdentifier"];
+        [_mainTableView registerNib:XTModulesSDKNib(@"XTLifePaymentPayBillTitleCell") forCellReuseIdentifier:@"XTLifePaymentPayBillTitleCellIdentifier"];
+        [_mainTableView registerNib:XTModulesSDKNib(@"XTLifePaymentPayBillContentCell") forCellReuseIdentifier:@"XTLifePaymentPayBillContentCellIdentifier"];
+        [_mainTableView registerNib:XTModulesSDKNib(@"XTLifePaymentPayBillMoneyCell") forCellReuseIdentifier:@"XTLifePaymentPayBillMoneyCellIdentifier"];
     }
     
     return _mainTableView;

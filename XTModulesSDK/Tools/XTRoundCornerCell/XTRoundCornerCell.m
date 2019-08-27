@@ -46,6 +46,25 @@ NSString * XTRoundCornerCellIdentifier = @"XTRoundCornerCellIdentifier";
     
     UIImage *shadowImage = nil;
     
+#if (XTIsModulesOutput == YES)
+    switch (self.roundCornerCellType) {
+        case XTRoundCornerCellTypeSingle:
+            shadowImage = [UIImage imageNamed:XTModulesSDKImage(@"cell_shadow_single")];
+            break;
+        case XTRoundCornerCellTypeTop:
+            shadowImage = [UIImage imageNamed:XTModulesSDKImage(@"cell_shadow_top")];
+            break;
+        case XTRoundCornerCellTypeMiddle:
+            shadowImage = [UIImage imageNamed:XTModulesSDKImage(@"cell_shadow_middle")];
+            break;
+        case XTRoundCornerCellTypeBottom:
+            shadowImage = [UIImage imageNamed:XTModulesSDKImage(@"cell_shadow_bottom")];
+            break;
+            
+        default:
+            break;
+    }
+#else
     switch (self.roundCornerCellType) {
         case XTRoundCornerCellTypeSingle:
             shadowImage = [UIImage imageNamed:XTModulesSDKResource(@"XTRoundCornerCell.bundle/cell_shadow_single")];
@@ -63,6 +82,7 @@ NSString * XTRoundCornerCellIdentifier = @"XTRoundCornerCellIdentifier";
         default:
             break;
     }
+#endif
     
     if (!self.shadowHidden && shadowImage) {
         self.shadowImageView.image = [shadowImage resizableImageWithCapInsets:UIEdgeInsetsMake(20.0, 50.0, 20.0, 50.0) resizingMode:UIImageResizingModeStretch];

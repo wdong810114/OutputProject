@@ -42,6 +42,97 @@
 		7A770995230E7692001996A1 /* XTOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A770993230E7692001996A1 /* XTOrder.m */; };
 		7A7709A32313BCF7001996A1 /* XTReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A7709A12313BCF7001996A1 /* XTReachability.h */; };
 		7A7709A42313BCF7001996A1 /* XTReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7709A22313BCF7001996A1 /* XTReachability.m */; };
+		7A770AA42314BB5C001996A1 /* life_payment_water@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A552314BB40001996A1 /* life_payment_water@3x.png */; };
+		7A770AA52314BB5C001996A1 /* refuel_ticket_cell_expired_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A562314BB40001996A1 /* refuel_ticket_cell_expired_icon@3x.png */; };
+		7A770AA62314BB5C001996A1 /* loading_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A572314BB40001996A1 /* loading_circle@2x.png */; };
+		7A770AA72314BB5C001996A1 /* refuel_ticket_cell_show_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A582314BB40001996A1 /* refuel_ticket_cell_show_logo@2x.png */; };
+		7A770AA82314BB5C001996A1 /* refuel_ticket_used_qrcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A592314BB41001996A1 /* refuel_ticket_used_qrcode@2x.png */; };
+		7A770AA92314BB5C001996A1 /* select_contact@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A5A2314BB41001996A1 /* select_contact@2x.png */; };
+		7A770AAA2314BB5C001996A1 /* refuel_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A5B2314BB41001996A1 /* refuel_icon@3x.png */; };
+		7A770AAB2314BB5C001996A1 /* refuel_instruction02@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A5C2314BB41001996A1 /* refuel_instruction02@3x.png */; };
+		7A770AAC2314BB5C001996A1 /* refuel_instruction04@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A5D2314BB41001996A1 /* refuel_instruction04@3x.png */; };
+		7A770AAD2314BB5C001996A1 /* data_empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A5E2314BB42001996A1 /* data_empty@3x.png */; };
+		7A770AAE2314BB5C001996A1 /* count_plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A5F2314BB42001996A1 /* count_plus@2x.png */; };
+		7A770AAF2314BB5C001996A1 /* life_payment_electric@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A602314BB42001996A1 /* life_payment_electric@3x.png */; };
+		7A770AB02314BB5C001996A1 /* life_payment_gas_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A612314BB43001996A1 /* life_payment_gas_gray@2x.png */; };
+		7A770AB12314BB5C001996A1 /* life_payment_receipt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A622314BB43001996A1 /* life_payment_receipt@3x.png */; };
+		7A770AB22314BB5C001996A1 /* refuel_instruction03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A632314BB43001996A1 /* refuel_instruction03@2x.png */; };
+		7A770AB32314BB5C001996A1 /* count_minus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A642314BB43001996A1 /* count_minus@3x.png */; };
+		7A770AB42314BB5C001996A1 /* life_payment_location_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A652314BB44001996A1 /* life_payment_location_n@2x.png */; };
+		7A770AB52314BB5C001996A1 /* refuel_instruction01@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A662314BB44001996A1 /* refuel_instruction01@3x.png */; };
+		7A770AB62314BB5C001996A1 /* back_icon_h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A672314BB44001996A1 /* back_icon_h@3x.png */; };
+		7A770AB72314BB5C001996A1 /* network_unavailable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A682314BB45001996A1 /* network_unavailable@2x.png */; };
+		7A770AB82314BB5C001996A1 /* back_icon_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A692314BB45001996A1 /* back_icon_n@2x.png */; };
+		7A770AB92314BB5C001996A1 /* refuel_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A6A2314BB45001996A1 /* refuel_icon@2x.png */; };
+		7A770ABA2314BB5C001996A1 /* protocol_agree@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A6B2314BB46001996A1 /* protocol_agree@3x.png */; };
+		7A770ABB2314BB5C001996A1 /* refuel_ticket_cell_expired_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A6C2314BB46001996A1 /* refuel_ticket_cell_expired_icon@2x.png */; };
+		7A770ABC2314BB5C001996A1 /* protocol_disagree@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A6D2314BB46001996A1 /* protocol_disagree@2x.png */; };
+		7A770ABD2314BB5C001996A1 /* refuel_nearby_station@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A6E2314BB47001996A1 /* refuel_nearby_station@3x.png */; };
+		7A770ABE2314BB5C001996A1 /* XTLifePaymentPayBillContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A6F2314BB47001996A1 /* XTLifePaymentPayBillContentCell.xib */; };
+		7A770ABF2314BB5C001996A1 /* XTLifePaymentPayBillTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A702314BB47001996A1 /* XTLifePaymentPayBillTitleCell.xib */; };
+		7A770AC02314BB5C001996A1 /* protocol_disagree@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A712314BB48001996A1 /* protocol_disagree@3x.png */; };
+		7A770AC12314BB5C001996A1 /* XTRefuelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A722314BB48001996A1 /* XTRefuelCell.xib */; };
+		7A770AC22314BB5C001996A1 /* back_icon_n@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A732314BB48001996A1 /* back_icon_n@3x.png */; };
+		7A770AC32314BB5C001996A1 /* XTRefuelTicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A742314BB49001996A1 /* XTRefuelTicketCell.xib */; };
+		7A770AC42314BB5C001996A1 /* loading_circle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A752314BB49001996A1 /* loading_circle@3x.png */; };
+		7A770AC52314BB5C001996A1 /* XTLifePaymentCityListSupplementaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A762314BB49001996A1 /* XTLifePaymentCityListSupplementaryHeaderView.xib */; };
+		7A770AC62314BB5C001996A1 /* count_plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A772314BB4A001996A1 /* count_plus@3x.png */; };
+		7A770AC72314BB5C001996A1 /* refuel_instruction03@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A782314BB4A001996A1 /* refuel_instruction03@3x.png */; };
+		7A770AC82314BB5C001996A1 /* life_payment_electric@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A792314BB4B001996A1 /* life_payment_electric@2x.png */; };
+		7A770AC92314BB5C001996A1 /* refuel_instruction02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A7A2314BB4B001996A1 /* refuel_instruction02@2x.png */; };
+		7A770ACA2314BB5C001996A1 /* XTLifePaymentAccountTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A7B2314BB4C001996A1 /* XTLifePaymentAccountTagCell.xib */; };
+		7A770ACB2314BB5C001996A1 /* XTLifePaymentPayBillMoneyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A7C2314BB4C001996A1 /* XTLifePaymentPayBillMoneyCell.xib */; };
+		7A770ACC2314BB5C001996A1 /* more_indicator@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A7D2314BB4C001996A1 /* more_indicator@3x.png */; };
+		7A770ACD2314BB5C001996A1 /* protocol_agree@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A7E2314BB4D001996A1 /* protocol_agree@2x.png */; };
+		7A770ACE2314BB5C001996A1 /* life_payment_gas@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A7F2314BB4D001996A1 /* life_payment_gas@3x.png */; };
+		7A770ACF2314BB5C001996A1 /* refuel_ticket_cell_line_cutoff@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A802314BB4D001996A1 /* refuel_ticket_cell_line_cutoff@3x.png */; };
+		7A770AD02314BB5C001996A1 /* XTLifePaymentAccountNoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A812314BB4E001996A1 /* XTLifePaymentAccountNoCell.xib */; };
+		7A770AD12314BB5C001996A1 /* tickets_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A822314BB4E001996A1 /* tickets_empty@2x.png */; };
+		7A770AD22314BB5C001996A1 /* XTLifePaymentCityListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A832314BB4E001996A1 /* XTLifePaymentCityListItemCell.xib */; };
+		7A770AD32314BB5C001996A1 /* life_payment_receipt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A842314BB4F001996A1 /* life_payment_receipt@2x.png */; };
+		7A770AD42314BB5C001996A1 /* refuel_ticket_cell_oil_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A852314BB4F001996A1 /* refuel_ticket_cell_oil_icon@2x.png */; };
+		7A770AD52314BB5C001996A1 /* life_payment_location_n@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A862314BB50001996A1 /* life_payment_location_n@3x.png */; };
+		7A770AD62314BB5C001996A1 /* life_payment_electric_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A872314BB50001996A1 /* life_payment_electric_gray@2x.png */; };
+		7A770AD72314BB5C001996A1 /* data_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A882314BB51001996A1 /* data_empty@2x.png */; };
+		7A770AD82314BB5C001996A1 /* refuel_banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A892314BB51001996A1 /* refuel_banner@2x.png */; };
+		7A770AD92314BB5C001996A1 /* refuel_ticket_cell_line_cutoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A8A2314BB52001996A1 /* refuel_ticket_cell_line_cutoff@2x.png */; };
+		7A770ADA2314BB5C001996A1 /* life_payment_location_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A8B2314BB52001996A1 /* life_payment_location_h@2x.png */; };
+		7A770ADB2314BB5C001996A1 /* refuel_ticket_cell_used_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A8C2314BB53001996A1 /* refuel_ticket_cell_used_icon@2x.png */; };
+		7A770ADC2314BB5C001996A1 /* life_payment_water_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A8D2314BB53001996A1 /* life_payment_water_gray@2x.png */; };
+		7A770ADD2314BB5C001996A1 /* refuel_instruction01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A8E2314BB54001996A1 /* refuel_instruction01@2x.png */; };
+		7A770ADE2314BB5C001996A1 /* refuel_ticket_cell_used_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A8F2314BB54001996A1 /* refuel_ticket_cell_used_icon@3x.png */; };
+		7A770ADF2314BB5C001996A1 /* refuel_ticket_used_qrcode@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A902314BB54001996A1 /* refuel_ticket_used_qrcode@3x.png */; };
+		7A770AE02314BB5C001996A1 /* XTLifePaymentAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A912314BB55001996A1 /* XTLifePaymentAccountCell.xib */; };
+		7A770AE12314BB5C001996A1 /* life_payment_electric_gray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A922314BB55001996A1 /* life_payment_electric_gray@3x.png */; };
+		7A770AE22314BB5C001996A1 /* life_payment_location_h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A932314BB55001996A1 /* life_payment_location_h@3x.png */; };
+		7A770AE32314BB5C001996A1 /* network_unavailable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A942314BB56001996A1 /* network_unavailable@3x.png */; };
+		7A770AE42314BB5C001996A1 /* life_payment_gas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A952314BB56001996A1 /* life_payment_gas@2x.png */; };
+		7A770AE52314BB5C001996A1 /* life_payment_gas_gray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A962314BB56001996A1 /* life_payment_gas_gray@3x.png */; };
+		7A770AE62314BB5C001996A1 /* refuel_instruction04@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A972314BB57001996A1 /* refuel_instruction04@2x.png */; };
+		7A770AE72314BB5C001996A1 /* count_minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A982314BB57001996A1 /* count_minus@2x.png */; };
+		7A770AE82314BB5C001996A1 /* refuel_ticket_cell_oil_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A992314BB57001996A1 /* refuel_ticket_cell_oil_icon@3x.png */; };
+		7A770AE92314BB5C001996A1 /* tickets_empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A9A2314BB58001996A1 /* tickets_empty@3x.png */; };
+		7A770AEA2314BB5C001996A1 /* XTLifePaymentAccountCompanyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A9B2314BB58001996A1 /* XTLifePaymentAccountCompanyCell.xib */; };
+		7A770AEB2314BB5C001996A1 /* refuel_banner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A9C2314BB58001996A1 /* refuel_banner@3x.png */; };
+		7A770AEC2314BB5C001996A1 /* more_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A9D2314BB59001996A1 /* more_indicator@2x.png */; };
+		7A770AED2314BB5C001996A1 /* life_payment_water@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A9E2314BB59001996A1 /* life_payment_water@2x.png */; };
+		7A770AEE2314BB5C001996A1 /* back_icon_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A9F2314BB5A001996A1 /* back_icon_h@2x.png */; };
+		7A770AEF2314BB5C001996A1 /* life_payment_water_gray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AA02314BB5A001996A1 /* life_payment_water_gray@3x.png */; };
+		7A770AF02314BB5C001996A1 /* refuel_nearby_station@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AA12314BB5A001996A1 /* refuel_nearby_station@2x.png */; };
+		7A770AF12314BB5C001996A1 /* refuel_ticket_cell_show_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AA22314BB5B001996A1 /* refuel_ticket_cell_show_logo@3x.png */; };
+		7A770AF22314BB5C001996A1 /* select_contact@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AA32314BB5B001996A1 /* select_contact@3x.png */; };
+		7A770AF32314BC21001996A1 /* XTModulesSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A770A4F2314BA75001996A1 /* XTModulesSDKBundle.bundle */; };
+		7A770AFC2314C0F0001996A1 /* cell_shadow_single@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AF42314C0EF001996A1 /* cell_shadow_single@2x.png */; };
+		7A770AFD2314C0F0001996A1 /* cell_shadow_middle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AF52314C0EF001996A1 /* cell_shadow_middle@2x.png */; };
+		7A770AFE2314C0F0001996A1 /* cell_shadow_middle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AF62314C0EF001996A1 /* cell_shadow_middle@3x.png */; };
+		7A770AFF2314C0F0001996A1 /* cell_shadow_top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AF72314C0F0001996A1 /* cell_shadow_top@2x.png */; };
+		7A770B002314C0F0001996A1 /* cell_shadow_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AF82314C0F0001996A1 /* cell_shadow_bottom@2x.png */; };
+		7A770B012314C0F0001996A1 /* cell_shadow_single@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AF92314C0F0001996A1 /* cell_shadow_single@3x.png */; };
+		7A770B022314C0F0001996A1 /* cell_shadow_top@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AFA2314C0F0001996A1 /* cell_shadow_top@3x.png */; };
+		7A770B032314C0F0001996A1 /* cell_shadow_bottom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AFB2314C0F0001996A1 /* cell_shadow_bottom@3x.png */; };
+		7A770B092314C52C001996A1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A770B082314C52C001996A1 /* Info.plist */; };
+		7A770B0F2314CE39001996A1 /* XTRoundCornerCell.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A770B0E2314CE39001996A1 /* XTRoundCornerCell.bundle */; };
+		7A770B112314CEC1001996A1 /* XTModulesSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A770B102314CEC1001996A1 /* XTModulesSDK.bundle */; };
 		7A78CE332306A3F5000741F2 /* XTLifePaymentAccountTagCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A78CE302306A3F5000741F2 /* XTLifePaymentAccountTagCell.h */; };
 		7A78CE342306A3F5000741F2 /* XTLifePaymentAccountTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A78CE312306A3F5000741F2 /* XTLifePaymentAccountTagCell.m */; };
 		7A78CE352306A3F5000741F2 /* XTLifePaymentAccountTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A78CE322306A3F5000741F2 /* XTLifePaymentAccountTagCell.xib */; };
@@ -91,7 +182,7 @@
 		7AB6CABD22FD5CA400F765EE /* XTRefuelTicketCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB6CABA22FD5CA400F765EE /* XTRefuelTicketCell.h */; };
 		7AB6CABE22FD5CA400F765EE /* XTRefuelTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6CABB22FD5CA400F765EE /* XTRefuelTicketCell.m */; };
 		7AB6CABF22FD5CA400F765EE /* XTRefuelTicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB6CABC22FD5CA400F765EE /* XTRefuelTicketCell.xib */; };
-		7AD6ABC022E58C7D00180CA3 /* XTModulesSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABBE22E58C7D00180CA3 /* XTModulesSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7AD6ABC022E58C7D00180CA3 /* XTModulesSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABBE22E58C7D00180CA3 /* XTModulesSDK.h */; };
 		7AD6ABC322E58C7D00180CA3 /* XTModulesSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD6ABBC22E58C7D00180CA3 /* XTModulesSDK.framework */; };
 		7AD6ABC422E58C7D00180CA3 /* XTModulesSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD6ABBC22E58C7D00180CA3 /* XTModulesSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AD6ABD022E58EF000180CA3 /* XTModulesManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABCE22E58EF000180CA3 /* XTModulesManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -103,7 +194,6 @@
 		7AD6ABDC22E594DC00180CA3 /* XTBaseNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABDA22E594DC00180CA3 /* XTBaseNavigationController.h */; };
 		7AD6ABDD22E594DC00180CA3 /* XTBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6ABDB22E594DC00180CA3 /* XTBaseNavigationController.m */; };
 		7AD6ABE122E59C6F00180CA3 /* XTMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABE022E59C6F00180CA3 /* XTMacro.h */; };
-		7AD6ABEB22E5AE0B00180CA3 /* XTModulesSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7AD6ABEA22E5AE0B00180CA3 /* XTModulesSDK.bundle */; };
 		7AD6ABF622E5BEFB00180CA3 /* XTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6ABEE22E5BEFB00180CA3 /* XTAlertView.m */; };
 		7AD6ABF722E5BEFB00180CA3 /* XTAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6ABEF22E5BEFB00180CA3 /* XTAlertView.h */; };
 		7AD6ABF822E5BEFB00180CA3 /* XTDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6ABF122E5BEFB00180CA3 /* XTDIYHeader.m */; };
@@ -149,13 +239,26 @@
 		7AD6AC5622F9519E00180CA3 /* XTRefuelGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC5422F9519E00180CA3 /* XTRefuelGoodsModel.m */; };
 		7AD6AC5922F9672800180CA3 /* XTRefuelApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC5722F9672800180CA3 /* XTRefuelApi.h */; };
 		7AD6AC5A22F9672800180CA3 /* XTRefuelApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC5822F9672800180CA3 /* XTRefuelApi.m */; };
-		7AD6AC5D22F97DCC00180CA3 /* XTRoundCornerCell.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7AD6AC5C22F97DCC00180CA3 /* XTRoundCornerCell.bundle */; };
 		7AD6AC6022F97E0600180CA3 /* XTRoundCornerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC5E22F97E0600180CA3 /* XTRoundCornerCell.h */; };
 		7AD6AC6122F97E0600180CA3 /* XTRoundCornerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC5F22F97E0600180CA3 /* XTRoundCornerCell.m */; };
 		D469779E76225C9B8DA17617 /* libPods-OutputProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFE40A37096E88702D1A130 /* libPods-OutputProject.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7A770B042314C22C001996A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A4DE54C22E55F1D00FDC427 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A770A4E2314BA75001996A1;
+			remoteInfo = XTModulesSDKBundle;
+		};
+		7A770B062314C2CC001996A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A4DE54C22E55F1D00FDC427 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A770A4E2314BA75001996A1;
+			remoteInfo = XTModulesSDKBundle;
+		};
 		7AD6ABC122E58C7D00180CA3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7A4DE54C22E55F1D00FDC427 /* Project object */;
@@ -222,6 +325,97 @@
 		7A770993230E7692001996A1 /* XTOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTOrder.m; sourceTree = "<group>"; };
 		7A7709A12313BCF7001996A1 /* XTReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReachability.h; sourceTree = "<group>"; };
 		7A7709A22313BCF7001996A1 /* XTReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTReachability.m; sourceTree = "<group>"; };
+		7A770A4F2314BA75001996A1 /* XTModulesSDKBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XTModulesSDKBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A770A552314BB40001996A1 /* life_payment_water@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_water@3x.png"; sourceTree = "<group>"; };
+		7A770A562314BB40001996A1 /* refuel_ticket_cell_expired_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_ticket_cell_expired_icon@3x.png"; sourceTree = "<group>"; };
+		7A770A572314BB40001996A1 /* loading_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_circle@2x.png"; sourceTree = "<group>"; };
+		7A770A582314BB40001996A1 /* refuel_ticket_cell_show_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_ticket_cell_show_logo@2x.png"; sourceTree = "<group>"; };
+		7A770A592314BB41001996A1 /* refuel_ticket_used_qrcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_ticket_used_qrcode@2x.png"; sourceTree = "<group>"; };
+		7A770A5A2314BB41001996A1 /* select_contact@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_contact@2x.png"; sourceTree = "<group>"; };
+		7A770A5B2314BB41001996A1 /* refuel_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_icon@3x.png"; sourceTree = "<group>"; };
+		7A770A5C2314BB41001996A1 /* refuel_instruction02@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_instruction02@3x.png"; sourceTree = "<group>"; };
+		7A770A5D2314BB41001996A1 /* refuel_instruction04@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_instruction04@3x.png"; sourceTree = "<group>"; };
+		7A770A5E2314BB42001996A1 /* data_empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "data_empty@3x.png"; sourceTree = "<group>"; };
+		7A770A5F2314BB42001996A1 /* count_plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "count_plus@2x.png"; sourceTree = "<group>"; };
+		7A770A602314BB42001996A1 /* life_payment_electric@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_electric@3x.png"; sourceTree = "<group>"; };
+		7A770A612314BB43001996A1 /* life_payment_gas_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_gas_gray@2x.png"; sourceTree = "<group>"; };
+		7A770A622314BB43001996A1 /* life_payment_receipt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_receipt@3x.png"; sourceTree = "<group>"; };
+		7A770A632314BB43001996A1 /* refuel_instruction03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_instruction03@2x.png"; sourceTree = "<group>"; };
+		7A770A642314BB43001996A1 /* count_minus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "count_minus@3x.png"; sourceTree = "<group>"; };
+		7A770A652314BB44001996A1 /* life_payment_location_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_location_n@2x.png"; sourceTree = "<group>"; };
+		7A770A662314BB44001996A1 /* refuel_instruction01@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_instruction01@3x.png"; sourceTree = "<group>"; };
+		7A770A672314BB44001996A1 /* back_icon_h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_icon_h@3x.png"; sourceTree = "<group>"; };
+		7A770A682314BB45001996A1 /* network_unavailable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "network_unavailable@2x.png"; sourceTree = "<group>"; };
+		7A770A692314BB45001996A1 /* back_icon_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_icon_n@2x.png"; sourceTree = "<group>"; };
+		7A770A6A2314BB45001996A1 /* refuel_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_icon@2x.png"; sourceTree = "<group>"; };
+		7A770A6B2314BB46001996A1 /* protocol_agree@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "protocol_agree@3x.png"; sourceTree = "<group>"; };
+		7A770A6C2314BB46001996A1 /* refuel_ticket_cell_expired_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_ticket_cell_expired_icon@2x.png"; sourceTree = "<group>"; };
+		7A770A6D2314BB46001996A1 /* protocol_disagree@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "protocol_disagree@2x.png"; sourceTree = "<group>"; };
+		7A770A6E2314BB47001996A1 /* refuel_nearby_station@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_nearby_station@3x.png"; sourceTree = "<group>"; };
+		7A770A6F2314BB47001996A1 /* XTLifePaymentPayBillContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentPayBillContentCell.xib; sourceTree = "<group>"; };
+		7A770A702314BB47001996A1 /* XTLifePaymentPayBillTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentPayBillTitleCell.xib; sourceTree = "<group>"; };
+		7A770A712314BB48001996A1 /* protocol_disagree@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "protocol_disagree@3x.png"; sourceTree = "<group>"; };
+		7A770A722314BB48001996A1 /* XTRefuelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRefuelCell.xib; sourceTree = "<group>"; };
+		7A770A732314BB48001996A1 /* back_icon_n@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_icon_n@3x.png"; sourceTree = "<group>"; };
+		7A770A742314BB49001996A1 /* XTRefuelTicketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRefuelTicketCell.xib; sourceTree = "<group>"; };
+		7A770A752314BB49001996A1 /* loading_circle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_circle@3x.png"; sourceTree = "<group>"; };
+		7A770A762314BB49001996A1 /* XTLifePaymentCityListSupplementaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentCityListSupplementaryHeaderView.xib; sourceTree = "<group>"; };
+		7A770A772314BB4A001996A1 /* count_plus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "count_plus@3x.png"; sourceTree = "<group>"; };
+		7A770A782314BB4A001996A1 /* refuel_instruction03@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_instruction03@3x.png"; sourceTree = "<group>"; };
+		7A770A792314BB4B001996A1 /* life_payment_electric@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_electric@2x.png"; sourceTree = "<group>"; };
+		7A770A7A2314BB4B001996A1 /* refuel_instruction02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_instruction02@2x.png"; sourceTree = "<group>"; };
+		7A770A7B2314BB4C001996A1 /* XTLifePaymentAccountTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentAccountTagCell.xib; sourceTree = "<group>"; };
+		7A770A7C2314BB4C001996A1 /* XTLifePaymentPayBillMoneyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentPayBillMoneyCell.xib; sourceTree = "<group>"; };
+		7A770A7D2314BB4C001996A1 /* more_indicator@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_indicator@3x.png"; sourceTree = "<group>"; };
+		7A770A7E2314BB4D001996A1 /* protocol_agree@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "protocol_agree@2x.png"; sourceTree = "<group>"; };
+		7A770A7F2314BB4D001996A1 /* life_payment_gas@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_gas@3x.png"; sourceTree = "<group>"; };
+		7A770A802314BB4D001996A1 /* refuel_ticket_cell_line_cutoff@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_ticket_cell_line_cutoff@3x.png"; sourceTree = "<group>"; };
+		7A770A812314BB4E001996A1 /* XTLifePaymentAccountNoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentAccountNoCell.xib; sourceTree = "<group>"; };
+		7A770A822314BB4E001996A1 /* tickets_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tickets_empty@2x.png"; sourceTree = "<group>"; };
+		7A770A832314BB4E001996A1 /* XTLifePaymentCityListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentCityListItemCell.xib; sourceTree = "<group>"; };
+		7A770A842314BB4F001996A1 /* life_payment_receipt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_receipt@2x.png"; sourceTree = "<group>"; };
+		7A770A852314BB4F001996A1 /* refuel_ticket_cell_oil_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_ticket_cell_oil_icon@2x.png"; sourceTree = "<group>"; };
+		7A770A862314BB50001996A1 /* life_payment_location_n@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_location_n@3x.png"; sourceTree = "<group>"; };
+		7A770A872314BB50001996A1 /* life_payment_electric_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_electric_gray@2x.png"; sourceTree = "<group>"; };
+		7A770A882314BB51001996A1 /* data_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "data_empty@2x.png"; sourceTree = "<group>"; };
+		7A770A892314BB51001996A1 /* refuel_banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_banner@2x.png"; sourceTree = "<group>"; };
+		7A770A8A2314BB52001996A1 /* refuel_ticket_cell_line_cutoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_ticket_cell_line_cutoff@2x.png"; sourceTree = "<group>"; };
+		7A770A8B2314BB52001996A1 /* life_payment_location_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_location_h@2x.png"; sourceTree = "<group>"; };
+		7A770A8C2314BB53001996A1 /* refuel_ticket_cell_used_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_ticket_cell_used_icon@2x.png"; sourceTree = "<group>"; };
+		7A770A8D2314BB53001996A1 /* life_payment_water_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_water_gray@2x.png"; sourceTree = "<group>"; };
+		7A770A8E2314BB54001996A1 /* refuel_instruction01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_instruction01@2x.png"; sourceTree = "<group>"; };
+		7A770A8F2314BB54001996A1 /* refuel_ticket_cell_used_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_ticket_cell_used_icon@3x.png"; sourceTree = "<group>"; };
+		7A770A902314BB54001996A1 /* refuel_ticket_used_qrcode@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_ticket_used_qrcode@3x.png"; sourceTree = "<group>"; };
+		7A770A912314BB55001996A1 /* XTLifePaymentAccountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentAccountCell.xib; sourceTree = "<group>"; };
+		7A770A922314BB55001996A1 /* life_payment_electric_gray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_electric_gray@3x.png"; sourceTree = "<group>"; };
+		7A770A932314BB55001996A1 /* life_payment_location_h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_location_h@3x.png"; sourceTree = "<group>"; };
+		7A770A942314BB56001996A1 /* network_unavailable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "network_unavailable@3x.png"; sourceTree = "<group>"; };
+		7A770A952314BB56001996A1 /* life_payment_gas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_gas@2x.png"; sourceTree = "<group>"; };
+		7A770A962314BB56001996A1 /* life_payment_gas_gray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_gas_gray@3x.png"; sourceTree = "<group>"; };
+		7A770A972314BB57001996A1 /* refuel_instruction04@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_instruction04@2x.png"; sourceTree = "<group>"; };
+		7A770A982314BB57001996A1 /* count_minus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "count_minus@2x.png"; sourceTree = "<group>"; };
+		7A770A992314BB57001996A1 /* refuel_ticket_cell_oil_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_ticket_cell_oil_icon@3x.png"; sourceTree = "<group>"; };
+		7A770A9A2314BB58001996A1 /* tickets_empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tickets_empty@3x.png"; sourceTree = "<group>"; };
+		7A770A9B2314BB58001996A1 /* XTLifePaymentAccountCompanyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentAccountCompanyCell.xib; sourceTree = "<group>"; };
+		7A770A9C2314BB58001996A1 /* refuel_banner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_banner@3x.png"; sourceTree = "<group>"; };
+		7A770A9D2314BB59001996A1 /* more_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_indicator@2x.png"; sourceTree = "<group>"; };
+		7A770A9E2314BB59001996A1 /* life_payment_water@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_water@2x.png"; sourceTree = "<group>"; };
+		7A770A9F2314BB5A001996A1 /* back_icon_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_icon_h@2x.png"; sourceTree = "<group>"; };
+		7A770AA02314BB5A001996A1 /* life_payment_water_gray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "life_payment_water_gray@3x.png"; sourceTree = "<group>"; };
+		7A770AA12314BB5A001996A1 /* refuel_nearby_station@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_nearby_station@2x.png"; sourceTree = "<group>"; };
+		7A770AA22314BB5B001996A1 /* refuel_ticket_cell_show_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_ticket_cell_show_logo@3x.png"; sourceTree = "<group>"; };
+		7A770AA32314BB5B001996A1 /* select_contact@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_contact@3x.png"; sourceTree = "<group>"; };
+		7A770AF42314C0EF001996A1 /* cell_shadow_single@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_shadow_single@2x.png"; sourceTree = "<group>"; };
+		7A770AF52314C0EF001996A1 /* cell_shadow_middle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_shadow_middle@2x.png"; sourceTree = "<group>"; };
+		7A770AF62314C0EF001996A1 /* cell_shadow_middle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_shadow_middle@3x.png"; sourceTree = "<group>"; };
+		7A770AF72314C0F0001996A1 /* cell_shadow_top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_shadow_top@2x.png"; sourceTree = "<group>"; };
+		7A770AF82314C0F0001996A1 /* cell_shadow_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_shadow_bottom@2x.png"; sourceTree = "<group>"; };
+		7A770AF92314C0F0001996A1 /* cell_shadow_single@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_shadow_single@3x.png"; sourceTree = "<group>"; };
+		7A770AFA2314C0F0001996A1 /* cell_shadow_top@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_shadow_top@3x.png"; sourceTree = "<group>"; };
+		7A770AFB2314C0F0001996A1 /* cell_shadow_bottom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_shadow_bottom@3x.png"; sourceTree = "<group>"; };
+		7A770B082314C52C001996A1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A770B0E2314CE39001996A1 /* XTRoundCornerCell.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTRoundCornerCell.bundle; sourceTree = "<group>"; };
+		7A770B102314CEC1001996A1 /* XTModulesSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTModulesSDK.bundle; sourceTree = "<group>"; };
 		7A78CE302306A3F5000741F2 /* XTLifePaymentAccountTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTLifePaymentAccountTagCell.h; sourceTree = "<group>"; };
 		7A78CE312306A3F5000741F2 /* XTLifePaymentAccountTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTLifePaymentAccountTagCell.m; sourceTree = "<group>"; };
 		7A78CE322306A3F5000741F2 /* XTLifePaymentAccountTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentAccountTagCell.xib; sourceTree = "<group>"; };
@@ -283,7 +477,6 @@
 		7AD6ABDA22E594DC00180CA3 /* XTBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTBaseNavigationController.h; sourceTree = "<group>"; };
 		7AD6ABDB22E594DC00180CA3 /* XTBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTBaseNavigationController.m; sourceTree = "<group>"; };
 		7AD6ABE022E59C6F00180CA3 /* XTMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTMacro.h; sourceTree = "<group>"; };
-		7AD6ABEA22E5AE0B00180CA3 /* XTModulesSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTModulesSDK.bundle; sourceTree = "<group>"; };
 		7AD6ABEE22E5BEFB00180CA3 /* XTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTAlertView.m; sourceTree = "<group>"; };
 		7AD6ABEF22E5BEFB00180CA3 /* XTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTAlertView.h; sourceTree = "<group>"; };
 		7AD6ABF122E5BEFB00180CA3 /* XTDIYHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTDIYHeader.m; sourceTree = "<group>"; };
@@ -329,7 +522,6 @@
 		7AD6AC5422F9519E00180CA3 /* XTRefuelGoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelGoodsModel.m; sourceTree = "<group>"; };
 		7AD6AC5722F9672800180CA3 /* XTRefuelApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelApi.h; sourceTree = "<group>"; };
 		7AD6AC5822F9672800180CA3 /* XTRefuelApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelApi.m; sourceTree = "<group>"; };
-		7AD6AC5C22F97DCC00180CA3 /* XTRoundCornerCell.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTRoundCornerCell.bundle; sourceTree = "<group>"; };
 		7AD6AC5E22F97E0600180CA3 /* XTRoundCornerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRoundCornerCell.h; sourceTree = "<group>"; };
 		7AD6AC5F22F97E0600180CA3 /* XTRoundCornerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRoundCornerCell.m; sourceTree = "<group>"; };
 		8D2A642B300DD9182AD331F8 /* libPods-XTModulesSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XTModulesSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -345,6 +537,13 @@
 			files = (
 				7AD6ABC322E58C7D00180CA3 /* XTModulesSDK.framework in Frameworks */,
 				D469779E76225C9B8DA17617 /* libPods-OutputProject.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A770A4C2314BA75001996A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +599,7 @@
 			children = (
 				7A4DE55622E55F1D00FDC427 /* OutputProject */,
 				7AD6ABBD22E58C7D00180CA3 /* XTModulesSDK */,
+				7A770A502314BA75001996A1 /* XTModulesSDKBundle */,
 				7A4DE55522E55F1D00FDC427 /* Products */,
 				AD76E98BA65DAA3486B9B7F1 /* Pods */,
 				7C4A6842DD8601450B89FE6A /* Frameworks */,
@@ -411,6 +611,7 @@
 			children = (
 				7A4DE55422E55F1D00FDC427 /* OutputProject.app */,
 				7AD6ABBC22E58C7D00180CA3 /* XTModulesSDK.framework */,
+				7A770A4F2314BA75001996A1 /* XTModulesSDKBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -438,6 +639,101 @@
 				7A7709A22313BCF7001996A1 /* XTReachability.m */,
 			);
 			path = XTReachability;
+			sourceTree = "<group>";
+		};
+		7A770A502314BA75001996A1 /* XTModulesSDKBundle */ = {
+			isa = PBXGroup;
+			children = (
+				7A770B082314C52C001996A1 /* Info.plist */,
+				7A770AF82314C0F0001996A1 /* cell_shadow_bottom@2x.png */,
+				7A770AFB2314C0F0001996A1 /* cell_shadow_bottom@3x.png */,
+				7A770AF52314C0EF001996A1 /* cell_shadow_middle@2x.png */,
+				7A770AF62314C0EF001996A1 /* cell_shadow_middle@3x.png */,
+				7A770AF42314C0EF001996A1 /* cell_shadow_single@2x.png */,
+				7A770AF92314C0F0001996A1 /* cell_shadow_single@3x.png */,
+				7A770AF72314C0F0001996A1 /* cell_shadow_top@2x.png */,
+				7A770AFA2314C0F0001996A1 /* cell_shadow_top@3x.png */,
+				7A770A9F2314BB5A001996A1 /* back_icon_h@2x.png */,
+				7A770A672314BB44001996A1 /* back_icon_h@3x.png */,
+				7A770A692314BB45001996A1 /* back_icon_n@2x.png */,
+				7A770A732314BB48001996A1 /* back_icon_n@3x.png */,
+				7A770A982314BB57001996A1 /* count_minus@2x.png */,
+				7A770A642314BB43001996A1 /* count_minus@3x.png */,
+				7A770A5F2314BB42001996A1 /* count_plus@2x.png */,
+				7A770A772314BB4A001996A1 /* count_plus@3x.png */,
+				7A770A882314BB51001996A1 /* data_empty@2x.png */,
+				7A770A5E2314BB42001996A1 /* data_empty@3x.png */,
+				7A770A872314BB50001996A1 /* life_payment_electric_gray@2x.png */,
+				7A770A922314BB55001996A1 /* life_payment_electric_gray@3x.png */,
+				7A770A792314BB4B001996A1 /* life_payment_electric@2x.png */,
+				7A770A602314BB42001996A1 /* life_payment_electric@3x.png */,
+				7A770A612314BB43001996A1 /* life_payment_gas_gray@2x.png */,
+				7A770A962314BB56001996A1 /* life_payment_gas_gray@3x.png */,
+				7A770A952314BB56001996A1 /* life_payment_gas@2x.png */,
+				7A770A7F2314BB4D001996A1 /* life_payment_gas@3x.png */,
+				7A770A8B2314BB52001996A1 /* life_payment_location_h@2x.png */,
+				7A770A932314BB55001996A1 /* life_payment_location_h@3x.png */,
+				7A770A652314BB44001996A1 /* life_payment_location_n@2x.png */,
+				7A770A862314BB50001996A1 /* life_payment_location_n@3x.png */,
+				7A770A842314BB4F001996A1 /* life_payment_receipt@2x.png */,
+				7A770A622314BB43001996A1 /* life_payment_receipt@3x.png */,
+				7A770A8D2314BB53001996A1 /* life_payment_water_gray@2x.png */,
+				7A770AA02314BB5A001996A1 /* life_payment_water_gray@3x.png */,
+				7A770A9E2314BB59001996A1 /* life_payment_water@2x.png */,
+				7A770A552314BB40001996A1 /* life_payment_water@3x.png */,
+				7A770A572314BB40001996A1 /* loading_circle@2x.png */,
+				7A770A752314BB49001996A1 /* loading_circle@3x.png */,
+				7A770A9D2314BB59001996A1 /* more_indicator@2x.png */,
+				7A770A7D2314BB4C001996A1 /* more_indicator@3x.png */,
+				7A770A682314BB45001996A1 /* network_unavailable@2x.png */,
+				7A770A942314BB56001996A1 /* network_unavailable@3x.png */,
+				7A770A7E2314BB4D001996A1 /* protocol_agree@2x.png */,
+				7A770A6B2314BB46001996A1 /* protocol_agree@3x.png */,
+				7A770A6D2314BB46001996A1 /* protocol_disagree@2x.png */,
+				7A770A712314BB48001996A1 /* protocol_disagree@3x.png */,
+				7A770A892314BB51001996A1 /* refuel_banner@2x.png */,
+				7A770A9C2314BB58001996A1 /* refuel_banner@3x.png */,
+				7A770A6A2314BB45001996A1 /* refuel_icon@2x.png */,
+				7A770A5B2314BB41001996A1 /* refuel_icon@3x.png */,
+				7A770A8E2314BB54001996A1 /* refuel_instruction01@2x.png */,
+				7A770A662314BB44001996A1 /* refuel_instruction01@3x.png */,
+				7A770A7A2314BB4B001996A1 /* refuel_instruction02@2x.png */,
+				7A770A5C2314BB41001996A1 /* refuel_instruction02@3x.png */,
+				7A770A632314BB43001996A1 /* refuel_instruction03@2x.png */,
+				7A770A782314BB4A001996A1 /* refuel_instruction03@3x.png */,
+				7A770A972314BB57001996A1 /* refuel_instruction04@2x.png */,
+				7A770A5D2314BB41001996A1 /* refuel_instruction04@3x.png */,
+				7A770AA12314BB5A001996A1 /* refuel_nearby_station@2x.png */,
+				7A770A6E2314BB47001996A1 /* refuel_nearby_station@3x.png */,
+				7A770A6C2314BB46001996A1 /* refuel_ticket_cell_expired_icon@2x.png */,
+				7A770A562314BB40001996A1 /* refuel_ticket_cell_expired_icon@3x.png */,
+				7A770A8A2314BB52001996A1 /* refuel_ticket_cell_line_cutoff@2x.png */,
+				7A770A802314BB4D001996A1 /* refuel_ticket_cell_line_cutoff@3x.png */,
+				7A770A852314BB4F001996A1 /* refuel_ticket_cell_oil_icon@2x.png */,
+				7A770A992314BB57001996A1 /* refuel_ticket_cell_oil_icon@3x.png */,
+				7A770A582314BB40001996A1 /* refuel_ticket_cell_show_logo@2x.png */,
+				7A770AA22314BB5B001996A1 /* refuel_ticket_cell_show_logo@3x.png */,
+				7A770A8C2314BB53001996A1 /* refuel_ticket_cell_used_icon@2x.png */,
+				7A770A8F2314BB54001996A1 /* refuel_ticket_cell_used_icon@3x.png */,
+				7A770A592314BB41001996A1 /* refuel_ticket_used_qrcode@2x.png */,
+				7A770A902314BB54001996A1 /* refuel_ticket_used_qrcode@3x.png */,
+				7A770A5A2314BB41001996A1 /* select_contact@2x.png */,
+				7A770AA32314BB5B001996A1 /* select_contact@3x.png */,
+				7A770A822314BB4E001996A1 /* tickets_empty@2x.png */,
+				7A770A9A2314BB58001996A1 /* tickets_empty@3x.png */,
+				7A770A912314BB55001996A1 /* XTLifePaymentAccountCell.xib */,
+				7A770A9B2314BB58001996A1 /* XTLifePaymentAccountCompanyCell.xib */,
+				7A770A812314BB4E001996A1 /* XTLifePaymentAccountNoCell.xib */,
+				7A770A7B2314BB4C001996A1 /* XTLifePaymentAccountTagCell.xib */,
+				7A770A832314BB4E001996A1 /* XTLifePaymentCityListItemCell.xib */,
+				7A770A762314BB49001996A1 /* XTLifePaymentCityListSupplementaryHeaderView.xib */,
+				7A770A6F2314BB47001996A1 /* XTLifePaymentPayBillContentCell.xib */,
+				7A770A7C2314BB4C001996A1 /* XTLifePaymentPayBillMoneyCell.xib */,
+				7A770A702314BB47001996A1 /* XTLifePaymentPayBillTitleCell.xib */,
+				7A770A722314BB48001996A1 /* XTRefuelCell.xib */,
+				7A770A742314BB49001996A1 /* XTRefuelTicketCell.xib */,
+			);
+			path = XTModulesSDKBundle;
 			sourceTree = "<group>";
 		};
 		7A78CE42230A465C000741F2 /* Vendors */ = {
@@ -486,7 +782,7 @@
 				7AD6ABEC22E5BD3900180CA3 /* Tools */,
 				7A78CE42230A465C000741F2 /* Vendors */,
 				7AD6ABBE22E58C7D00180CA3 /* XTModulesSDK.h */,
-				7AD6ABEA22E5AE0B00180CA3 /* XTModulesSDK.bundle */,
+				7A770B102314CEC1001996A1 /* XTModulesSDK.bundle */,
 				7AD6ABBF22E58C7D00180CA3 /* Info.plist */,
 			);
 			path = XTModulesSDK;
@@ -732,7 +1028,7 @@
 		7AD6AC5B22F97DCC00180CA3 /* XTRoundCornerCell */ = {
 			isa = PBXGroup;
 			children = (
-				7AD6AC5C22F97DCC00180CA3 /* XTRoundCornerCell.bundle */,
+				7A770B0E2314CE39001996A1 /* XTRoundCornerCell.bundle */,
 				7AD6AC5E22F97E0600180CA3 /* XTRoundCornerCell.h */,
 				7AD6AC5F22F97E0600180CA3 /* XTRoundCornerCell.m */,
 			);
@@ -768,6 +1064,7 @@
 			files = (
 				7AD6ABD022E58EF000180CA3 /* XTModulesManager.h in Headers */,
 				7AD6AC1F22E85DDC00180CA3 /* XTPhoneRechargeApi.h in Headers */,
+				7AD6ABC022E58C7D00180CA3 /* XTModulesSDK.h in Headers */,
 				7A46A92123050E30001A6C70 /* XTLifePaymentAccountCell.h in Headers */,
 				7A3D96A023054F9300AF0B97 /* XTLifePaymentPayBillViewController.h in Headers */,
 				7AD6AC4822F16EBC00180CA3 /* UIView+XTExtension.h in Headers */,
@@ -779,7 +1076,6 @@
 				7A8403A9230BE52300D7F680 /* XTLifePaymentPayBillMoneyCell.h in Headers */,
 				7AD6ABF722E5BEFB00180CA3 /* XTAlertView.h in Headers */,
 				7AB6CAA422FBFA1A00F765EE /* XTRefuelOrderModel.h in Headers */,
-				7AD6ABC022E58C7D00180CA3 /* XTModulesSDK.h in Headers */,
 				7AD6AC3C22F01F3400180CA3 /* XTPhoneRechargeHistoryView.h in Headers */,
 				7AD6AC1722E846FC00180CA3 /* XTSanitizer.h in Headers */,
 				7A770994230E7692001996A1 /* XTOrder.h in Headers */,
@@ -850,12 +1146,30 @@
 			buildRules = (
 			);
 			dependencies = (
+				7A770B052314C22C001996A1 /* PBXTargetDependency */,
 				7AD6ABC222E58C7D00180CA3 /* PBXTargetDependency */,
 			);
 			name = OutputProject;
 			productName = OutputProject;
 			productReference = 7A4DE55422E55F1D00FDC427 /* OutputProject.app */;
 			productType = "com.apple.product-type.application";
+		};
+		7A770A4E2314BA75001996A1 /* XTModulesSDKBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A770A522314BA75001996A1 /* Build configuration list for PBXNativeTarget "XTModulesSDKBundle" */;
+			buildPhases = (
+				7A770A4B2314BA75001996A1 /* Sources */,
+				7A770A4C2314BA75001996A1 /* Frameworks */,
+				7A770A4D2314BA75001996A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XTModulesSDKBundle;
+			productName = XTModulesSDKBundle;
+			productReference = 7A770A4F2314BA75001996A1 /* XTModulesSDKBundle.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 		7AD6ABBB22E58C7D00180CA3 /* XTModulesSDK */ = {
 			isa = PBXNativeTarget;
@@ -871,6 +1185,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7A770B072314C2CC001996A1 /* PBXTargetDependency */,
 			);
 			name = XTModulesSDK;
 			productName = XTModulesSDK;
@@ -887,6 +1202,9 @@
 				ORGANIZATIONNAME = "Newsky Payment";
 				TargetAttributes = {
 					7A4DE55322E55F1D00FDC427 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					7A770A4E2314BA75001996A1 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 					7AD6ABBB22E58C7D00180CA3 = {
@@ -909,6 +1227,7 @@
 			targets = (
 				7A4DE55322E55F1D00FDC427 /* OutputProject */,
 				7AD6ABBB22E58C7D00180CA3 /* XTModulesSDK */,
+				7A770A4E2314BA75001996A1 /* XTModulesSDKBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -918,9 +1237,105 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A770AF32314BC21001996A1 /* XTModulesSDKBundle.bundle in Resources */,
 				7A4DE56422E55F1F00FDC427 /* LaunchScreen.storyboard in Resources */,
 				7A4DE56122E55F1F00FDC427 /* Assets.xcassets in Resources */,
 				7A4DE55F22E55F1D00FDC427 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A770A4D2314BA75001996A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A770AFF2314C0F0001996A1 /* cell_shadow_top@2x.png in Resources */,
+				7A770AA42314BB5C001996A1 /* life_payment_water@3x.png in Resources */,
+				7A770AA52314BB5C001996A1 /* refuel_ticket_cell_expired_icon@3x.png in Resources */,
+				7A770AA62314BB5C001996A1 /* loading_circle@2x.png in Resources */,
+				7A770AA72314BB5C001996A1 /* refuel_ticket_cell_show_logo@2x.png in Resources */,
+				7A770AA82314BB5C001996A1 /* refuel_ticket_used_qrcode@2x.png in Resources */,
+				7A770AA92314BB5C001996A1 /* select_contact@2x.png in Resources */,
+				7A770AAA2314BB5C001996A1 /* refuel_icon@3x.png in Resources */,
+				7A770B092314C52C001996A1 /* Info.plist in Resources */,
+				7A770AAB2314BB5C001996A1 /* refuel_instruction02@3x.png in Resources */,
+				7A770AAC2314BB5C001996A1 /* refuel_instruction04@3x.png in Resources */,
+				7A770AAD2314BB5C001996A1 /* data_empty@3x.png in Resources */,
+				7A770AAE2314BB5C001996A1 /* count_plus@2x.png in Resources */,
+				7A770AAF2314BB5C001996A1 /* life_payment_electric@3x.png in Resources */,
+				7A770AFC2314C0F0001996A1 /* cell_shadow_single@2x.png in Resources */,
+				7A770AB02314BB5C001996A1 /* life_payment_gas_gray@2x.png in Resources */,
+				7A770B002314C0F0001996A1 /* cell_shadow_bottom@2x.png in Resources */,
+				7A770AB12314BB5C001996A1 /* life_payment_receipt@3x.png in Resources */,
+				7A770AB22314BB5C001996A1 /* refuel_instruction03@2x.png in Resources */,
+				7A770AB32314BB5C001996A1 /* count_minus@3x.png in Resources */,
+				7A770AB42314BB5C001996A1 /* life_payment_location_n@2x.png in Resources */,
+				7A770AB52314BB5C001996A1 /* refuel_instruction01@3x.png in Resources */,
+				7A770AB62314BB5C001996A1 /* back_icon_h@3x.png in Resources */,
+				7A770AB72314BB5C001996A1 /* network_unavailable@2x.png in Resources */,
+				7A770AB82314BB5C001996A1 /* back_icon_n@2x.png in Resources */,
+				7A770AB92314BB5C001996A1 /* refuel_icon@2x.png in Resources */,
+				7A770ABA2314BB5C001996A1 /* protocol_agree@3x.png in Resources */,
+				7A770ABB2314BB5C001996A1 /* refuel_ticket_cell_expired_icon@2x.png in Resources */,
+				7A770ABC2314BB5C001996A1 /* protocol_disagree@2x.png in Resources */,
+				7A770ABD2314BB5C001996A1 /* refuel_nearby_station@3x.png in Resources */,
+				7A770ABE2314BB5C001996A1 /* XTLifePaymentPayBillContentCell.xib in Resources */,
+				7A770ABF2314BB5C001996A1 /* XTLifePaymentPayBillTitleCell.xib in Resources */,
+				7A770AC02314BB5C001996A1 /* protocol_disagree@3x.png in Resources */,
+				7A770AC12314BB5C001996A1 /* XTRefuelCell.xib in Resources */,
+				7A770B022314C0F0001996A1 /* cell_shadow_top@3x.png in Resources */,
+				7A770AC22314BB5C001996A1 /* back_icon_n@3x.png in Resources */,
+				7A770AC32314BB5C001996A1 /* XTRefuelTicketCell.xib in Resources */,
+				7A770AC42314BB5C001996A1 /* loading_circle@3x.png in Resources */,
+				7A770AC52314BB5C001996A1 /* XTLifePaymentCityListSupplementaryHeaderView.xib in Resources */,
+				7A770AC62314BB5C001996A1 /* count_plus@3x.png in Resources */,
+				7A770AC72314BB5C001996A1 /* refuel_instruction03@3x.png in Resources */,
+				7A770AC82314BB5C001996A1 /* life_payment_electric@2x.png in Resources */,
+				7A770AC92314BB5C001996A1 /* refuel_instruction02@2x.png in Resources */,
+				7A770ACA2314BB5C001996A1 /* XTLifePaymentAccountTagCell.xib in Resources */,
+				7A770AFD2314C0F0001996A1 /* cell_shadow_middle@2x.png in Resources */,
+				7A770ACB2314BB5C001996A1 /* XTLifePaymentPayBillMoneyCell.xib in Resources */,
+				7A770ACC2314BB5C001996A1 /* more_indicator@3x.png in Resources */,
+				7A770ACD2314BB5C001996A1 /* protocol_agree@2x.png in Resources */,
+				7A770ACE2314BB5C001996A1 /* life_payment_gas@3x.png in Resources */,
+				7A770ACF2314BB5C001996A1 /* refuel_ticket_cell_line_cutoff@3x.png in Resources */,
+				7A770AFE2314C0F0001996A1 /* cell_shadow_middle@3x.png in Resources */,
+				7A770AD02314BB5C001996A1 /* XTLifePaymentAccountNoCell.xib in Resources */,
+				7A770AD12314BB5C001996A1 /* tickets_empty@2x.png in Resources */,
+				7A770AD22314BB5C001996A1 /* XTLifePaymentCityListItemCell.xib in Resources */,
+				7A770AD32314BB5C001996A1 /* life_payment_receipt@2x.png in Resources */,
+				7A770AD42314BB5C001996A1 /* refuel_ticket_cell_oil_icon@2x.png in Resources */,
+				7A770AD52314BB5C001996A1 /* life_payment_location_n@3x.png in Resources */,
+				7A770AD62314BB5C001996A1 /* life_payment_electric_gray@2x.png in Resources */,
+				7A770AD72314BB5C001996A1 /* data_empty@2x.png in Resources */,
+				7A770AD82314BB5C001996A1 /* refuel_banner@2x.png in Resources */,
+				7A770AD92314BB5C001996A1 /* refuel_ticket_cell_line_cutoff@2x.png in Resources */,
+				7A770ADA2314BB5C001996A1 /* life_payment_location_h@2x.png in Resources */,
+				7A770ADB2314BB5C001996A1 /* refuel_ticket_cell_used_icon@2x.png in Resources */,
+				7A770ADC2314BB5C001996A1 /* life_payment_water_gray@2x.png in Resources */,
+				7A770ADD2314BB5C001996A1 /* refuel_instruction01@2x.png in Resources */,
+				7A770ADE2314BB5C001996A1 /* refuel_ticket_cell_used_icon@3x.png in Resources */,
+				7A770ADF2314BB5C001996A1 /* refuel_ticket_used_qrcode@3x.png in Resources */,
+				7A770AE02314BB5C001996A1 /* XTLifePaymentAccountCell.xib in Resources */,
+				7A770AE12314BB5C001996A1 /* life_payment_electric_gray@3x.png in Resources */,
+				7A770AE22314BB5C001996A1 /* life_payment_location_h@3x.png in Resources */,
+				7A770AE32314BB5C001996A1 /* network_unavailable@3x.png in Resources */,
+				7A770AE42314BB5C001996A1 /* life_payment_gas@2x.png in Resources */,
+				7A770AE52314BB5C001996A1 /* life_payment_gas_gray@3x.png in Resources */,
+				7A770AE62314BB5C001996A1 /* refuel_instruction04@2x.png in Resources */,
+				7A770B012314C0F0001996A1 /* cell_shadow_single@3x.png in Resources */,
+				7A770AE72314BB5C001996A1 /* count_minus@2x.png in Resources */,
+				7A770AE82314BB5C001996A1 /* refuel_ticket_cell_oil_icon@3x.png in Resources */,
+				7A770AE92314BB5C001996A1 /* tickets_empty@3x.png in Resources */,
+				7A770AEA2314BB5C001996A1 /* XTLifePaymentAccountCompanyCell.xib in Resources */,
+				7A770AEB2314BB5C001996A1 /* refuel_banner@3x.png in Resources */,
+				7A770AEC2314BB5C001996A1 /* more_indicator@2x.png in Resources */,
+				7A770AED2314BB5C001996A1 /* life_payment_water@2x.png in Resources */,
+				7A770AEE2314BB5C001996A1 /* back_icon_h@2x.png in Resources */,
+				7A770AEF2314BB5C001996A1 /* life_payment_water_gray@3x.png in Resources */,
+				7A770AF02314BB5C001996A1 /* refuel_nearby_station@2x.png in Resources */,
+				7A770B032314C0F0001996A1 /* cell_shadow_bottom@3x.png in Resources */,
+				7A770AF12314BB5C001996A1 /* refuel_ticket_cell_show_logo@3x.png in Resources */,
+				7A770AF22314BB5C001996A1 /* select_contact@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,18 +1343,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AD6ABEB22E5AE0B00180CA3 /* XTModulesSDK.bundle in Resources */,
 				7A84039F230BE4A300D7F680 /* XTLifePaymentPayBillTitleCell.xib in Resources */,
 				7A78CE352306A3F5000741F2 /* XTLifePaymentAccountTagCell.xib in Resources */,
 				7AB6CAA122FAB44900F765EE /* XTRefuelCell.xib in Resources */,
 				7A78CE412306A432000741F2 /* XTLifePaymentAccountNoCell.xib in Resources */,
 				7A46A92323050E30001A6C70 /* XTLifePaymentAccountCell.xib in Resources */,
 				7A8403A5230BE4D800D7F680 /* XTLifePaymentPayBillContentCell.xib in Resources */,
+				7A770B112314CEC1001996A1 /* XTModulesSDK.bundle in Resources */,
 				7A78CE6A230BCC30000741F2 /* XTLifePaymentCityListItemCell.xib in Resources */,
 				7AB6CABF22FD5CA400F765EE /* XTRefuelTicketCell.xib in Resources */,
 				7A78CE70230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.xib in Resources */,
+				7A770B0F2314CE39001996A1 /* XTRoundCornerCell.bundle in Resources */,
 				7A8403AB230BE52300D7F680 /* XTLifePaymentPayBillMoneyCell.xib in Resources */,
-				7AD6AC5D22F97DCC00180CA3 /* XTRoundCornerCell.bundle in Resources */,
 				7A78CE3B2306A415000741F2 /* XTLifePaymentAccountCompanyCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1038,6 +1453,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7A770A4B2314BA75001996A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AD6ABB822E58C7D00180CA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1107,6 +1529,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7A770B052314C22C001996A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A770A4E2314BA75001996A1 /* XTModulesSDKBundle */;
+			targetProxy = 7A770B042314C22C001996A1 /* PBXContainerItemProxy */;
+		};
+		7A770B072314C2CC001996A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A770A4E2314BA75001996A1 /* XTModulesSDKBundle */;
+			targetProxy = 7A770B062314C2CC001996A1 /* PBXContainerItemProxy */;
+		};
 		7AD6ABC222E58C7D00180CA3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7AD6ABBB22E58C7D00180CA3 /* XTModulesSDK */;
@@ -1288,6 +1720,42 @@
 			};
 			name = Release;
 		};
+		7A770A532314BA75001996A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = NO;
+				DEVELOPMENT_TEAM = C8RJ2CF978;
+				INFOPLIST_FILE = XTModulesSDKBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtszkj.XTModulesSDKBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		7A770A542314BA75001996A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = NO;
+				DEVELOPMENT_TEAM = C8RJ2CF978;
+				INFOPLIST_FILE = XTModulesSDKBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtszkj.XTModulesSDKBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		7AD6ABC622E58C7D00180CA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 66173D2FD1BD539C773F7E34 /* Pods-XTModulesSDK.debug.xcconfig */;
@@ -1367,6 +1835,15 @@
 			buildConfigurations = (
 				7A4DE56B22E55F1F00FDC427 /* Debug */,
 				7A4DE56C22E55F1F00FDC427 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A770A522314BA75001996A1 /* Build configuration list for PBXNativeTarget "XTModulesSDKBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A770A532314BA75001996A1 /* Debug */,
+				7A770A542314BA75001996A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

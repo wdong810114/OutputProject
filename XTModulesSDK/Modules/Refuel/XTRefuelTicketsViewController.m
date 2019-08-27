@@ -372,7 +372,7 @@ static CGFloat const XTTabViewHeight = 50.0;
             ticketsTableView.delegate = self;
             ticketsTableView.separatorColor = [UIColor clearColor];
             ticketsTableView.tableFooterView = [[UIView alloc] init];
-            [ticketsTableView registerNib:[UINib nibWithNibName:XTModulesSDKResource(@"XTRefuelTicketCell") bundle:nil] forCellReuseIdentifier:@"XTRefuelTicketCellIdentifier"];
+            [ticketsTableView registerNib:XTModulesSDKNib(@"XTRefuelTicketCell") forCellReuseIdentifier:@"XTRefuelTicketCellIdentifier"];
             ticketsTableView.mj_header = [XTDIYHeader headerWithRefreshingBlock:^{
                 _pageNumberDictionary[@(index)] = @1;
                 [self requestTickets:index];

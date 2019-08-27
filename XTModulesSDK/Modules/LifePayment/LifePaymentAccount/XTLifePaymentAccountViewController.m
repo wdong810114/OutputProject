@@ -549,9 +549,9 @@ static NSInteger const XTCompaniesPickerTag = 1002;
         if (@available(iOS 11.0, *)) {
             _mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
-        [_mainTableView registerNib:[UINib nibWithNibName:XTModulesSDKResource(@"XTLifePaymentAccountTagCell") bundle:nil] forCellReuseIdentifier:@"XTLifePaymentAccountTagCellIdentifier"];
-        [_mainTableView registerNib:[UINib nibWithNibName:XTModulesSDKResource(@"XTLifePaymentAccountCompanyCell") bundle:nil] forCellReuseIdentifier:@"XTLifePaymentAccountCompanyCellIdentifier"];
-        [_mainTableView registerNib:[UINib nibWithNibName:XTModulesSDKResource(@"XTLifePaymentAccountNoCell") bundle:nil] forCellReuseIdentifier:@"XTLifePaymentAccountNoCellIdentifier"];
+        [_mainTableView registerNib:XTModulesSDKNib(@"XTLifePaymentAccountTagCell") forCellReuseIdentifier:@"XTLifePaymentAccountTagCellIdentifier"];
+        [_mainTableView registerNib:XTModulesSDKNib(@"XTLifePaymentAccountCompanyCell") forCellReuseIdentifier:@"XTLifePaymentAccountCompanyCellIdentifier"];
+        [_mainTableView registerNib:XTModulesSDKNib(@"XTLifePaymentAccountNoCell") forCellReuseIdentifier:@"XTLifePaymentAccountNoCellIdentifier"];
     }
     
     return _mainTableView;
@@ -608,7 +608,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
     if (!_tableFooterView) {
         _tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(self.mainTableView.bounds), 147.0)];
         _tableFooterView.backgroundColor = [UIColor clearColor];
-                
+        
         UIButton *nextButton = [XTAppUtils redButtonWithFrame:CGRectMake(20.0, 65.0, CGRectGetWidth(_tableFooterView.bounds) - 20.0 * 2, 45.0)];
         nextButton.titleLabel.font = XTFont(18.0);
         [nextButton setTitle:@"下一步" forState:UIControlStateNormal];

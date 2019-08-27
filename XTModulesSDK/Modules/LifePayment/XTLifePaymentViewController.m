@@ -484,7 +484,7 @@ static CGFloat const XTTabViewHeight = 116.0;
             accountsTableView.separatorColor = XTSeparatorColor;
             accountsTableView.tableHeaderView = [self generateTableHeaderView];
             accountsTableView.tableFooterView = [[UIView alloc] init];
-            [accountsTableView registerNib:[UINib nibWithNibName:XTModulesSDKResource(@"XTLifePaymentAccountCell") bundle:nil] forCellReuseIdentifier:@"XTLifePaymentAccountCellIdentifier"];
+            [accountsTableView registerNib:XTModulesSDKNib(@"XTLifePaymentAccountCell") forCellReuseIdentifier:@"XTLifePaymentAccountCellIdentifier"];
             if (@available(iOS 11.0, *)) {
                 accountsTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
             }
