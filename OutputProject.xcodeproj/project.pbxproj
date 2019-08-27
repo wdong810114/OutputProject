@@ -40,6 +40,8 @@
 		7A4DE56722E55F1F00FDC427 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DE56622E55F1F00FDC427 /* main.m */; };
 		7A770994230E7692001996A1 /* XTOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A770992230E7692001996A1 /* XTOrder.h */; };
 		7A770995230E7692001996A1 /* XTOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A770993230E7692001996A1 /* XTOrder.m */; };
+		7A7709A32313BCF7001996A1 /* XTReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A7709A12313BCF7001996A1 /* XTReachability.h */; };
+		7A7709A42313BCF7001996A1 /* XTReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7709A22313BCF7001996A1 /* XTReachability.m */; };
 		7A78CE332306A3F5000741F2 /* XTLifePaymentAccountTagCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A78CE302306A3F5000741F2 /* XTLifePaymentAccountTagCell.h */; };
 		7A78CE342306A3F5000741F2 /* XTLifePaymentAccountTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A78CE312306A3F5000741F2 /* XTLifePaymentAccountTagCell.m */; };
 		7A78CE352306A3F5000741F2 /* XTLifePaymentAccountTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A78CE322306A3F5000741F2 /* XTLifePaymentAccountTagCell.xib */; };
@@ -141,7 +143,6 @@
 		7AD6AC4522F12B0600180CA3 /* XTPhoneRechargeOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC4322F12B0600180CA3 /* XTPhoneRechargeOrderModel.m */; };
 		7AD6AC4822F16EBC00180CA3 /* UIView+XTExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC4622F16EBC00180CA3 /* UIView+XTExtension.h */; };
 		7AD6AC4922F16EBC00180CA3 /* UIView+XTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC4722F16EBC00180CA3 /* UIView+XTExtension.m */; };
-		7AD6AC4E22F2DD7A00180CA3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC4C22F2DD7A00180CA3 /* Reachability.m */; };
 		7AD6AC5122F9251D00180CA3 /* XTRefuelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC4F22F9251D00180CA3 /* XTRefuelViewController.h */; };
 		7AD6AC5222F9251D00180CA3 /* XTRefuelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC5022F9251D00180CA3 /* XTRefuelViewController.m */; };
 		7AD6AC5522F9519E00180CA3 /* XTRefuelGoodsModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC5322F9519E00180CA3 /* XTRefuelGoodsModel.h */; };
@@ -219,6 +220,8 @@
 		7A4DE56E22E563C200FDC427 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		7A770992230E7692001996A1 /* XTOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTOrder.h; sourceTree = "<group>"; };
 		7A770993230E7692001996A1 /* XTOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTOrder.m; sourceTree = "<group>"; };
+		7A7709A12313BCF7001996A1 /* XTReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReachability.h; sourceTree = "<group>"; };
+		7A7709A22313BCF7001996A1 /* XTReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTReachability.m; sourceTree = "<group>"; };
 		7A78CE302306A3F5000741F2 /* XTLifePaymentAccountTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTLifePaymentAccountTagCell.h; sourceTree = "<group>"; };
 		7A78CE312306A3F5000741F2 /* XTLifePaymentAccountTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTLifePaymentAccountTagCell.m; sourceTree = "<group>"; };
 		7A78CE322306A3F5000741F2 /* XTLifePaymentAccountTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentAccountTagCell.xib; sourceTree = "<group>"; };
@@ -320,8 +323,6 @@
 		7AD6AC4322F12B0600180CA3 /* XTPhoneRechargeOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPhoneRechargeOrderModel.m; sourceTree = "<group>"; };
 		7AD6AC4622F16EBC00180CA3 /* UIView+XTExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XTExtension.h"; sourceTree = "<group>"; };
 		7AD6AC4722F16EBC00180CA3 /* UIView+XTExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XTExtension.m"; sourceTree = "<group>"; };
-		7AD6AC4C22F2DD7A00180CA3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		7AD6AC4D22F2DD7A00180CA3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		7AD6AC4F22F9251D00180CA3 /* XTRefuelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelViewController.h; sourceTree = "<group>"; };
 		7AD6AC5022F9251D00180CA3 /* XTRefuelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelViewController.m; sourceTree = "<group>"; };
 		7AD6AC5322F9519E00180CA3 /* XTRefuelGoodsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelGoodsModel.h; sourceTree = "<group>"; };
@@ -426,9 +427,17 @@
 				7A4DE56222E55F1F00FDC427 /* LaunchScreen.storyboard */,
 				7A4DE56522E55F1F00FDC427 /* Info.plist */,
 				7A4DE56622E55F1F00FDC427 /* main.m */,
-				7AD6AC4A22F2DD7A00180CA3 /* Vendors */,
 			);
 			path = OutputProject;
+			sourceTree = "<group>";
+		};
+		7A7709A02313BCF7001996A1 /* XTReachability */ = {
+			isa = PBXGroup;
+			children = (
+				7A7709A12313BCF7001996A1 /* XTReachability.h */,
+				7A7709A22313BCF7001996A1 /* XTReachability.m */,
+			);
+			path = XTReachability;
 			sourceTree = "<group>";
 		};
 		7A78CE42230A465C000741F2 /* Vendors */ = {
@@ -575,6 +584,7 @@
 		7AD6ABEC22E5BD3900180CA3 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7A7709A02313BCF7001996A1 /* XTReachability */,
 				7AD6AC0022E70F9900180CA3 /* XTClient */,
 				7AD6ABED22E5BEFB00180CA3 /* XTAlertView */,
 				7AD6ABF022E5BEFB00180CA3 /* XTDIYHeader */,
@@ -719,23 +729,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		7AD6AC4A22F2DD7A00180CA3 /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-				7AD6AC4B22F2DD7A00180CA3 /* Reachability */,
-			);
-			path = Vendors;
-			sourceTree = "<group>";
-		};
-		7AD6AC4B22F2DD7A00180CA3 /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				7AD6AC4D22F2DD7A00180CA3 /* Reachability.h */,
-				7AD6AC4C22F2DD7A00180CA3 /* Reachability.m */,
-			);
-			path = Reachability;
-			sourceTree = "<group>";
-		};
 		7AD6AC5B22F97DCC00180CA3 /* XTRoundCornerCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -808,6 +801,7 @@
 				7AD6AC2B22EAFA1D00180CA3 /* XTPhonePriceModel.h in Headers */,
 				7AD6AC5522F9519E00180CA3 /* XTRefuelGoodsModel.h in Headers */,
 				7AD6ABDC22E594DC00180CA3 /* XTBaseNavigationController.h in Headers */,
+				7A7709A32313BCF7001996A1 /* XTReachability.h in Headers */,
 				7AD6ABD822E5944C00180CA3 /* XTBaseViewController.h in Headers */,
 				7AB6CA9F22FAB44900F765EE /* XTRefuelCell.h in Headers */,
 				7A46A9062302A6B6001A6C70 /* XTLifePaymentAccountModel.h in Headers */,
@@ -1040,7 +1034,6 @@
 			files = (
 				7A4DE55C22E55F1D00FDC427 /* ViewController.m in Sources */,
 				7A4DE56722E55F1F00FDC427 /* main.m in Sources */,
-				7AD6AC4E22F2DD7A00180CA3 /* Reachability.m in Sources */,
 				7A4DE55922E55F1D00FDC427 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1062,6 +1055,7 @@
 				7AD6AC2822EAFA0800180CA3 /* XTPhoneModel.m in Sources */,
 				7AD6ABFA22E5BEFB00180CA3 /* XTDIYFooter.m in Sources */,
 				7AD6AC1822E846FC00180CA3 /* XTSanitizer.m in Sources */,
+				7A7709A42313BCF7001996A1 /* XTReachability.m in Sources */,
 				7A78CE402306A432000741F2 /* XTLifePaymentAccountNoCell.m in Sources */,
 				7AD6AC4922F16EBC00180CA3 /* UIView+XTExtension.m in Sources */,
 				7A78CE6F230BD35C000741F2 /* XTLifePaymentCityListSupplementaryHeaderView.m in Sources */,

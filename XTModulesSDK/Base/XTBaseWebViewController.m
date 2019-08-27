@@ -8,7 +8,7 @@
 
 #import "XTBaseWebViewController.h"
 
-#import "Reachability.h"
+#import "XTReachability.h"
 
 @interface XTBaseWebViewController ()
 
@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) UIView *networkUnavailableView;
 
-@property (nonatomic, strong) Reachability *reachable;
+@property (nonatomic, strong) XTReachability *reachable;
 
 - (void)startRequest;
 - (void)handleNetworkUnavailable;
@@ -46,11 +46,11 @@
         self.shouldIgnoreCache = NO;
         self.shouldShowNetworkUnavailableView = NO;
         
-        self.reachable = [Reachability reachabilityForInternetConnection];
+        self.reachable = [XTReachability reachabilityForInternetConnection];
         
         [XTNotificationCenter addObserver:self
                                  selector:@selector(reachabilityChanged)
-                                     name:kReachabilityChangedNotification
+                                     name:kXTReachabilityChangedNotification
                                    object:nil];
     }
     
@@ -181,7 +181,7 @@
 
 - (BOOL)isReachable
 {
-    return ([self.reachable currentReachabilityStatus] != NotReachable);
+    return ([self.reachable currentReachabilityStatus] != XTNotReachable);
 }
 
 #pragma mark - WKNavigationDelegate

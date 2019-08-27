@@ -8,7 +8,7 @@
 
 #import "XTModulesManager.h"
 
-#import "Reachability.h"
+#import "XTReachability.h"
 #import "XTBaseNavigationController.h"
 #import "XTPhoneRechargeViewController.h"
 #import "XTRefuelViewController.h"
@@ -24,7 +24,7 @@ NSString * const XTLifeServicePayDidSuccessNotification = @"XTLifeServicePayDidS
 
 @interface XTModulesManager ()
 
-@property (nonatomic, strong) Reachability *reachable;
+@property (nonatomic, strong) XTReachability *reachable;
 
 @property (nonatomic, weak) UIViewController *sourceVC;
 @property (nonatomic, assign) XTModuleShowMode mode;
@@ -53,7 +53,7 @@ NSString * const XTLifeServicePayDidSuccessNotification = @"XTLifeServicePayDidS
 {
     self = [super init];
     if (self) {
-        self.reachable = [Reachability reachabilityForInternetConnection];
+        self.reachable = [XTReachability reachabilityForInternetConnection];
     }
     
     return self;
@@ -103,7 +103,7 @@ NSString * const XTLifeServicePayDidSuccessNotification = @"XTLifeServicePayDidS
 #pragma mark - Public
 - (BOOL)isReachable
 {
-    return ([self.reachable currentReachabilityStatus] != NotReachable);
+    return ([self.reachable currentReachabilityStatus] != XTNotReachable);
 }
 
 - (XTError *)showPhoneRechargeWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessKey:(NSString *)accessKey userId:(NSString *)userId phone:(NSString *)phone

@@ -48,35 +48,35 @@
 #endif
 
 
-extern NSString *const kReachabilityChangedNotification;
+extern NSString *const kXTReachabilityChangedNotification;
 
 typedef enum 
 {
 	// Apple NetworkStatus Compatible Names.
-	NotReachable     = 0,
-	ReachableViaWiFi = 2,
-	ReachableViaWWAN = 1
-} NetworkStatus;
+	XTNotReachable     = 0,
+	XTReachableViaWiFi = 2,
+	XTReachableViaWWAN = 1
+} XTNetworkStatus;
 
-@class Reachability;
+@class XTReachability;
 
-typedef void (^NetworkReachable)(Reachability * reachability);
-typedef void (^NetworkUnreachable)(Reachability * reachability);
+typedef void (^XTNetworkReachable)(XTReachability * reachability);
+typedef void (^XTNetworkUnreachable)(XTReachability * reachability);
 
-@interface Reachability : NSObject
+@interface XTReachability : NSObject
 
-@property (nonatomic, copy) NetworkReachable    reachableBlock;
-@property (nonatomic, copy) NetworkUnreachable  unreachableBlock;
+@property (nonatomic, copy) XTNetworkReachable    reachableBlock;
+@property (nonatomic, copy) XTNetworkUnreachable  unreachableBlock;
 
 
 @property (nonatomic, assign) BOOL reachableOnWWAN;
 
-+(Reachability*)reachabilityWithHostname:(NSString*)hostname;
-+(Reachability*)reachabilityForInternetConnection;
-+(Reachability*)reachabilityWithAddress:(const struct sockaddr_in*)hostAddress;
-+(Reachability*)reachabilityForLocalWiFi;
++(XTReachability*)reachabilityWithHostname:(NSString*)hostname;
++(XTReachability*)reachabilityForInternetConnection;
++(XTReachability*)reachabilityWithAddress:(const struct sockaddr_in*)hostAddress;
++(XTReachability*)reachabilityForLocalWiFi;
 
--(Reachability *)initWithReachabilityRef:(SCNetworkReachabilityRef)ref;
+-(XTReachability *)initWithReachabilityRef:(SCNetworkReachabilityRef)ref;
 
 -(BOOL)startNotifier;
 -(void)stopNotifier;
@@ -94,7 +94,7 @@ typedef void (^NetworkUnreachable)(Reachability * reachability);
 // Is user intervention required?
 -(BOOL)isInterventionRequired;
 
--(NetworkStatus)currentReachabilityStatus;
+-(XTNetworkStatus)currentReachabilityStatus;
 -(SCNetworkReachabilityFlags)reachabilityFlags;
 -(NSString*)currentReachabilityString;
 -(NSString*)currentReachabilityFlags;
