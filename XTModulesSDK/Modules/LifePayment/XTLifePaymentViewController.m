@@ -160,7 +160,7 @@ static CGFloat const XTTabViewHeight = 116.0;
     tipLabel.textColor = XTColorFromHex(0x999999);
     tipLabel.text = @"缴费账户";
     
-    UIButton *manageButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(tableHeaderView.bounds) - 58.0, 0.0, 58.0, CGRectGetHeight(tableHeaderView.bounds))];
+    UIButton *manageButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(tableHeaderView.bounds) - 67.0, 0.0, 67.0, CGRectGetHeight(tableHeaderView.bounds))];
     manageButton.backgroundColor = [UIColor clearColor];
     manageButton.titleLabel.font = XTFont(14.0);
     [manageButton setTitleColor:XTBrandRedColor forState:UIControlStateNormal];

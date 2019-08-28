@@ -91,14 +91,14 @@
 
 - (void)setLeftBarButtonItem:(SEL)action title:(NSString *)title
 {
-    CGFloat width = [XTAppUtils sizeOfString:title font:XTFont(16.0) constrainedToSize:CGSizeMake(100.0, 44.0)].width;
+    CGFloat width = [XTAppUtils sizeOfString:title font:XTFont(14.0) constrainedToSize:CGSizeMake(100.0, 44.0)].width;
     
     UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, width, 44.0)];
     customView.backgroundColor = [UIColor clearColor];
     
     UIButton *actionButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(customView.bounds), CGRectGetHeight(customView.bounds))];
     actionButton.backgroundColor = [UIColor clearColor];
-    actionButton.titleLabel.font = XTFont(16.0);
+    actionButton.titleLabel.font = XTFont(14.0);
     [actionButton setTitleColor:XTBrandRedColor forState:UIControlStateNormal];
     [actionButton setTitleColor:[XTBrandRedColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
     [actionButton setTitle:title forState:UIControlStateNormal];
@@ -111,14 +111,14 @@
 
 - (void)setRightBarButtonItem:(SEL)action title:(NSString *)title
 {
-    CGFloat width = [XTAppUtils sizeOfString:title font:XTFont(16.0) constrainedToSize:CGSizeMake(100.0, 44.0)].width;
+    CGFloat width = [XTAppUtils sizeOfString:title font:XTFont(14.0) constrainedToSize:CGSizeMake(100.0, 44.0)].width;
     
     UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, width, 44.0)];
     customView.backgroundColor = [UIColor clearColor];
     
     UIButton *actionButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(customView.bounds), CGRectGetHeight(customView.bounds))];
     actionButton.backgroundColor = [UIColor clearColor];
-    actionButton.titleLabel.font = XTFont(16.0);
+    actionButton.titleLabel.font = XTFont(14.0);
     [actionButton setTitleColor:XTBrandRedColor forState:UIControlStateNormal];
     [actionButton setTitleColor:[XTBrandRedColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
     [actionButton setTitle:title forState:UIControlStateNormal];

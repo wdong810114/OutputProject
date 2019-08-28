@@ -173,12 +173,14 @@ NSString * const XTLifeServicePayDidSuccessNotification = @"XTLifeServicePayDidS
 
 - (XTError *)showLifePaymentWithSourceVC:(UIViewController *)sourceVC mode:(XTModuleShowMode)mode accessKey:(NSString *)accessKey userId:(NSString *)userId phone:(NSString *)phone
 {
+#if XTIsModulesOutput
     {
         XTError *error = [[XTError alloc] init];
         error.code = -100;
         error.message = @"生活缴费功能暂时无法使用";
         return error;
     }
+#endif
     
     XTError *error = [self checkWithSourceVC:sourceVC mode:mode accessKey:accessKey userId:userId phone:phone];
     if (error) {
