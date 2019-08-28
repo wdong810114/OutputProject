@@ -87,6 +87,7 @@
                                          cityCode:(NSString *)cityCode
                                       companyCode:(NSString *)companyCode
                                             phone:(NSString *)phone
+                                   accountAddress:(NSString *)accountAddress
                                 completionHandler:(void (^)(XTModuleObject *output, NSError *error))handler
 {
     NSMutableString *resourcePath = [NSMutableString stringWithFormat:@"/addAccount"];
@@ -127,6 +128,9 @@
     if (phone && phone.length > 0) {
         bodyParams[@"phone"] = phone;
         [sortKeys addObject:@"phone"];
+    }
+    if (accountAddress && accountAddress.length > 0) {
+        bodyParams[@"address"] = accountAddress;
     }
     id body = [self.apiClient bodyWithBodyParams:bodyParams sortKeys:sortKeys];
     
@@ -177,31 +181,24 @@
     }
     if (tagCode && tagCode.length > 0) {
         bodyParams[@"tagCode"] = tagCode;
-        [sortKeys addObject:@"tagCode"];
     }
     if (accountAddress && accountAddress.length > 0) {
         bodyParams[@"address"] = accountAddress;
-        [sortKeys addObject:@"address"];
     }
     if (accountNo && accountNo.length > 0) {
         bodyParams[@"account"] = accountNo;
-        [sortKeys addObject:@"account"];
     }
     if (accountType && accountType.length > 0) {
         bodyParams[@"type"] = accountType;
-        [sortKeys addObject:@"type"];
     }
     if (cityCode && cityCode.length > 0) {
         bodyParams[@"cityCode"] = cityCode;
-        [sortKeys addObject:@"cityCode"];
     }
     if (companyCode && companyCode.length > 0) {
         bodyParams[@"companyId"] = companyCode;
-        [sortKeys addObject:@"companyId"];
     }
     if (phone && phone.length > 0) {
         bodyParams[@"phone"] = phone;
-        [sortKeys addObject:@"phone"];
     }
     id body = [self.apiClient bodyWithBodyParams:bodyParams sortKeys:sortKeys];
     

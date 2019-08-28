@@ -153,8 +153,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
                 }
             }];
         } else {
-            XTWeakSelf(weakSelf);
-            [[XTLifePaymentApi sharedAPI] postAddAccountWithAccountNo:accountNo tagCode:tagCode accountType:accountType cityCode:cityCode companyCode:companyCode phone:phone completionHandler:^(XTModuleObject *output, NSError *error) {
+            [[XTLifePaymentApi sharedAPI] postAddAccountWithAccountNo:accountNo tagCode:tagCode accountType:accountType cityCode:cityCode companyCode:companyCode phone:phone accountAddress:accountAddress completionHandler:^(XTModuleObject *output, NSError *error) {
                 [weakSelf hideLoading];
                 
                 if (!error) {

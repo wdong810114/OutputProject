@@ -44,6 +44,7 @@
  *  @param cityCode 城市编码
  *  @param companyCode 缴费公司编码
  *  @param phone 手机号
+ *  @param accountAddress 账户地址
  *
  *  @return XTModuleObject*
  */
@@ -53,6 +54,7 @@
                                          cityCode:(NSString *)cityCode
                                       companyCode:(NSString *)companyCode
                                             phone:(NSString *)phone
+                                   accountAddress:(NSString *)accountAddress
                                 completionHandler:(void (^)(XTModuleObject *output, NSError *error))handler;
 
 /**
