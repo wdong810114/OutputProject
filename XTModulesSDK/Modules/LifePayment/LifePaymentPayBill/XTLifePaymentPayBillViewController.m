@@ -12,14 +12,15 @@
 #import "XTLifePaymentPayBillTitleCell.h"
 #import "XTLifePaymentPayBillContentCell.h"
 #import "XTLifePaymentPayBillMoneyCell.h"
+#import "XTLifePaymentErrorAlertView.h"
 #import "XTOrder.h"
 
-@interface XTLifePaymentPayBillViewController () <UITableViewDataSource, UITableViewDelegate, XTLifePaymentPayBillMoneyCellDelegate>
+@interface XTLifePaymentPayBillViewController () <UITableViewDataSource, UITableViewDelegate, XTLifePaymentPayBillMoneyCellDelegate, XTLifePaymentErrorAlertViewDelegate>
 
 @property (nonatomic, strong) UITableView *mainTableView;
 @property (nonatomic, strong) UIButton *nextButton;
 
-@property (nonatomic, strong) UIView *errorAlertView;
+@property (nonatomic, strong) XTLifePaymentErrorAlertView *errorAlertView;
 
 @end
 
@@ -113,18 +114,6 @@
     }
 }
 
-- (void)knowButtonClicked
-{
-    [UIView animateWithDuration:0.25 animations:^{
-        self.errorAlertView.hidden = YES;
-    } completion:^(BOOL finished) {
-        [self.errorAlertView removeFromSuperview];
-        self.errorAlertView = nil;
-        
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
-}
-
 #pragma mark - Private
 - (void)requestPayBill
 {
@@ -175,62 +164,16 @@
 
 - (void)showErrorAlertWithMessage:(NSString *)message
 {
-    UIView *errorAlertView = [[UIView alloc] initWithFrame:XTMainScreenBounds];
-    errorAlertView.backgroundColor = [UIColor clearColor];
-    errorAlertView.hidden = YES;
-    self.errorAlertView = errorAlertView;
+    if (!self.errorAlertView) {
+        XTLifePaymentErrorAlertView *errorAlertView = [[XTLifePaymentErrorAlertView alloc] initWithFrame:XTMainScreenBounds];
+        errorAlertView.delegate = self;
+        errorAlertView.title = @"账号信息查询失败";
+        errorAlertView.iconImage = [UIImage imageNamed:XTModulesSDKImage(@"life_payment_receipt")];
+        self.errorAlertView = errorAlertView;
+    }
+    self.errorAlertView.message = message;
     
-    UIView *translucentView = [[UIView alloc] initWithFrame:errorAlertView.bounds];
-    translucentView.backgroundColor = [UIColor blackColor];
-    translucentView.alpha = 0.5;
-    
-    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake((CGRectGetWidth(errorAlertView.bounds) - 280.0) / 2, (CGRectGetHeight(errorAlertView.bounds) - 210.0) / 2, 280.0, 210.0)];
-    contentView.backgroundColor = [UIColor whiteColor];
-    contentView.layer.masksToBounds = YES;
-    contentView.layer.cornerRadius = 5.0;
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, 0.0, CGRectGetWidth(contentView.bounds) - 20.0 * 2, 40.0)];
-    titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.font = XTFont(14.0);
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.textColor = XTColorFromHex(0x333333);
-    titleLabel.text = @"账号信息查询失败";
-    
-    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(titleLabel.frame), CGRectGetWidth(contentView.bounds), 1.0)];
-    separator.backgroundColor = XTColorFromHex(0xEDEDED);
-    
-    UIImageView *receiptImageView = [[UIImageView alloc] initWithFrame:CGRectMake((CGRectGetWidth(contentView.bounds) - 50.0) / 2, CGRectGetMaxY(separator.frame) + 24.0, 50.0, 50.0)];
-    receiptImageView.backgroundColor = [UIColor clearColor];
-    receiptImageView.image = [UIImage imageNamed:XTModulesSDKImage(@"life_payment_receipt")];
-    
-    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, CGRectGetMaxY(receiptImageView.frame), CGRectGetWidth(contentView.bounds) - 20.0 * 2, 55.0)];
-    messageLabel.backgroundColor = [UIColor clearColor];
-    messageLabel.numberOfLines = 2;
-    messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    messageLabel.font = XTFont(12.0);
-    messageLabel.textAlignment = NSTextAlignmentCenter;
-    messageLabel.textColor = XTColorFromHex(0xCCCCCC);
-    messageLabel.text = message;
-    
-    UIButton *knowButton = [XTAppUtils redButtonWithFrame:CGRectMake(0.0, CGRectGetHeight(contentView.bounds) - 40.0, CGRectGetWidth(contentView.bounds), 40.0)];
-    knowButton.titleLabel.font = XTFont(14.0);
-    [knowButton setTitle:@"我知道了" forState:UIControlStateNormal];
-    [knowButton addTarget:self action:@selector(knowButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    
-    [contentView addSubview:titleLabel];
-    [contentView addSubview:separator];
-    [contentView addSubview:receiptImageView];
-    [contentView addSubview:messageLabel];
-    [contentView addSubview:knowButton];
-
-    [errorAlertView addSubview:translucentView];
-    [errorAlertView addSubview:contentView];
-    
-    [XTMainWindow addSubview:errorAlertView];
-    
-    [UIView animateWithDuration:0.25 animations:^{
-        errorAlertView.hidden = NO;
-    }];
+    [self.errorAlertView show];
 }
 
 - (BOOL)checkValidity
@@ -374,6 +317,12 @@
     _money = [money copy];
     
     self.nextButton.enabled = money.floatValue > 0.0;
+}
+
+#pragma mark - XTLifePaymentErrorAlertViewDelegate
+- (void)lifePaymentErrorAlertViewDidClickKnow:(XTLifePaymentErrorAlertView *)lifePaymentErrorAlertView
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Getter

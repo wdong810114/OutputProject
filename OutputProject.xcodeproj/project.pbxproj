@@ -132,6 +132,8 @@
 		7A770B032314C0F0001996A1 /* cell_shadow_bottom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A770AFB2314C0F0001996A1 /* cell_shadow_bottom@3x.png */; };
 		7A770B0F2314CE39001996A1 /* XTRoundCornerCell.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A770B0E2314CE39001996A1 /* XTRoundCornerCell.bundle */; };
 		7A770B112314CEC1001996A1 /* XTModulesSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A770B102314CEC1001996A1 /* XTModulesSDK.bundle */; };
+		7A770B2223164D02001996A1 /* XTLifePaymentErrorAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A770B2023164D02001996A1 /* XTLifePaymentErrorAlertView.h */; };
+		7A770B2323164D02001996A1 /* XTLifePaymentErrorAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A770B2123164D02001996A1 /* XTLifePaymentErrorAlertView.m */; };
 		7A78CE332306A3F5000741F2 /* XTLifePaymentAccountTagCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A78CE302306A3F5000741F2 /* XTLifePaymentAccountTagCell.h */; };
 		7A78CE342306A3F5000741F2 /* XTLifePaymentAccountTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A78CE312306A3F5000741F2 /* XTLifePaymentAccountTagCell.m */; };
 		7A78CE352306A3F5000741F2 /* XTLifePaymentAccountTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A78CE322306A3F5000741F2 /* XTLifePaymentAccountTagCell.xib */; };
@@ -415,6 +417,8 @@
 		7A770B082314C52C001996A1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A770B0E2314CE39001996A1 /* XTRoundCornerCell.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTRoundCornerCell.bundle; sourceTree = "<group>"; };
 		7A770B102314CEC1001996A1 /* XTModulesSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XTModulesSDK.bundle; sourceTree = "<group>"; };
+		7A770B2023164D02001996A1 /* XTLifePaymentErrorAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTLifePaymentErrorAlertView.h; sourceTree = "<group>"; };
+		7A770B2123164D02001996A1 /* XTLifePaymentErrorAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTLifePaymentErrorAlertView.m; sourceTree = "<group>"; };
 		7A78CE302306A3F5000741F2 /* XTLifePaymentAccountTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTLifePaymentAccountTagCell.h; sourceTree = "<group>"; };
 		7A78CE312306A3F5000741F2 /* XTLifePaymentAccountTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTLifePaymentAccountTagCell.m; sourceTree = "<group>"; };
 		7A78CE322306A3F5000741F2 /* XTLifePaymentAccountTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTLifePaymentAccountTagCell.xib; sourceTree = "<group>"; };
@@ -841,6 +845,8 @@
 				7A3D9698230545CE00AF0B97 /* LifePaymentAccount */,
 				7A3D969D23054F5C00AF0B97 /* LifePaymentPayBill */,
 				7A78CE60230B977F000741F2 /* LifePaymentCityList */,
+				7A770B2023164D02001996A1 /* XTLifePaymentErrorAlertView.h */,
+				7A770B2123164D02001996A1 /* XTLifePaymentErrorAlertView.m */,
 			);
 			path = LifePayment;
 			sourceTree = "<group>";
@@ -1094,6 +1100,7 @@
 				7A78CE5B230A46E2000741F2 /* AbstractActionSheetPicker.h in Headers */,
 				7AD6AC1022E843DA00180CA3 /* XTClientConfiguration.h in Headers */,
 				7AD6AC2B22EAFA1D00180CA3 /* XTPhonePriceModel.h in Headers */,
+				7A770B2223164D02001996A1 /* XTLifePaymentErrorAlertView.h in Headers */,
 				7AD6AC5522F9519E00180CA3 /* XTRefuelGoodsModel.h in Headers */,
 				7AD6ABDC22E594DC00180CA3 /* XTBaseNavigationController.h in Headers */,
 				7A7709A32313BCF7001996A1 /* XTReachability.h in Headers */,
@@ -1485,6 +1492,7 @@
 				7AD6AC1422E8446500180CA3 /* XTDefaultClientConfiguration.m in Sources */,
 				7AB6CAB522FCFE0900F765EE /* XTRefuelTicketModel.m in Sources */,
 				7AD6AC2C22EAFA1D00180CA3 /* XTPhonePriceModel.m in Sources */,
+				7A770B2323164D02001996A1 /* XTLifePaymentErrorAlertView.m in Sources */,
 				7A46A90F2303DA44001A6C70 /* XTLifePaymentPayBillModel.m in Sources */,
 				7AD6ABD522E5942600180CA3 /* XTPhoneRechargeViewController.m in Sources */,
 				7AD6ABD122E58EF000180CA3 /* XTModulesManager.m in Sources */,
