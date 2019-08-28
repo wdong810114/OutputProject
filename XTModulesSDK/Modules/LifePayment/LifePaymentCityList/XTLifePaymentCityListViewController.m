@@ -47,21 +47,7 @@
     if (XTIsReachable) {
         [self showLoading];
         
-        NSString *companyType = nil;
-        switch (self.lifePaymentType) {
-            case XTLifePaymentTypeWater:
-                companyType = @"1";
-                break;
-            case XTLifePaymentTypeElectric:
-                companyType = @"2";
-                break;
-            case XTLifePaymentTypeGas:
-                companyType = @"3";
-                break;
-                
-            default:
-                break;
-        }
+        NSString *companyType = XTCompanyTypeFromLifePaymentType(self.lifePaymentType);
         
         XTWeakSelf(weakSelf);
         [[XTLifePaymentApi sharedAPI] postGetCitiesWithCompanyType:companyType completionHandler:^(NSArray<XTLifePaymentCityModel> *output, NSError *error) {

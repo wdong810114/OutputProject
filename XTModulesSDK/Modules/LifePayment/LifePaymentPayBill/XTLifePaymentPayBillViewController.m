@@ -26,8 +26,6 @@
 
 @implementation XTLifePaymentPayBillViewController
 {
-    XTLifePaymentPayBillModel *_payBillModel;
-    
     NSString *_money;
 }
 
@@ -41,7 +39,9 @@
     [self.view addSubview:self.mainTableView];
     [self.view addSubview:self.nextButton];
     
-    [self requestPayBill];
+    if (!self.payBillModel) {
+        [self requestPayBill];
+    }
 }
 
 #pragma mark - Button
@@ -61,36 +61,27 @@
     if (XTIsReachable) {
         [self showLoading];
         
-        NSString *accountNo = _payBillModel.accountNo;
+        NSString *accountNo = self.payBillModel.accountNo;
         NSString *phone = [XTModulesManager sharedManager].phone;
         NSString *companyCode = self.accountModel.companyCode;
         NSString *cityCode = self.accountModel.cityCode;
-        NSString *accountType = nil;
+        NSString *accountType = XTAccountTypeFromLifePaymentType(self.lifePaymentType);
         NSInteger orderType = -1;
         switch (self.lifePaymentType) {
             case XTLifePaymentTypeWater:
-            {
-                accountType = @"1";
                 orderType = 2;
-            }
                 break;
             case XTLifePaymentTypeElectric:
-            {
-                accountType = @"2";
                 orderType = 3;
-            }
                 break;
             case XTLifePaymentTypeGas:
-            {
-                accountType = @"3";
                 orderType = 4;
-            }
                 break;
                 
             default:
                 break;
         }
-        NSString *accountAddress = _payBillModel.accountAddress;
+        NSString *accountAddress = self.payBillModel.accountAddress;
         NSString *amount = [_money copy];
         
         XTWeakSelf(weakSelf);
@@ -123,33 +114,19 @@
         NSString *accountNo = self.accountModel.accountNo;
         NSString *companyCode = self.accountModel.companyCode;
         NSString *cityCode = self.accountModel.cityCode;
-        NSString *accountType = nil;
-        switch (self.lifePaymentType) {
-            case XTLifePaymentTypeWater:
-                accountType = @"1";
-                break;
-            case XTLifePaymentTypeElectric:
-                accountType = @"2";
-                break;
-            case XTLifePaymentTypeGas:
-                accountType = @"3";
-                break;
-                
-            default:
-                break;
-        }
+        NSString *accountType = XTAccountTypeFromLifePaymentType(self.lifePaymentType);
         
         XTWeakSelf(weakSelf);
         [[XTLifePaymentApi sharedAPI] postQueryAccountInfoWithAccountNo:accountNo companyCode:companyCode cityCode:cityCode accountType:accountType completionHandler:^(XTLifePaymentPayBillModel *output, NSError *error) {
             [weakSelf hideLoading];
             
             if (!error) {
-                _payBillModel = output;
+                weakSelf.payBillModel = output;
                 
-                if (_payBillModel.code.integerValue == 0) {
+                if (weakSelf.payBillModel.code.integerValue == 0) {
                     [weakSelf.mainTableView reloadData];
                 } else {
-                    [weakSelf showErrorAlertWithMessage:_payBillModel.message];
+                    [weakSelf showErrorAlertWithMessage:weakSelf.payBillModel.message];
                 }
             } else {
                 if (error.domain == XTBusinessDataErrorDomain && error.code != XTUserTokenInvalidErrorCode) {
@@ -190,7 +167,7 @@
         return NO;
     }
     
-    if (XTStringIsEmpty(_payBillModel.accountNo)) {
+    if (XTStringIsEmpty(self.payBillModel.accountNo)) {
         [self showToastWithText:@"缴费账户信息错误"];
         return NO;
     }
@@ -243,16 +220,16 @@
                     break;
             }
             
-            cell.noLabel.text = _payBillModel.accountNo;
+            cell.noLabel.text = self.payBillModel.accountNo;
             
             return cell;
         } else {
             XTLifePaymentPayBillContentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XTLifePaymentPayBillContentCellIdentifier" forIndexPath:indexPath];
             
-            cell.accountAddressLabel.text = _payBillModel.accountAddress;
-            cell.companyNameLabel.text = _payBillModel.companyName;
-            cell.arrearageLabel.text = [NSString stringWithFormat:@"¥ %.2f", [_payBillModel.arrearage floatValue]];
-            cell.balanceLabel.text = [NSString stringWithFormat:@"¥ %.2f", [_payBillModel.balance floatValue]];
+            cell.accountAddressLabel.text = self.payBillModel.accountAddress;
+            cell.companyNameLabel.text = self.payBillModel.companyName;
+            cell.arrearageLabel.text = [NSString stringWithFormat:@"¥ %.2f", [self.payBillModel.arrearage floatValue]];
+            cell.balanceLabel.text = [NSString stringWithFormat:@"¥ %.2f", [self.payBillModel.balance floatValue]];
             
             return cell;
         }

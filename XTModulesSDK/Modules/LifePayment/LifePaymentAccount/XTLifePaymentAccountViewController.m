@@ -14,6 +14,7 @@
 #import "XTLifePaymentAccountTagCell.h"
 #import "XTLifePaymentAccountCompanyCell.h"
 #import "XTLifePaymentAccountNoCell.h"
+#import "XTLifePaymentErrorAlertView.h"
 #import "XTLifePaymentCityListViewController.h"
 #import "XTLifePaymentPayBillViewController.h"
 
@@ -25,6 +26,8 @@ static NSInteger const XTCompaniesPickerTag = 1002;
 @property (nonatomic, strong) UITableView *mainTableView;
 @property (nonatomic, strong) UIView *tableHeaderView;
 @property (nonatomic, strong) UIView *tableFooterView;
+
+@property (nonatomic, strong) XTLifePaymentErrorAlertView *errorAlertView;
 
 @end
 
@@ -38,6 +41,8 @@ static NSInteger const XTCompaniesPickerTag = 1002;
     NSUInteger _pickerSelectedCompanyIndex;
     
     BOOL _isProtocolChecked;
+    
+    XTLifePaymentPayBillModel *_payBillModel;
 }
 
 - (instancetype)init
@@ -117,53 +122,13 @@ static NSInteger const XTCompaniesPickerTag = 1002;
         return;
     }
     
-    if (XTIsReachable) {
-        [self showLoading];
-        
-        NSString *uuid = self.accountModel.uuid;
-        NSString *tagCode = self.accountModel.tagCode;
-        NSString *accountAddress = self.accountModel.accountAddress;
-        NSString *accountNo = self.accountModel.accountNo;
-        NSString *accountType = nil;
-        switch (self.lifePaymentType) {
-            case XTLifePaymentTypeWater:
-                accountType = @"1";
-                break;
-            case XTLifePaymentTypeElectric:
-                accountType = @"2";
-                break;
-            case XTLifePaymentTypeGas:
-                accountType = @"3";
-                break;
-                
-            default:
-                break;
-        }
-        NSString *cityCode = self.accountModel.cityCode;
-        NSString *companyCode = self.accountModel.companyCode;
-        NSString *phone = [XTModulesManager sharedManager].phone;
-        
-        XTWeakSelf(weakSelf);
+    [self requestPayBillWithCompletion:^{
         if (self.isEdit) {
-            [[XTLifePaymentApi sharedAPI] postEditAccountWithUUID:uuid tagCode:tagCode accountAddress:accountAddress accountNo:accountNo accountType:accountType cityCode:cityCode companyCode:companyCode phone:phone completionHandler:^(XTModuleObject *output, NSError *error) {
-                [weakSelf hideLoading];
-                
-                if (!error) {
-                    [weakSelf toPayBill];
-                }
-            }];
+            [self requestEditAccount];
         } else {
-            [[XTLifePaymentApi sharedAPI] postAddAccountWithAccountNo:accountNo tagCode:tagCode accountType:accountType cityCode:cityCode companyCode:companyCode phone:phone accountAddress:accountAddress completionHandler:^(XTModuleObject *output, NSError *error) {
-                [weakSelf hideLoading];
-                
-                if (!error) {
-                    [weakSelf toPayBill];
-                }
-            }];
+            [self requestAddAccount];
         }
-    } else {
-        [self showToastWithText:XTNetworkUnavailable];
-    }
+    }];
 }
 
 - (void)agreeButtonClicked:(UIButton *)button
@@ -213,21 +178,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
             dispatch_group_leave(group);
             
             if (!error) {
-                NSString *companyType = nil;
-                switch (self.lifePaymentType) {
-                    case XTLifePaymentTypeWater:
-                        companyType = @"1";
-                        break;
-                    case XTLifePaymentTypeElectric:
-                        companyType = @"2";
-                        break;
-                    case XTLifePaymentTypeGas:
-                        companyType = @"3";
-                        break;
-                        
-                    default:
-                        break;
-                }
+                NSString *companyType = XTCompanyTypeFromLifePaymentType(self.lifePaymentType);
                 
                 NSMutableArray *companyArray = [[NSMutableArray alloc] init];
                 if (output && output.count > 0) {
@@ -306,11 +257,111 @@ static NSInteger const XTCompaniesPickerTag = 1002;
     return YES;
 }
 
+- (void)requestEditAccount
+{
+    if (XTIsReachable) {
+        [self showLoading];
+        
+        NSString *uuid = self.accountModel.uuid;
+        NSString *tagCode = self.accountModel.tagCode;
+        NSString *accountAddress = _payBillModel.accountAddress;
+        NSString *accountNo = _payBillModel.accountNo;
+        NSString *accountType = XTAccountTypeFromLifePaymentType(self.lifePaymentType);
+        NSString *cityCode = self.accountModel.cityCode;
+        NSString *companyCode = self.accountModel.companyCode;
+        NSString *phone = [XTModulesManager sharedManager].phone;
+        
+        XTWeakSelf(weakSelf);
+        [[XTLifePaymentApi sharedAPI] postEditAccountWithUUID:uuid tagCode:tagCode accountAddress:accountAddress accountNo:accountNo accountType:accountType cityCode:cityCode companyCode:companyCode phone:phone completionHandler:^(XTModuleObject *output, NSError *error) {
+            [weakSelf hideLoading];
+            
+            if (!error) {
+                [weakSelf toPayBill];
+            }
+        }];
+    } else {
+        [self showToastWithText:XTNetworkUnavailable];
+    }
+}
+
+- (void)requestAddAccount
+{
+    if (XTIsReachable) {
+        [self showLoading];
+        
+        NSString *accountNo = _payBillModel.accountNo;
+        NSString *tagCode = self.accountModel.tagCode;
+        NSString *accountType = XTAccountTypeFromLifePaymentType(self.lifePaymentType);
+        NSString *cityCode = self.accountModel.cityCode;
+        NSString *companyCode = self.accountModel.companyCode;
+        NSString *phone = [XTModulesManager sharedManager].phone;
+        NSString *accountAddress = _payBillModel.accountAddress;
+        
+        XTWeakSelf(weakSelf);
+        [[XTLifePaymentApi sharedAPI] postAddAccountWithAccountNo:accountNo tagCode:tagCode accountType:accountType cityCode:cityCode companyCode:companyCode phone:phone accountAddress:accountAddress completionHandler:^(XTModuleObject *output, NSError *error) {
+            [weakSelf hideLoading];
+            
+            if (!error) {
+                [weakSelf toPayBill];
+            }
+        }];
+    } else {
+        [self showToastWithText:XTNetworkUnavailable];
+    }
+}
+
+- (void)requestPayBillWithCompletion:(void (^)(void))completion
+{
+    if (XTIsReachable) {
+        [self showLoading];
+        
+        NSString *accountNo = self.accountModel.accountNo;
+        NSString *companyCode = self.accountModel.companyCode;
+        NSString *cityCode = self.accountModel.cityCode;
+        NSString *accountType = XTAccountTypeFromLifePaymentType(self.lifePaymentType);
+        
+        XTWeakSelf(weakSelf);
+        [[XTLifePaymentApi sharedAPI] postQueryAccountInfoWithAccountNo:accountNo companyCode:companyCode cityCode:cityCode accountType:accountType completionHandler:^(XTLifePaymentPayBillModel *output, NSError *error) {
+            [weakSelf hideLoading];
+            
+            if (!error) {
+                _payBillModel = output;
+                
+                if (_payBillModel.code.integerValue == 0) {
+                    completion();
+                } else {
+                    [weakSelf showErrorAlertWithMessage:_payBillModel.message];
+                }
+            } else {
+                if (error.domain == XTBusinessDataErrorDomain && error.code != XTUserTokenInvalidErrorCode) {
+                    [weakSelf showErrorAlertWithMessage:error.userInfo[NSLocalizedDescriptionKey]];
+                }
+            }
+        }];
+    } else {
+        [self showAlert:XTNetworkUnavailable];
+    }
+}
+
+- (void)showErrorAlertWithMessage:(NSString *)message
+{
+    if (!self.errorAlertView) {
+        XTLifePaymentErrorAlertView *errorAlertView = [[XTLifePaymentErrorAlertView alloc] initWithFrame:XTMainScreenBounds];
+        errorAlertView.title = @"账号信息查询失败";
+        errorAlertView.iconImage = [UIImage imageNamed:XTModulesSDKImage(@"life_payment_receipt")];
+        self.errorAlertView = errorAlertView;
+    }
+    self.errorAlertView.message = message;
+    
+    [self.errorAlertView show];
+}
+
 - (void)toPayBill
 {
     XTLifePaymentPayBillViewController *vc = [[XTLifePaymentPayBillViewController alloc] init];
     vc.lifePaymentType = self.lifePaymentType;
     vc.accountModel = self.accountModel;
+    vc.payBillModel = _payBillModel;
     [self.navigationController pushViewController:vc animated:YES];
     
     NSMutableArray *vcArray = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];
