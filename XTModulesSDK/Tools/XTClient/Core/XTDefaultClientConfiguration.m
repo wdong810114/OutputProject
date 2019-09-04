@@ -34,11 +34,7 @@
 {
     self = [super init];
     if (self) {
-#if XTIsModulesOutput
         _host = [XTModulesManager sharedManager].host;
-#else
-        _host = @"http://221.180.167.192/AppExternal/LifeService";
-#endif
         
         _mutableDefaultHeaders = [NSMutableDictionary dictionary];
     }

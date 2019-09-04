@@ -35,6 +35,8 @@
     [self.view addSubview:self.phoneRechargeButton];
     [self.view addSubview:self.refuelButton];
     [self.view addSubview:self.lifePaymentButton];
+    
+    [XTModulesManager sharedManager].host = @"http://221.180.167.192/AppExternal/LifeService";
 }
 
 #pragma mark - Action
