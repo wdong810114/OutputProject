@@ -64,6 +64,8 @@
     [self setLeftBarButtonItem:@selector(backButtonClicked) image:@"back_icon_n" highlightedImage:@"back_icon_h"];
     
     [self initView];
+    
+    [self requestWithPhoneNumber:[XTModulesManager sharedManager].phone name:@"默认号码"];
 }
 
 - (void)backButtonClicked
@@ -558,6 +560,7 @@
         _phoneNumberTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
         _phoneNumberTextField.font = XTFont(30.0);
         _phoneNumberTextField.textColor = XTBrandBlackColor;
+        _phoneNumberTextField.text = [self formatPhoneNumber:[XTModulesManager sharedManager].phone];
         
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"请输入手机号码" attributes:@{NSForegroundColorAttributeName:XTColorFromHex(0xCCCCCC), NSFontAttributeName:XTFont(30.0)}];
         _phoneNumberTextField.attributedPlaceholder = attributedString;
