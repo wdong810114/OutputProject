@@ -309,6 +309,20 @@ static CGFloat const XTTabViewHeight = 116.0;
     })
 }
 
+- (void)showAccountDeleteAlert:(void (^)(BOOL isConfirm))block
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"确定删除吗？" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        block(NO);
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        block(YES);
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -367,7 +381,12 @@ static CGFloat const XTTabViewHeight = 116.0;
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-        [self deleteAccountWithTableView:tableView indexPath:indexPath];
+        XTWeakSelf(weakSelf);
+        [self showAccountDeleteAlert:^(BOOL isConfirm) {
+            if (isConfirm) {
+                [weakSelf deleteAccountWithTableView:tableView indexPath:indexPath];
+            }
+        }];
     }];
     
     UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"编辑" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
@@ -409,11 +428,16 @@ static CGFloat const XTTabViewHeight = 116.0;
 
 - (void)lifePaymentAccountCellDidClickDelete:(XTLifePaymentAccountCell *)lifePaymentAccountCell
 {
-    NSInteger index = _selectedTabItemButtonTag - XTTabItemButtonTagBase;
-    UITableView *accountsTableView = self.accountsTableViewArray[index];
-    NSIndexPath *indexPath = [accountsTableView indexPathForCell:lifePaymentAccountCell];
-    
-    [self deleteAccountWithTableView:accountsTableView indexPath:indexPath];
+    XTWeakSelf(weakSelf);
+    [self showAccountDeleteAlert:^(BOOL isConfirm) {
+        if (isConfirm) {
+            NSInteger index = _selectedTabItemButtonTag - XTTabItemButtonTagBase;
+            UITableView *accountsTableView = weakSelf.accountsTableViewArray[index];
+            NSIndexPath *indexPath = [accountsTableView indexPathForCell:lifePaymentAccountCell];
+            
+            [weakSelf deleteAccountWithTableView:accountsTableView indexPath:indexPath];
+        }
+    }];
 }
 
 #pragma mark - Getter
