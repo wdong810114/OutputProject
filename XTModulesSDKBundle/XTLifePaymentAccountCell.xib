@@ -42,6 +42,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="contentLabel" destination="zyt-04-svf" id="y1a-7o-Vru"/>
+                <outlet property="contentLabelTrailing" destination="P6T-mS-CH1" id="owr-cH-Q5L"/>
                 <outlet property="tagLabel" destination="FcX-fX-e7f" id="eLh-dx-X8d"/>
             </connections>
         </tableViewCell>
