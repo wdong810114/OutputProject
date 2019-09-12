@@ -27,39 +27,36 @@
 {
     [super layoutSubviews];
     
-    self.manageView.frame = CGRectMake(CGRectGetWidth(self.contentView.bounds) - 135.0, 0.0, 135.0, CGRectGetHeight(self.contentView.bounds));
-    
-    for (UIView *subview in self.subviews) {
-        if ([subview isKindOfClass:NSClassFromString(@"UITableViewCellDeleteConfirmationView")]) {
-            for (UIView *subsubview in subview.subviews) {
-                if ([subsubview isKindOfClass:[UIButton class]]) {
-                    UIButton *button = (UIButton *)subsubview;
-                    button.titleLabel.font = XTFont(14.0);
-                    [button setTitleColor:XTBrandRedColor forState:UIControlStateNormal];
-                    [button setTitleColor:[XTBrandRedColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
-                }
-            }
-            
-            if (subview.subviews.count <= 2) {
-                UIView *divider = [[UIView alloc] initWithFrame:CGRectMake(67.0, (CGRectGetHeight(self.manageView.bounds) - 20.0) / 2, 1.0, 20.0)];
-                divider.backgroundColor = XTBrandRedColor;
-                [subview addSubview:divider];
-            }
+    [UIView animateWithDuration:0.25 animations:^{
+        if (self.isManaging) {
+            self.manageView.frame = CGRectMake(CGRectGetWidth(self.contentView.bounds) - 135.0, 0.0, 135.0, CGRectGetHeight(self.contentView.bounds));
+            self.manageView.hidden = NO;
+        } else {
+            self.manageView.frame = CGRectZero;
+            self.manageView.hidden = YES;
         }
-    }
+    }];
 }
 
-- (void)setIsEditing:(BOOL)isEditing
+- (void)setIsManaging:(BOOL)isManaging
 {
-    _isEditing = isEditing;
+    _isManaging = isManaging;
     
-    if (isEditing) {
-        self.manageView.hidden = NO;
+    if (isManaging) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.accessoryType = UITableViewCellAccessoryNone;
+        self.contentLabelTrailing.constant = 135.0;
+        
+        [self.contentView addSubview:self.manageView];
     } else {
-        self.manageView.hidden = YES;
+        self.selectionStyle = UITableViewCellSelectionStyleDefault;
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        self.contentLabelTrailing.constant = 5.0;
+        
+        [self.manageView removeFromSuperview];
     }
+    
+    [self setNeedsLayout];
 }
 
 - (void)setModel:(XTLifePaymentAccountModel *)model
@@ -94,6 +91,7 @@
     if (!_manageView) {
         _manageView = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.contentView.bounds) - 135.0, 0.0, 135.0, CGRectGetHeight(self.contentView.bounds))];
         _manageView.backgroundColor = [UIColor clearColor];
+        _manageView.hidden = NO;
         
         UIButton *editButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 67.0, CGRectGetHeight(_manageView.bounds))];
         editButton.backgroundColor = [UIColor clearColor];
@@ -117,7 +115,6 @@
         [_manageView addSubview:editButton];
         [_manageView addSubview:divider];
         [_manageView addSubview:deleteButton];
-        [self.contentView addSubview:_manageView];
     }
     
     return _manageView;

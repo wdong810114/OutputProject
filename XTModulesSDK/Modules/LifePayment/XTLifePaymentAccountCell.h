@@ -25,9 +25,11 @@
 @property (nonatomic, weak) IBOutlet UILabel *tagLabel;
 @property (nonatomic, weak) IBOutlet UILabel *contentLabel;
 
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *contentLabelTrailing;
+
 @property (nonatomic, weak) id<XTLifePaymentAccountCellDelegate> delegate;
 
 @property (nonatomic, strong) XTLifePaymentAccountModel *model;
-@property (nonatomic, assign) BOOL isEditing;
+@property (nonatomic, assign) BOOL isManaging;
 
 @end

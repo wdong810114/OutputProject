@@ -36,7 +36,7 @@ static CGFloat const XTTabViewHeight = 116.0;
     
     NSMutableDictionary *_dataSourceDictionary;
     
-    BOOL _isEditing;
+    BOOL _isManaging;
 }
 
 - (void)dealloc
@@ -53,7 +53,7 @@ static CGFloat const XTTabViewHeight = 116.0;
         
         _dataSourceDictionary = [NSMutableDictionary dictionary];
         
-        _isEditing = NO;
+        _isManaging = NO;
         
         [XTNotificationCenter addObserver:self
                                  selector:@selector(lifePaymentSuccess)
@@ -82,6 +82,13 @@ static CGFloat const XTTabViewHeight = 116.0;
     [self requestData];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self resetManageStatus];
+}
+
 #pragma mark - Button
 - (void)backButtonClicked
 {
@@ -105,6 +112,8 @@ static CGFloat const XTTabViewHeight = 116.0;
         return;
     }
     
+    [self resetManageStatus];
+    
     _selectedTabItemButtonTag = tabItemButton.tag;
     [self switchTabWithTabItemButtonTag:_selectedTabItemButtonTag];
     
@@ -116,9 +125,9 @@ static CGFloat const XTTabViewHeight = 116.0;
     NSInteger index = _selectedTabItemButtonTag - XTTabItemButtonTagBase;
     NSArray *dataSource = _dataSourceDictionary[@(index)];
     if (dataSource && dataSource.count > 0) {
-        UITableView *accountsTableView = self.accountsTableViewArray[index];
+        _isManaging = !_isManaging;
         
-        _isEditing = !_isEditing;
+        UITableView *accountsTableView = self.accountsTableViewArray[index];
         [accountsTableView reloadData];
     }
 }
@@ -249,7 +258,7 @@ static CGFloat const XTTabViewHeight = 116.0;
             [weakSelf hideLoading];
             
             if (!error) {
-                _isEditing = NO;
+                _isManaging = NO;
                 
                 NSMutableArray *accountsArray = [NSMutableArray array];
                 if (output && output.count > 0) {
@@ -287,6 +296,10 @@ static CGFloat const XTTabViewHeight = 116.0;
                 _dataSourceDictionary[@(index)] = accountsArray;
                 
                 [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                
+                if (accountsArray.count == 0) {
+                    [weakSelf resetManageStatus];
+                }
             }
         }];
     } else {
@@ -323,6 +336,22 @@ static CGFloat const XTTabViewHeight = 116.0;
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+- (void)resetManageStatus
+{
+    if (!_isManaging) {
+        return;
+    }
+    
+    NSInteger index = _selectedTabItemButtonTag - XTTabItemButtonTagBase;
+    NSArray *dataSource = _dataSourceDictionary[@(index)];
+    if (dataSource && dataSource.count > 0) {
+        _isManaging = NO;
+        
+        UITableView *accountsTableView = self.accountsTableViewArray[index];
+        [accountsTableView reloadData];
+    }
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -336,7 +365,7 @@ static CGFloat const XTTabViewHeight = 116.0;
 {
     XTLifePaymentAccountCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XTLifePaymentAccountCellIdentifier" forIndexPath:indexPath];
     cell.delegate = self;
-    cell.isEditing = _isEditing;
+    cell.isManaging = _isManaging;
     
     NSInteger index = [self.accountsTableViewArray indexOfObject:tableView];
     NSArray *dataSource = _dataSourceDictionary[@(index)];
@@ -344,11 +373,6 @@ static CGFloat const XTTabViewHeight = 116.0;
     cell.model = model;
     
     return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return !_isEditing;
 }
 
 #pragma mark - UITableViewDelegate
@@ -362,9 +386,9 @@ static CGFloat const XTTabViewHeight = 116.0;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (!_isSwitchAnimation) {
-        if (_isEditing) {
-            _isEditing = NO;
-            [tableView setEditing:NO animated:YES];
+        if (_isManaging) {
+            _isManaging = NO;
+            [tableView reloadData];
         } else {
             NSInteger index = [self.accountsTableViewArray indexOfObject:tableView];
             NSArray *dataSource = _dataSourceDictionary[@(index)];
@@ -378,35 +402,6 @@ static CGFloat const XTTabViewHeight = 116.0;
     }
 }
 
-- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-        XTWeakSelf(weakSelf);
-        [self showAccountDeleteAlert:^(BOOL isConfirm) {
-            if (isConfirm) {
-                [weakSelf deleteAccountWithTableView:tableView indexPath:indexPath];
-            }
-        }];
-    }];
-    
-    UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"编辑" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-        _isEditing = NO;
-        [tableView setEditing:NO animated:YES];
-        
-        NSInteger index = [self.accountsTableViewArray indexOfObject:tableView];
-        NSArray *dataSource = _dataSourceDictionary[@(index)];
-        XTLifePaymentAccountModel *accountModel = dataSource[indexPath.row];
-        
-        XTLifePaymentAccountViewController *vc = [[XTLifePaymentAccountViewController alloc] init];
-        vc.lifePaymentType = [self lifePaymentType];
-        vc.isEdit = YES;
-        vc.accountModel = accountModel;
-        [self.navigationController pushViewController:vc animated:YES];
-    }];
-    
-    return @[deleteAction, editAction];
-}
-
 #pragma mark - XTLifePaymentAccountCellDelegate
 - (void)lifePaymentAccountCellDidClickEdit:(XTLifePaymentAccountCell *)lifePaymentAccountCell
 {
@@ -415,9 +410,6 @@ static CGFloat const XTTabViewHeight = 116.0;
     NSIndexPath *indexPath = [accountsTableView indexPathForCell:lifePaymentAccountCell];
     NSArray *dataSource = _dataSourceDictionary[@(index)];
     XTLifePaymentAccountModel *accountModel = dataSource[indexPath.row];
-    
-    _isEditing = NO;
-    [accountsTableView setEditing:NO animated:YES];
     
     XTLifePaymentAccountViewController *vc = [[XTLifePaymentAccountViewController alloc] init];
     vc.lifePaymentType = [self lifePaymentType];
@@ -519,6 +511,5 @@ static CGFloat const XTTabViewHeight = 116.0;
     
     return _mainScrollView;
 }
-
 
 @end
