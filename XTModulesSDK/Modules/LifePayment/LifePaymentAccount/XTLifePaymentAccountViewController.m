@@ -163,7 +163,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
                 if (output && output.count > 0) {
                     _tagArray = [NSArray arrayWithArray:output];
                     
-                    if (!weakSelf.isEdit) {
+                    if (!weakSelf.accountModel.tagCode || !weakSelf.accountModel.tagName) {
                         XTLifePaymentTagModel *model = _tagArray[0];
                         weakSelf.accountModel.tagCode = model.tagCode;
                         weakSelf.accountModel.tagName = model.tagName;
