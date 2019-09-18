@@ -155,11 +155,6 @@
 
 - (BOOL)checkValidity
 {
-    if (_money.floatValue < 30.0) {
-        [self showToastWithText:@"最低缴费金额30元"];
-        return NO;
-    }
-
     if (!(XTLifePaymentTypeWater == self.lifePaymentType ||
           XTLifePaymentTypeElectric == self.lifePaymentType ||
           XTLifePaymentTypeGas == self.lifePaymentType)) {
