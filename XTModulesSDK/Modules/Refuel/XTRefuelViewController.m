@@ -614,7 +614,7 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
 - (UIView *)purchaseNoticeView
 {
     if (!_purchaseNoticeView) {
-        NSString *purchaseNotice = @"1、此电子券由中国石油天然气股份有限公司辽宁销售分公司发行，在所属指定加油站通用（仅限辽宁省内使用）。\n\n2、此卡不记名，有效期自购买之日起3年，不挂失补办和退卡、不找零、不兑现，请勿将二维码泄露给他人，因保管不当造成损失后果自负。\n\n3、此卡200元(含)面值以下一次性核销。\n\n4、可以一次购买一张或者多张电子券，可多张叠加使用，不找零。\n\n5、可使用右上角“附近加油站”功能查看可使用的加油站。如遇到不能使用的情况请拨打客服电话400-024-0700";
+        NSString *purchaseNotice = @"1、此电子券由中国石油天然气股份有限公司辽宁销售分公司发行，在所属指定加油站通用（仅限辽宁省内使用）。\n\n2、此电子券不记名，有效期自购买之日起3年，不挂失补办、不找零、不兑现，请勿将电子券码泄露给他人，因保管不当造成损失后果自负。\n\n3、此电子券200元（含）面值以下一次性核销。\n\n4、可以一次购买一张或者多张电子券，可多张叠加使用，不找零。\n\n5、可使用右上角“附近加油站”功能查看可使用的加油站。如遇到不能使用的情况请拨打客服电话400-024-0700。";
         CGFloat height = [XTAppUtils sizeOfString:purchaseNotice font:XTFont(12.0) constrainedToSize:CGSizeMake(CGRectGetWidth(self.refuelTableView.bounds) - 50.0, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping].height + 10.0;
         _purchaseNoticeView = [[UIView alloc] initWithFrame:CGRectMake(25.0, 0.0, CGRectGetWidth(self.refuelTableView.bounds) - 50.0, height)];
         _purchaseNoticeView.backgroundColor = [UIColor clearColor];
@@ -666,7 +666,7 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
 - (UIView *)priceDescriptionView
 {
     if (!_priceDescriptionView) {
-        NSString *priceDescription = @"面值：指加油券的价值数额。\n\n折扣：如无特殊说明，折扣指加油券面值基础上计算出的优惠比例或优惠金额；如有疑问，您可在购买前联系客服进行咨询。\n\n异常问题：具体的成交价格可能因用户使用优惠券产生变化，最终价格以订单结算价为准。";
+        NSString *priceDescription = @"面额：指加油券的价值数额。\n\n折扣：如无特殊说明，折扣指加油券面值基础上计算出的优惠比例或优惠金额；如有疑问，您可在购买前联系客服进行咨询。\n\n异常问题：具体的成交价格可能因用户使用的优惠券产生变化，最终价格以订单结算价为准；如您发现活动商品售价或促销信息有异常，建议购买前先联系客服咨询。";
         CGFloat height = [XTAppUtils sizeOfString:priceDescription font:XTFont(12.0) constrainedToSize:CGSizeMake(CGRectGetWidth(self.refuelTableView.bounds) - 50.0, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping].height + 10.0;
         _priceDescriptionView = [[UIView alloc] initWithFrame:CGRectMake(25.0, 0.0, CGRectGetWidth(self.refuelTableView.bounds) - 50.0, height)];
         _priceDescriptionView.backgroundColor = [UIColor clearColor];
