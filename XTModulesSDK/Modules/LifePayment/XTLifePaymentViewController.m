@@ -158,29 +158,45 @@ static CGFloat const XTTabViewHeight = 116.0;
     [self switchTabWithTabItemButtonTag:_selectedTabItemButtonTag];
 }
 
-- (UIView *)generateTableHeaderView
+- (UIView *)generateTableHeaderView:(BOOL)isEmpty
 {
-    UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(self.mainScrollView.bounds), 50.0)];
-    tableHeaderView.backgroundColor = [UIColor clearColor];
-    
-    UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 0.0, 150.0, CGRectGetHeight(tableHeaderView.bounds))];
-    tipLabel.backgroundColor = [UIColor clearColor];
-    tipLabel.font = XTFont(14.0);
-    tipLabel.textColor = XTColorFromHex(0x999999);
-    tipLabel.text = @"缴费账户";
-    
-    UIButton *manageButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(tableHeaderView.bounds) - 67.0, 0.0, 67.0, CGRectGetHeight(tableHeaderView.bounds))];
-    manageButton.backgroundColor = [UIColor clearColor];
-    manageButton.titleLabel.font = XTFont(14.0);
-    [manageButton setTitleColor:XTBrandRedColor forState:UIControlStateNormal];
-    [manageButton setTitleColor:[XTBrandRedColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
-    [manageButton setTitle:@"管理" forState:UIControlStateNormal];
-    [manageButton addTarget:self action:@selector(manageButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    
-    [tableHeaderView addSubview:tipLabel];
-    [tableHeaderView addSubview:manageButton];
-    
-    return tableHeaderView;
+    if (isEmpty) {
+        UIView *tableHeaderView = [[UIView alloc] initWithFrame:self.mainScrollView.bounds];
+        tableHeaderView.backgroundColor = [UIColor clearColor];
+        
+        UIButton *payButton = [XTAppUtils redButtonWithFrame:CGRectMake((CGRectGetWidth(tableHeaderView.bounds) - 120.0) / 2, CGRectGetHeight(tableHeaderView.bounds) / 3, 120.0, 40.0)];
+        payButton.layer.masksToBounds = YES;
+        payButton.layer.cornerRadius = 5.0;
+        payButton.titleLabel.font = XTFont(14.0);
+        [payButton setTitle:@"立即缴费" forState:UIControlStateNormal];
+        [payButton addTarget:self action:@selector(addAccountButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        
+        [tableHeaderView addSubview:payButton];
+        
+        return tableHeaderView;
+    } else {
+        UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(self.mainScrollView.bounds), 50.0)];
+        tableHeaderView.backgroundColor = [UIColor clearColor];
+        
+        UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 0.0, 150.0, CGRectGetHeight(tableHeaderView.bounds))];
+        tipLabel.backgroundColor = [UIColor clearColor];
+        tipLabel.font = XTFont(14.0);
+        tipLabel.textColor = XTColorFromHex(0x999999);
+        tipLabel.text = @"缴费账户";
+        
+        UIButton *manageButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetWidth(tableHeaderView.bounds) - 67.0, 0.0, 67.0, CGRectGetHeight(tableHeaderView.bounds))];
+        manageButton.backgroundColor = [UIColor clearColor];
+        manageButton.titleLabel.font = XTFont(14.0);
+        [manageButton setTitleColor:XTBrandRedColor forState:UIControlStateNormal];
+        [manageButton setTitleColor:[XTBrandRedColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
+        [manageButton setTitle:@"管理" forState:UIControlStateNormal];
+        [manageButton addTarget:self action:@selector(manageButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        
+        [tableHeaderView addSubview:tipLabel];
+        [tableHeaderView addSubview:manageButton];
+        
+        return tableHeaderView;
+    }
 }
 
 - (void)switchTabWithTabItemButtonTag:(NSInteger)tabItemButtonTag
@@ -266,6 +282,7 @@ static CGFloat const XTTabViewHeight = 116.0;
                 }
                 
                 _dataSourceDictionary[@(index)] = accountsArray;
+                accountsTableView.tableHeaderView = [weakSelf generateTableHeaderView:(accountsArray.count == 0)];
                 [accountsTableView reloadData];
                 
                 [weakSelf scrollToTop:accountsTableView];
@@ -296,6 +313,8 @@ static CGFloat const XTTabViewHeight = 116.0;
                 _dataSourceDictionary[@(index)] = accountsArray;
                 
                 [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                
+                tableView.tableHeaderView = [weakSelf generateTableHeaderView:(accountsArray.count == 0)];
                 
                 if (accountsArray.count == 0) {
                     [weakSelf resetManageStatus];
@@ -498,7 +517,7 @@ static CGFloat const XTTabViewHeight = 116.0;
             accountsTableView.dataSource = self;
             accountsTableView.delegate = self;
             accountsTableView.separatorColor = XTSeparatorColor;
-            accountsTableView.tableHeaderView = [self generateTableHeaderView];
+            accountsTableView.tableHeaderView = [self generateTableHeaderView:YES];
             accountsTableView.tableFooterView = [[UIView alloc] init];
             [accountsTableView registerNib:XTModulesSDKNib(@"XTLifePaymentAccountCell") forCellReuseIdentifier:@"XTLifePaymentAccountCellIdentifier"];
             if (@available(iOS 11.0, *)) {

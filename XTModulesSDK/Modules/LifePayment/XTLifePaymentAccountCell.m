@@ -27,15 +27,13 @@
 {
     [super layoutSubviews];
     
-    [UIView animateWithDuration:0.25 animations:^{
-        if (self.isManaging) {
-            self.manageView.frame = CGRectMake(CGRectGetWidth(self.contentView.bounds) - 135.0, 0.0, 135.0, CGRectGetHeight(self.contentView.bounds));
-            self.manageView.hidden = NO;
-        } else {
-            self.manageView.frame = CGRectZero;
-            self.manageView.hidden = YES;
-        }
-    }];
+    if (self.isManaging) {
+        self.manageView.frame = CGRectMake(CGRectGetWidth(self.contentView.bounds) - 135.0, 0.0, 135.0, CGRectGetHeight(self.contentView.bounds));
+        self.manageView.hidden = NO;
+    } else {
+        self.manageView.frame = CGRectZero;
+        self.manageView.hidden = YES;
+    }
 }
 
 - (void)setIsManaging:(BOOL)isManaging

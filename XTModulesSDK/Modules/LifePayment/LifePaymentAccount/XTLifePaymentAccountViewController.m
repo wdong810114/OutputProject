@@ -660,6 +660,8 @@ static NSInteger const XTCompaniesPickerTag = 1002;
         _tableFooterView.backgroundColor = [UIColor clearColor];
         
         UIButton *nextButton = [XTAppUtils redButtonWithFrame:CGRectMake(20.0, 65.0, CGRectGetWidth(_tableFooterView.bounds) - 20.0 * 2, 45.0)];
+        nextButton.layer.masksToBounds = YES;
+        nextButton.layer.cornerRadius = 5.0;
         nextButton.titleLabel.font = XTFont(18.0);
         [nextButton setTitle:@"下一步" forState:UIControlStateNormal];
         [nextButton addTarget:self action:@selector(nextButtonClicked) forControlEvents:UIControlEventTouchUpInside];
