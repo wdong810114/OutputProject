@@ -60,9 +60,9 @@
  *
  *  @param ticketId 券ID
  *
- *  @return XTRefuelTicketModel*
+ *  @return NSArray<XTRefuelTicketModel>*
  */
 - (NSURLSessionTask *)postQueryAccountCouponOrderinfoWithTicketId:(NSString *)ticketId
-                                                completionHandler:(void (^)(XTRefuelTicketModel *output, NSError *error))handler;
+                                                completionHandler:(void (^)(NSArray<XTRefuelTicketModel> *output, NSError *error))handler;
 
 @end

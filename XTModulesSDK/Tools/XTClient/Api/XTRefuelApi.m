@@ -171,7 +171,7 @@
 }
 
 - (NSURLSessionTask *)postQueryAccountCouponOrderinfoWithTicketId:(NSString *)ticketId
-                                                completionHandler:(void (^)(XTRefuelTicketModel *output, NSError *error))handler
+                                                completionHandler:(void (^)(NSArray<XTRefuelTicketModel> *output, NSError *error))handler
 {
     NSMutableString *resourcePath = [NSMutableString stringWithFormat:@"/queryAccountCouponOrderinfo"];
     
@@ -202,10 +202,10 @@
                                       body:body
                         requestContentType:requestContentType
                        responseContentType:responseContentType
-                              responseType:@"XTRefuelTicketModel*"
+                              responseType:@"NSArray<XTRefuelTicketModel>*"
                            completionBlock:^(id data, NSError *error) {
                                if (handler) {
-                                   handler((XTRefuelTicketModel *)data, error);
+                                   handler((NSArray<XTRefuelTicketModel> *)data, error);
                                }
                            }];
 }

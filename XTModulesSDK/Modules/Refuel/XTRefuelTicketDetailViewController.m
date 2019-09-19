@@ -47,15 +47,17 @@
         [self showLoading];
         
         XTWeakSelf(weakSelf);
-        [[XTRefuelApi sharedAPI] postQueryAccountCouponOrderinfoWithTicketId:self.ticketId completionHandler:^(XTRefuelTicketModel *output, NSError *error) {
+        [[XTRefuelApi sharedAPI] postQueryAccountCouponOrderinfoWithTicketId:self.ticketId completionHandler:^(NSArray<XTRefuelTicketModel> *output, NSError *error) {
             [weakSelf hideLoading];
             
             if (!error) {
-                _model = output;
-                
-                weakSelf.mainTableView.tableHeaderView = self.tableHeaderView;
-                [weakSelf.mainTableView reloadData];
-                weakSelf.mainTableView.hidden = NO;
+                if (output && output.count > 0) {
+                    _model = output[0];
+                    
+                    weakSelf.mainTableView.tableHeaderView = self.tableHeaderView;
+                    [weakSelf.mainTableView reloadData];
+                    weakSelf.mainTableView.hidden = NO;
+                }
             }
         }];
     } else {
