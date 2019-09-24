@@ -304,10 +304,12 @@ static CGFloat const XTTabViewHeight = 50.0;
         NSArray *dataSource = _dataSourceDictionary[@(index)];
         XTRefuelTicketModel *model = dataSource[indexPath.row];
         
-        XTRefuelTicketDetailViewController *vc = [[XTRefuelTicketDetailViewController alloc] init];
-        vc.ticketId = model.ticketId;
-        vc.ticketName = model.ticketName;
-        [self.navigationController pushViewController:vc animated:YES];
+        if ([model.status isEqualToString:@"0"] || [model.status isEqualToString:@"3"]) {
+            XTRefuelTicketDetailViewController *vc = [[XTRefuelTicketDetailViewController alloc] init];
+            vc.ticketId = model.ticketId;
+            vc.ticketName = model.ticketName;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     }
 }
 

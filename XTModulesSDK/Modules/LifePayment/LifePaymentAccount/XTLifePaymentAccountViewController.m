@@ -407,7 +407,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
                     cell.noTextField.placeholder = @"查看纸质账单";
                     break;
                 case XTLifePaymentTypeElectric:
-                    cell.noTextField.placeholder = @"查看纸质账单或拨95598";
+                    cell.noTextField.placeholder = @"查看纸质账单或拨打95598";
                     break;
                     
                 default:
