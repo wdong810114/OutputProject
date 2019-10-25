@@ -19,6 +19,7 @@
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController
 {
     XTBaseNavigationController *navigationController = [super initWithRootViewController:rootViewController];
+    navigationController.modalPresentationStyle = UIModalPresentationFullScreen;
     navigationController.interactivePopGestureRecognizer.delegate = self;
     
     navigationController.navigationBar.translucent = NO;

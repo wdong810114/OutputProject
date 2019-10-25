@@ -257,11 +257,13 @@
         CNContactPickerViewController *contactPicker = [[CNContactPickerViewController alloc] init];
         contactPicker.delegate = self;
         contactPicker.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
+        contactPicker.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:contactPicker animated:YES completion:nil];
     } else {
         ABPeoplePickerNavigationController *peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
         peoplePicker.peoplePickerDelegate = self;
         peoplePicker.displayedProperties = @[[NSNumber numberWithInt:kABPersonPhoneProperty]];
+        peoplePicker.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:peoplePicker animated:YES completion:nil];
     }
 }
