@@ -82,6 +82,7 @@
                                            typeof(weakSelf) self = weakSelf; \
                                            {x} \
                                        });
+#define XTDeviceSystemVersion  [UIDevice currentDevice].systemVersion.floatValue
 
 #define XTIsReachable [[XTModulesManager sharedManager] isReachable]
 #define XTNetworkUnavailable   @"网络加载失败，请稍后再试"

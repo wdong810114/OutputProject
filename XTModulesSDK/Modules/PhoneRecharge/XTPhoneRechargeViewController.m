@@ -221,7 +221,7 @@
 
 - (void)checkAddressBookAuthorization:(void (^)(BOOL isAuthorized))block
 {
-    if (@available(iOS 9.0, *)) {
+    if (XTDeviceSystemVersion >= 9.0) {
         CNAuthorizationStatus authStatus = [CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts];
         if (CNAuthorizationStatusNotDetermined == authStatus) {
             CNContactStore *contactStore = [[CNContactStore alloc] init];
@@ -253,7 +253,7 @@
 
 - (void)callAddressBook
 {
-    if (@available(iOS 9.0, *)) {
+    if (XTDeviceSystemVersion >= 9.0) {
         CNContactPickerViewController *contactPicker = [[CNContactPickerViewController alloc] init];
         contactPicker.delegate = self;
         contactPicker.displayedPropertyKeys = @[CNContactPhoneNumbersKey];

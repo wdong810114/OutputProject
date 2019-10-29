@@ -505,7 +505,7 @@ static CGFloat const XTTabViewHeight = 116.0;
         _mainScrollView.showsVerticalScrollIndicator = NO;
         _mainScrollView.contentSize = CGSizeMake(CGRectGetWidth(_mainScrollView.bounds) * self.tabItemButtonArray.count, CGRectGetHeight(_mainScrollView.bounds));
         [_mainScrollView.panGestureRecognizer requireGestureRecognizerToFail:self.navigationController.interactivePopGestureRecognizer];
-        if (@available(iOS 11.0, *)) {
+        if (XTDeviceSystemVersion >= 11.0) {
             _mainScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
         
@@ -520,7 +520,7 @@ static CGFloat const XTTabViewHeight = 116.0;
             accountsTableView.tableHeaderView = [self generateTableHeaderView:YES];
             accountsTableView.tableFooterView = [[UIView alloc] init];
             [accountsTableView registerNib:XTModulesSDKNib(@"XTLifePaymentAccountCell") forCellReuseIdentifier:@"XTLifePaymentAccountCellIdentifier"];
-            if (@available(iOS 11.0, *)) {
+            if (XTDeviceSystemVersion >= 11.0) {
                 accountsTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
             }
             [_mainScrollView addSubview:accountsTableView];

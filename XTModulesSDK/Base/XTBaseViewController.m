@@ -56,6 +56,11 @@
     return UIStatusBarStyleDefault;
 }
 
+- (UIModalPresentationStyle)modalPresentationStyle
+{
+    return UIModalPresentationFullScreen;
+}
+
 #pragma mark - Public
 - (void)setLeftBarButtonItem:(SEL)action image:(NSString *)image highlightedImage:(NSString *)highlightedImage
 {

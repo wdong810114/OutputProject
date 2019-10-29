@@ -66,7 +66,7 @@ NSInteger const XTPhoneRechargeHistoryMaxCount = 5;
         historyTableView.dataSource = self;
         historyTableView.delegate = self;
         historyTableView.tableFooterView = [[UIView alloc] init];
-        if (@available(iOS 11.0, *)) {
+        if (XTDeviceSystemVersion >= 11.0) {
             historyTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
         self.historyTableView = historyTableView;

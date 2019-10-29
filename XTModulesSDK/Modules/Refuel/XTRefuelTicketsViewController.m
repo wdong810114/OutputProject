@@ -361,7 +361,7 @@ static CGFloat const XTTabViewHeight = 50.0;
         _mainScrollView.delegate = self;
         _mainScrollView.contentSize = CGSizeMake(CGRectGetWidth(_mainScrollView.bounds) * self.tabItemButtonArray.count, CGRectGetHeight(_mainScrollView.bounds));
         [_mainScrollView.panGestureRecognizer requireGestureRecognizerToFail:self.navigationController.interactivePopGestureRecognizer];
-        if (@available(iOS 11.0, *)) {
+        if (XTDeviceSystemVersion >= 11.0) {
             _mainScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
         
@@ -385,7 +385,7 @@ static CGFloat const XTTabViewHeight = 50.0;
                 [self requestTickets:index];
             }];
             ticketsTableView.mj_footer.hidden = YES;
-            if (@available(iOS 11.0, *)) {
+            if (XTDeviceSystemVersion >= 11.0) {
                 ticketsTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
             }
             [_mainScrollView addSubview:ticketsTableView];

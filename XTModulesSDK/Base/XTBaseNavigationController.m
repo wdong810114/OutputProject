@@ -19,7 +19,6 @@
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController
 {
     XTBaseNavigationController *navigationController = [super initWithRootViewController:rootViewController];
-    navigationController.modalPresentationStyle = UIModalPresentationFullScreen;
     navigationController.interactivePopGestureRecognizer.delegate = self;
     
     navigationController.navigationBar.translucent = NO;
@@ -34,6 +33,11 @@
 - (UIViewController *)childViewControllerForStatusBarStyle
 {
     return self.topViewController;
+}
+
+- (UIModalPresentationStyle)modalPresentationStyle
+{
+    return UIModalPresentationFullScreen;
 }
 
 #pragma mark - UIGestureRecognizerDelegate

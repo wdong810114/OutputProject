@@ -596,7 +596,7 @@ static NSInteger const XTCompaniesPickerTag = 1002;
         _mainTableView.separatorColor = XTSeparatorColor;
         _mainTableView.tableHeaderView = self.tableHeaderView;
         _mainTableView.tableFooterView = self.tableFooterView;
-        if (@available(iOS 11.0, *)) {
+        if (XTDeviceSystemVersion >= 11.0) {
             _mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
         [_mainTableView registerNib:XTModulesSDKNib(@"XTLifePaymentAccountTagCell") forCellReuseIdentifier:@"XTLifePaymentAccountTagCellIdentifier"];

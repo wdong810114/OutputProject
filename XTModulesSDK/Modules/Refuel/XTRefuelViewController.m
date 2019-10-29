@@ -529,7 +529,7 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
         _refuelTableView.separatorColor = [UIColor clearColor];
         _refuelTableView.tableHeaderView = self.tableHeaderView;
         _refuelTableView.tableFooterView = [[UIView alloc] init];
-        if (@available(iOS 11.0, *)) {
+        if (XTDeviceSystemVersion >= 11.0) {
             _refuelTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
         [_refuelTableView registerNib:XTModulesSDKNib(@"XTRefuelCell") forCellReuseIdentifier:@"XTRefuelCellIdentifier"];

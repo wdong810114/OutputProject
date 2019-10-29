@@ -310,7 +310,7 @@
         _mainTableView.delegate = self;
         _mainTableView.separatorColor = XTSeparatorColor;
         _mainTableView.tableFooterView = [[UIView alloc] init];
-        if (@available(iOS 11.0, *)) {
+        if (XTDeviceSystemVersion >= 11.0) {
             _mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
         [_mainTableView registerNib:XTModulesSDKNib(@"XTLifePaymentPayBillTitleCell") forCellReuseIdentifier:@"XTLifePaymentPayBillTitleCellIdentifier"];
