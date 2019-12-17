@@ -25,5 +25,17 @@
  *  金额
  */
 @property (nonatomic) NSString *amount;
+/*
+ *  折扣后金额
+ */
+@property (nonatomic) NSString *discountAmount;
+/*
+ *  折扣率
+ */
+@property (nonatomic) NSString *discount;
+/*
+ *  库存数量
+ */
+@property (nonatomic) NSString *numLimit;
 
 @end

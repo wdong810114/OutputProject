@@ -22,6 +22,10 @@
  *  订单金额
  */
 @property (nonatomic, copy) NSString *orderAmount;
+/**
+ *  订单应付金额
+ */
+@property (nonatomic, copy) NSString *orderOriginalAmount;
 
 /**
  *  订单对象转字典

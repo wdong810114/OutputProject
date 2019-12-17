@@ -9,6 +9,7 @@
 #import "XTRefuelViewController.h"
 
 #import "XTRefuelApi.h"
+#import "XTRefuelDiscountCell.h"
 #import "XTRefuelCell.h"
 #import "XTRoundCornerCell.h"
 #import "XTBaseWebViewController.h"
@@ -39,13 +40,14 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
 
 @implementation XTRefuelViewController
 {
-    NSArray *_refuelGoodsArray;
-    
+    NSMutableArray *_refuelGoodsArray;
     NSMutableDictionary *_countDictionary;
     
     BOOL _isPurchaseNoticeFold;   // 购买须知是否是折叠状态
     BOOL _isInstructionsFold;     // 使用说明是否是折叠状态
     BOOL _isPriceDescriptionFold; // 价格说明是否是折叠状态
+    
+    BOOL _isNeedRefresh;
 }
 
 - (void)dealloc
@@ -58,11 +60,14 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
     self = [super init];
     
     if (self) {
+        _refuelGoodsArray = [NSMutableArray array];
         _countDictionary = [NSMutableDictionary dictionary];
         
         _isPurchaseNoticeFold = YES;
         _isInstructionsFold = YES;
         _isPriceDescriptionFold = YES;
+        
+        _isNeedRefresh = NO;
         
         [XTNotificationCenter addObserver:self
                                  selector:@selector(refuelSuccess)
@@ -84,6 +89,17 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
     [self initView];
     
     [self requestRefuelGoods];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (_isNeedRefresh) {
+        [self requestRefuelGoods];
+        
+        _isNeedRefresh = NO;
+    }
 }
 
 - (void)backButtonClicked
@@ -115,6 +131,7 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
                 
                 XTRefuelGoodsModel *model = _refuelGoodsArray[indexPath.row];
                 goodsDict[@"ruleId"] = model.goodsId;
+                goodsDict[@"disamount"] = model.discountAmount;
                 goodsDict[@"goodsname"] = model.goodsName;
                 
                 [goodsList addObject:goodsDict];
@@ -128,7 +145,8 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
                     XTOrder *order = [[XTOrder alloc] init];
                     order.orderType = 1;
                     order.orderId = output.orderId;
-                    order.orderAmount = [NSString stringWithFormat:@"%.2f", [weakSelf calculateTotalAmount]];
+                    order.orderAmount = output.orderAmount;
+                    order.orderOriginalAmount = [NSString stringWithFormat:@"%.2f", [weakSelf calculateTotalAmount]];
                     
                     id object = [XTModulesManager sharedManager].sourceVC;
                     NSDictionary *userInfo = [order toDictionary];
@@ -167,6 +185,7 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
     }
     [self.navigationController setViewControllers:vcArray];
     
+    [_refuelGoodsArray removeAllObjects];
     [_countDictionary removeAllObjects];
     
     _isPurchaseNoticeFold = YES;
@@ -176,6 +195,8 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
     [self.refuelTableView reloadData];
     
     self.totalAmountLabel.text = @"¥ 0.00";
+    
+    _isNeedRefresh = YES;
 }
 
 #pragma mark - Private
@@ -191,9 +212,6 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
 
 - (void)requestRefuelGoods
 {
-    self.refuelTableView.hidden = YES;
-    self.bottomView.hidden = YES;
-    
     if (XTIsReachable) {
         [self showLoading];
         
@@ -202,14 +220,10 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
             [weakSelf hideLoading];
             
             if (!error) {
-                _refuelGoodsArray = [NSArray arrayWithArray:output];
+                [_refuelGoodsArray removeAllObjects];
+                [_refuelGoodsArray addObjectsFromArray:output];
                 
                 if (_refuelGoodsArray.count > 0) {
-                    weakSelf.totalAmountLabel.text = @"¥ 0.00";
-
-                    weakSelf.refuelTableView.hidden = NO;
-                    weakSelf.bottomView.hidden = NO;
-                    
                     [weakSelf.refuelTableView reloadData];
                 } else {
                     [weakSelf.view addSubview:weakSelf.dataEmptyView];
@@ -237,20 +251,40 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
         }
     }
     
-    CGFloat totalAmount = [self calculateTotalAmount];
+    CGFloat totalAmount = [self calculateTotalDiscountAmount];
     self.totalAmountLabel.text = [NSString stringWithFormat:@"¥ %.2f", totalAmount];
 }
 
 - (CGFloat)calculateTotalAmount
 {
+    // 计算应付金额
+    
     CGFloat totalAmount = 0.0;
     
     for (NSIndexPath *indexPath in [_countDictionary allKeys]) {
-        XTRefuelGoodsModel *model = [_refuelGoodsArray objectAtIndex:indexPath.row];
-        totalAmount += [model.amount floatValue] * [_countDictionary[indexPath] integerValue];
+        XTRefuelGoodsModel *model = _refuelGoodsArray[indexPath.row];
+        CGFloat amount = [model.amount floatValue];
+        
+        totalAmount += amount * [_countDictionary[indexPath] integerValue];
     }
     
     return totalAmount;
+}
+
+- (CGFloat)calculateTotalDiscountAmount
+{
+    // 计算实付金额
+    
+    CGFloat totalDiscountAmount = 0.0;
+    
+    for (NSIndexPath *indexPath in [_countDictionary allKeys]) {
+        XTRefuelGoodsModel *model = _refuelGoodsArray[indexPath.row];
+        CGFloat discountAmount = [model.discountAmount floatValue];
+        
+        totalDiscountAmount += discountAmount * [_countDictionary[indexPath] integerValue];
+    }
+    
+    return totalDiscountAmount;
 }
 
 #pragma mark - UITableViewDataSource
@@ -275,27 +309,59 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        XTRefuelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XTRefuelCellIdentifier" forIndexPath:indexPath];
+        XTRefuelGoodsModel *model = _refuelGoodsArray[indexPath.row];
         
-        XTWeakSelf(weakSelf);
-        [cell setCountPlusBlock:^{
-            [weakSelf totalAmountChangeWithCountOperateType:XTCountOperateTypePlus indexPath:indexPath];
-        }];
-        [cell setCountMinusBlock:^{
-            [weakSelf totalAmountChangeWithCountOperateType:XTCountOperateTypeMinus indexPath:indexPath];
-        }];
-        cell.model = _refuelGoodsArray[indexPath.row];
-        
-        cell.countLabel.text = [NSString stringWithFormat:@"%@", _countDictionary[indexPath]];
-        if ([[_countDictionary allKeys] containsObject:indexPath]) {
-            cell.minusButton.hidden = NO;
-            cell.countLabel.hidden = NO;
+        if (model.discount.integerValue < 100) {
+            XTRefuelDiscountCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XTRefuelDiscountCellIdentifier" forIndexPath:indexPath];
+            
+            XTWeakSelf(weakSelf);
+            [cell setCountPlusBlock:^{
+                [weakSelf totalAmountChangeWithCountOperateType:XTCountOperateTypePlus indexPath:indexPath];
+            }];
+            [cell setCountMinusBlock:^{
+                [weakSelf totalAmountChangeWithCountOperateType:XTCountOperateTypeMinus indexPath:indexPath];
+            }];
+            
+            cell.model = model;
+            
+            if ([[_countDictionary allKeys] containsObject:indexPath]) {
+                cell.minusButton.enabled = YES;
+                cell.countLabel.text = [NSString stringWithFormat:@"%@", _countDictionary[indexPath]];
+                if ([_countDictionary[indexPath] integerValue] < model.numLimit.integerValue) {
+                    cell.plusButton.enabled = YES;
+                } else {
+                    cell.plusButton.enabled = NO;
+                }
+            } else {
+                cell.minusButton.enabled = NO;
+                cell.countLabel.text = @"0";
+                cell.plusButton.enabled = YES;
+            }
+            
+            return cell;
         } else {
-            cell.minusButton.hidden = YES;
-            cell.countLabel.hidden = YES;
+            XTRefuelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XTRefuelCellIdentifier" forIndexPath:indexPath];
+            
+            XTWeakSelf(weakSelf);
+            [cell setCountPlusBlock:^{
+                [weakSelf totalAmountChangeWithCountOperateType:XTCountOperateTypePlus indexPath:indexPath];
+            }];
+            [cell setCountMinusBlock:^{
+                [weakSelf totalAmountChangeWithCountOperateType:XTCountOperateTypeMinus indexPath:indexPath];
+            }];
+            
+            cell.model = model;
+            
+            if ([[_countDictionary allKeys] containsObject:indexPath]) {
+                cell.minusButton.enabled = YES;
+                cell.countLabel.text = [NSString stringWithFormat:@"%@", _countDictionary[indexPath]];
+            } else {
+                cell.minusButton.enabled = NO;
+                cell.countLabel.text = @"0";
+            }
+            
+            return cell;
         }
-        
-        return cell;
     } else {
         XTRoundCornerCell *cell = (XTRoundCornerCell *)[tableView dequeueReusableCellWithIdentifier:XTRoundCornerCellIdentifier];
         if (!cell) {
@@ -406,7 +472,13 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        return 100.0;
+        XTRefuelGoodsModel *model = _refuelGoodsArray[indexPath.row];
+        
+        if (model.discount.integerValue < 100) {
+            return 140.0;
+        } else {
+            return 100.0;
+        }
     } else {
         CGFloat rowHeight = 0.0;
         
@@ -532,8 +604,8 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
         if (XTDeviceSystemVersion >= 11.0) {
             _refuelTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
+        [_refuelTableView registerNib:XTModulesSDKNib(@"XTRefuelDiscountCell") forCellReuseIdentifier:@"XTRefuelDiscountCellIdentifier"];
         [_refuelTableView registerNib:XTModulesSDKNib(@"XTRefuelCell") forCellReuseIdentifier:@"XTRefuelCellIdentifier"];
-        _refuelTableView.hidden = YES;
     }
     
     return _refuelTableView;
@@ -579,7 +651,6 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
     if (!_bottomView) {
         _bottomView = [[UIView alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(self.refuelTableView.frame), XTMainScreenWidth, 49.0)];
         _bottomView.backgroundColor = [UIColor whiteColor];
-        _bottomView.hidden = YES;
         
         UILabel *totalLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0, 14.0, 46.0, 24.0)];
         totalLabel.backgroundColor = [UIColor clearColor];

@@ -26,7 +26,11 @@
         return nil;
     }
     
-    return @{@"orderType" : @(self.orderType), @"orderId" : self.orderId, @"orderAmount" : self.orderAmount};
+    if (!self.orderOriginalAmount) {
+        self.orderOriginalAmount = [self.orderAmount copy];
+    }
+    
+    return @{@"orderType" : @(self.orderType), @"orderId" : self.orderId, @"orderAmount" : self.orderAmount, @"orderOriginalAmount" : self.orderOriginalAmount};
 }
 
 @end
