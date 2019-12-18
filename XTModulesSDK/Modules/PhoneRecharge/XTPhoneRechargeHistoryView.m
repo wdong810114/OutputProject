@@ -39,7 +39,7 @@ NSInteger const XTPhoneRechargeHistoryMaxCount = 5;
         // 半透明视图
         UIView *translucentView = [[UIView alloc] initWithFrame:self.bounds];
         translucentView.backgroundColor = [UIColor blackColor];
-        translucentView.alpha = 0.5;
+        translucentView.alpha = 0.3;
         translucentView.hidden = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelSelect)];
         [translucentView addGestureRecognizer:tapGesture];

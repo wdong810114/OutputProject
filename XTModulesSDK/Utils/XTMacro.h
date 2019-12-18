@@ -42,10 +42,10 @@
 #define XTColorFromHexAlpha(rgbValue, a)  [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0 blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:a]
 #define XTColorFromHex(rgbValue)  XTColorFromHexAlpha(rgbValue, 1.0)
 
-#define XTBrandBlackColor       XTColorFromHex(0x111111) // 品牌黑
-#define XTBrandLightBlackColor  XTColorFromHex(0x4D4D4D) // 品牌浅黑
-#define XTBrandGrayColor        XTColorFromHex(0xA2A2A2) // 品牌灰
-#define XTBrandLightGrayColor   XTColorFromHex(0xE8E8E8) // 品牌浅灰
+#define XTBrandBlackColor       XTColorFromHex(0x333333) // 品牌黑
+#define XTBrandLightBlackColor  XTColorFromHex(0x505050) // 品牌浅黑
+#define XTBrandGrayColor        XTColorFromHex(0x767676) // 品牌灰
+#define XTBrandLightGrayColor   XTColorFromHex(0xABABAB) // 品牌浅灰
 #define XTBrandRedColor         XTColorFromHex(0xE0282A) // 品牌红
 
 #define XTViewBGColor     XTColorFromHex(0xF6F6F6) // 视图背景颜色

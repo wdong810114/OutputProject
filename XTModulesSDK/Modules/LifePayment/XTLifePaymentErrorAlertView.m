@@ -29,7 +29,7 @@
         
         UIView *translucentView = [[UIView alloc] initWithFrame:self.bounds];
         translucentView.backgroundColor = [UIColor blackColor];
-        translucentView.alpha = 0.5;
+        translucentView.alpha = 0.3;
         
         UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.bounds) - 280.0) / 2, (CGRectGetHeight(self.bounds) - 210.0) / 2, 280.0, 210.0)];
         contentView.backgroundColor = [UIColor whiteColor];
@@ -40,11 +40,11 @@
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.font = XTFont(14.0);
         titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.textColor = XTColorFromHex(0x333333);
+        titleLabel.textColor = XTBrandBlackColor;
         self.titleLabel = titleLabel;
         
         UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(titleLabel.frame), CGRectGetWidth(contentView.bounds), 1.0)];
-        separator.backgroundColor = XTColorFromHex(0xEDEDED);
+        separator.backgroundColor = XTSeparatorColor;
         
         UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake((CGRectGetWidth(contentView.bounds) - 50.0) / 2, CGRectGetMaxY(separator.frame) + 24.0, 50.0, 50.0)];
         iconImageView.backgroundColor = [UIColor clearColor];
@@ -56,7 +56,7 @@
         messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
         messageLabel.font = XTFont(12.0);
         messageLabel.textAlignment = NSTextAlignmentCenter;
-        messageLabel.textColor = XTColorFromHex(0xCCCCCC);
+        messageLabel.textColor = XTBrandGrayColor;
         self.messageLabel = messageLabel;
         
         UIButton *knowButton = [XTAppUtils redButtonWithFrame:CGRectMake(0.0, CGRectGetHeight(contentView.bounds) - 40.0, CGRectGetWidth(contentView.bounds), 40.0)];
