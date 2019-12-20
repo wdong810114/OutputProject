@@ -35,6 +35,7 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
 @property (nonatomic, strong) UIView *priceDescriptionView;
 
 @property (nonatomic, strong) UIView *dataEmptyView;
+@property (nonatomic, strong) UIView *outOfLimitView;
 
 @end
 
@@ -53,6 +54,11 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
 - (void)dealloc
 {
     [XTNotificationCenter removeObserver:self];
+    
+    if (_outOfLimitView) {
+        [_outOfLimitView removeFromSuperview];
+        _outOfLimitView = nil;
+    }
 }
 
 - (instancetype)init
@@ -142,16 +148,25 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
                 [weakSelf hideLoading];
                 
                 if (!error) {
-                    XTOrder *order = [[XTOrder alloc] init];
-                    order.orderType = 1;
-                    order.orderId = output.orderId;
-                    order.orderAmount = output.orderAmount;
-                    order.orderOriginalAmount = [NSString stringWithFormat:@"%.2f", [weakSelf calculateTotalAmount]];
-                    
-                    id object = [XTModulesManager sharedManager].sourceVC;
-                    NSDictionary *userInfo = [order toDictionary];
-                    
-                    [XTNotificationCenter postNotificationName:XTLifeServicePlaceOrderDidSuccessNotification object:object userInfo:userInfo];
+                    if ([output.xtCode isEqualToString:@"1066"]) {
+                        // 库存不足
+                        
+                        [XTMainWindow addSubview:weakSelf.outOfLimitView];
+                        [UIView animateWithDuration:0.25 animations:^{
+                            weakSelf.outOfLimitView.hidden = NO;
+                        }];
+                    } else {
+                        XTOrder *order = [[XTOrder alloc] init];
+                        order.orderType = 1;
+                        order.orderId = output.orderId;
+                        order.orderAmount = output.orderAmount;
+                        order.originalOrderAmount = output.originalOrderAmount;
+                        
+                        id object = [XTModulesManager sharedManager].sourceVC;
+                        NSDictionary *userInfo = [order toDictionary];
+                        
+                        [XTNotificationCenter postNotificationName:XTLifeServicePlaceOrderDidSuccessNotification object:object userInfo:userInfo];
+                    }
                 }
             }];
         } else {
@@ -171,6 +186,18 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)outOfLimitConfirmButtonClicked
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        self.outOfLimitView.hidden = YES;
+    } completion:^(BOOL finished) {
+        [self.outOfLimitView removeFromSuperview];
+        
+        [self clearRefuelGoods];
+        [self requestRefuelGoods];
+    }];
+}
+
 #pragma mark - Notification
 - (void)refuelSuccess
 {
@@ -185,16 +212,11 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
     }
     [self.navigationController setViewControllers:vcArray];
     
-    [_refuelGoodsArray removeAllObjects];
-    [_countDictionary removeAllObjects];
-    
     _isPurchaseNoticeFold = YES;
     _isInstructionsFold = YES;
     _isPriceDescriptionFold = YES;
     
-    [self.refuelTableView reloadData];
-    
-    self.totalAmountLabel.text = @"¥ 0.00";
+    [self clearRefuelGoods];
     
     _isNeedRefresh = YES;
 }
@@ -237,6 +259,16 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
     }
 }
 
+- (void)clearRefuelGoods
+{
+    [_refuelGoodsArray removeAllObjects];
+    [_countDictionary removeAllObjects];
+    
+    [self.refuelTableView reloadData];
+    
+    self.totalAmountLabel.text = @"¥ 0.00";
+}
+
 - (void)totalAmountChangeWithCountOperateType:(XTCountOperateType)type indexPath:(NSIndexPath *)indexPath
 {
     if (XTCountOperateTypePlus == type) {
@@ -251,40 +283,22 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
         }
     }
     
-    CGFloat totalAmount = [self calculateTotalDiscountAmount];
+    CGFloat totalAmount = [self calculateTotalAmount];
     self.totalAmountLabel.text = [NSString stringWithFormat:@"¥ %.2f", totalAmount];
 }
 
 - (CGFloat)calculateTotalAmount
 {
-    // 计算应付金额
-    
     CGFloat totalAmount = 0.0;
-    
-    for (NSIndexPath *indexPath in [_countDictionary allKeys]) {
-        XTRefuelGoodsModel *model = _refuelGoodsArray[indexPath.row];
-        CGFloat amount = [model.amount floatValue];
-        
-        totalAmount += amount * [_countDictionary[indexPath] integerValue];
-    }
-    
-    return totalAmount;
-}
-
-- (CGFloat)calculateTotalDiscountAmount
-{
-    // 计算实付金额
-    
-    CGFloat totalDiscountAmount = 0.0;
     
     for (NSIndexPath *indexPath in [_countDictionary allKeys]) {
         XTRefuelGoodsModel *model = _refuelGoodsArray[indexPath.row];
         CGFloat discountAmount = [model.discountAmount floatValue];
         
-        totalDiscountAmount += discountAmount * [_countDictionary[indexPath] integerValue];
+        totalAmount += discountAmount * [_countDictionary[indexPath] integerValue];
     }
     
-    return totalDiscountAmount;
+    return totalAmount;
 }
 
 #pragma mark - UITableViewDataSource
@@ -783,6 +797,51 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
     }
     
     return _dataEmptyView;
+}
+
+- (UIView *)outOfLimitView
+{
+    if (!_outOfLimitView) {
+        _outOfLimitView = [[UIView alloc] initWithFrame:XTMainScreenBounds];
+        _outOfLimitView.backgroundColor = [UIColor clearColor];
+        _outOfLimitView.hidden = YES;
+        
+        UIView *translucentView = [[UIView alloc] initWithFrame:_outOfLimitView.bounds];
+        translucentView.backgroundColor = [UIColor blackColor];
+        translucentView.alpha = 0.3;
+        
+        UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake((CGRectGetWidth(_outOfLimitView.bounds) - 280.0) / 2, (CGRectGetHeight(_outOfLimitView.bounds) - 170.0) / 2, 280.0, 170.0)];
+        contentView.backgroundColor = [UIColor whiteColor];
+        contentView.layer.masksToBounds = YES;
+        contentView.layer.cornerRadius = 5.0;
+        
+        UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake((CGRectGetWidth(contentView.bounds) - 50.0) / 2, 18.0, 50.0, 50.0)];
+        iconImageView.backgroundColor = [UIColor clearColor];
+        iconImageView.image = [UIImage imageNamed:XTModulesSDKImage(@"refuel_out_of_limit")];
+        
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, CGRectGetMaxY(iconImageView.frame), CGRectGetWidth(contentView.bounds) - 20.0 * 2, 62.0)];
+        messageLabel.backgroundColor = [UIColor clearColor];
+        messageLabel.numberOfLines = 2;
+        messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        messageLabel.font = XTFont(14.0);
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.textColor = XTBrandGrayColor;
+        messageLabel.text = @"部分商品被人抢光了，请重新选择";
+        
+        UIButton *confirmButton = [XTAppUtils redButtonWithFrame:CGRectMake(0.0, CGRectGetHeight(contentView.bounds) - 40.0, CGRectGetWidth(contentView.bounds), 40.0)];
+        confirmButton.titleLabel.font = XTFont(14.0);
+        [confirmButton setTitle:@"确定" forState:UIControlStateNormal];
+        [confirmButton addTarget:self action:@selector(outOfLimitConfirmButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        
+        [contentView addSubview:iconImageView];
+        [contentView addSubview:messageLabel];
+        [contentView addSubview:confirmButton];
+        
+        [_outOfLimitView addSubview:translucentView];
+        [_outOfLimitView addSubview:contentView];
+    }
+    
+    return _outOfLimitView;
 }
 
 @end

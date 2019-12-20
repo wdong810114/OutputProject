@@ -242,6 +242,8 @@
 		7AD6AC5A22F9672800180CA3 /* XTRefuelApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC5822F9672800180CA3 /* XTRefuelApi.m */; };
 		7AD6AC6022F97E0600180CA3 /* XTRoundCornerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD6AC5E22F97E0600180CA3 /* XTRoundCornerCell.h */; };
 		7AD6AC6122F97E0600180CA3 /* XTRoundCornerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6AC5F22F97E0600180CA3 /* XTRoundCornerCell.m */; };
+		8B4F411923A9B6B2006E35C4 /* refuel_out_of_limit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4F411723A9B6B2006E35C4 /* refuel_out_of_limit@2x.png */; };
+		8B4F411A23A9B6B2006E35C4 /* refuel_out_of_limit@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B4F411823A9B6B2006E35C4 /* refuel_out_of_limit@3x.png */; };
 		8BB3ABC423A7622600F9C37D /* XTRefuelDiscountCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BB3ABC123A7622600F9C37D /* XTRefuelDiscountCell.h */; };
 		8BB3ABC523A7622600F9C37D /* XTRefuelDiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB3ABC223A7622600F9C37D /* XTRefuelDiscountCell.m */; };
 		8BB3ABC623A7622600F9C37D /* XTRefuelDiscountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB3ABC323A7622600F9C37D /* XTRefuelDiscountCell.xib */; };
@@ -536,6 +538,8 @@
 		7AD6AC5822F9672800180CA3 /* XTRefuelApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelApi.m; sourceTree = "<group>"; };
 		7AD6AC5E22F97E0600180CA3 /* XTRoundCornerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRoundCornerCell.h; sourceTree = "<group>"; };
 		7AD6AC5F22F97E0600180CA3 /* XTRoundCornerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRoundCornerCell.m; sourceTree = "<group>"; };
+		8B4F411723A9B6B2006E35C4 /* refuel_out_of_limit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_out_of_limit@2x.png"; sourceTree = "<group>"; };
+		8B4F411823A9B6B2006E35C4 /* refuel_out_of_limit@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuel_out_of_limit@3x.png"; sourceTree = "<group>"; };
 		8BB3ABC123A7622600F9C37D /* XTRefuelDiscountCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTRefuelDiscountCell.h; sourceTree = "<group>"; };
 		8BB3ABC223A7622600F9C37D /* XTRefuelDiscountCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTRefuelDiscountCell.m; sourceTree = "<group>"; };
 		8BB3ABC323A7622600F9C37D /* XTRefuelDiscountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRefuelDiscountCell.xib; sourceTree = "<group>"; };
@@ -732,6 +736,8 @@
 				7A770A5D2314BB41001996A1 /* refuel_instruction04@3x.png */,
 				7A770AA12314BB5A001996A1 /* refuel_nearby_station@2x.png */,
 				7A770A6E2314BB47001996A1 /* refuel_nearby_station@3x.png */,
+				8B4F411723A9B6B2006E35C4 /* refuel_out_of_limit@2x.png */,
+				8B4F411823A9B6B2006E35C4 /* refuel_out_of_limit@3x.png */,
 				7A770A6C2314BB46001996A1 /* refuel_ticket_cell_expired_icon@2x.png */,
 				7A770A562314BB40001996A1 /* refuel_ticket_cell_expired_icon@3x.png */,
 				7A770A8A2314BB52001996A1 /* refuel_ticket_cell_line_cutoff@2x.png */,
@@ -1320,6 +1326,7 @@
 				7A770ABE2314BB5C001996A1 /* XTLifePaymentPayBillContentCell.xib in Resources */,
 				7A770ABF2314BB5C001996A1 /* XTLifePaymentPayBillTitleCell.xib in Resources */,
 				7A770AC02314BB5C001996A1 /* protocol_disagree@3x.png in Resources */,
+				8B4F411A23A9B6B2006E35C4 /* refuel_out_of_limit@3x.png in Resources */,
 				7A770AC12314BB5C001996A1 /* XTRefuelCell.xib in Resources */,
 				7A770B022314C0F0001996A1 /* cell_shadow_top@3x.png in Resources */,
 				7A770AC22314BB5C001996A1 /* back_icon_n@3x.png in Resources */,
@@ -1328,6 +1335,7 @@
 				7A770AC52314BB5C001996A1 /* XTLifePaymentCityListSupplementaryHeaderView.xib in Resources */,
 				7A770AC62314BB5C001996A1 /* count_plus@3x.png in Resources */,
 				7A770AC72314BB5C001996A1 /* refuel_instruction03@3x.png in Resources */,
+				8B4F411923A9B6B2006E35C4 /* refuel_out_of_limit@2x.png in Resources */,
 				7A770AC82314BB5C001996A1 /* life_payment_electric@2x.png in Resources */,
 				7A770AC92314BB5C001996A1 /* refuel_instruction02@2x.png in Resources */,
 				7A770ACA2314BB5C001996A1 /* XTLifePaymentAccountTagCell.xib in Resources */,

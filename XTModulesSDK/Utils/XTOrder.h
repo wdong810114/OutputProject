@@ -19,13 +19,13 @@
  */
 @property (nonatomic, copy) NSString *orderId;
 /**
- *  订单金额
+ *  订单金额（元）
  */
 @property (nonatomic, copy) NSString *orderAmount;
 /**
- *  订单应付金额
+ *  订单原始金额（元）
  */
-@property (nonatomic, copy) NSString *orderOriginalAmount;
+@property (nonatomic, copy) NSString *originalOrderAmount;
 
 /**
  *  订单对象转字典
