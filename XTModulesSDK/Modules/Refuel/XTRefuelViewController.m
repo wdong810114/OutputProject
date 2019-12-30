@@ -173,7 +173,7 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
             [self showToastWithText:XTNetworkUnavailable];
         }
     } else {
-        [self showToastWithText:@"您还没有选择商品"];
+        [self showToastWithText:@"您还没有选择加油券"];
     }
 }
 
