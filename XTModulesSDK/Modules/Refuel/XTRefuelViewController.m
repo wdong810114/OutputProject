@@ -88,7 +88,7 @@ typedef NS_ENUM(NSInteger, XTCountOperateType)
 {
     [super viewDidLoad];
     
-    self.title = @"特惠加油";
+    self.title = @"加油券";
     [self setLeftBarButtonItem:@selector(backButtonClicked) image:@"back_icon_n" highlightedImage:@"back_icon_h"];
     [self setRightBarButtonItem:@selector(ticketsButtonClicked) title:@"我的油券"];
     
