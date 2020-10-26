@@ -24,8 +24,8 @@
     navigationController.navigationBar.translucent = NO;
     [navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     navigationController.navigationBar.shadowImage = nil;
-    navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-    navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName : XTBoldFont(18.0), NSForegroundColorAttributeName : XTBrandBlackColor};
+    navigationController.navigationBar.barTintColor = XTColorFromHex(0xF3F3F3);
+    navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName : [UIFont systemFontOfSize:18.0 weight:UIFontWeightSemibold], NSForegroundColorAttributeName : XTColorFromHex(0x111111)};
     
     return navigationController;
 }

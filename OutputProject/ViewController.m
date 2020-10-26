@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     
-    self.accessKey = @"2890f1c5-90bd-4122-9934-c918efd6d083";
+    self.accessKey = @"1c1eca28-9203-4767-ab18-61bb54e50594";
     self.userId = @"64247836761171908098";
     self.phone = @"18640048241";
     
