@@ -28,16 +28,16 @@
 {
     [super viewDidLoad];
     
-    self.accessKey = @"1c1eca28-9203-4767-ab18-61bb54e50594";
-    self.userId = @"64247836761171908098";
+    self.accessKey = @"aaf9a5ef-dbc4-4aaa-bd7d-c4b7fe629415";
+    self.userId = @"92898383941936122469";
     self.phone = @"18640048241";
     
     [self.view addSubview:self.phoneRechargeButton];
     [self.view addSubview:self.refuelButton];
     [self.view addSubview:self.lifePaymentButton];
     
-//    [XTModulesManager sharedManager].host = @"http://app.nsmetro.com/AppExternal/LifeService";
-    [XTModulesManager sharedManager].host = @"http://221.180.167.192/AppExternal/LifeService";
+    [XTModulesManager sharedManager].host = @"http://app.nsmetro.com/AppExternal/LifeService";
+//    [XTModulesManager sharedManager].host = @"http://221.180.167.192/AppExternal/LifeService";
 }
 
 #pragma mark - Action

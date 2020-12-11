@@ -6,6 +6,8 @@
 //  Copyright © 2019年 Newsky Payment. All rights reserved.
 //
 
+#import "XTAppUtils.h"
+
 #define XTIsModulesOutput  1 // 是否模块外放
 
 /******* 屏幕尺寸 *******/
@@ -14,13 +16,18 @@
 #define XTMainScreenWidth   XTMainScreenSize.width       // 屏幕宽度
 #define XTMainScreenHeight  XTMainScreenSize.height      // 屏幕高度
 
-#define XTIsIphoneX             (((XTMainScreenWidth == 375.0 && XTMainScreenHeight == 812.0) || XTMainScreenHeight == 896.0) ? YES : NO) // 是否是iPhoneX系列
-#define XTStatusBarHeight       (XTIsIphoneX ? 44.0 : 20.0) // 状态栏高度
-#define XTNavigationBarHeight   44.0 // 导航栏高度
-#define XTSafeAreaTopMargin     (XTIsIphoneX ? 44.0 : 0.0) // 安全区距上方距离
-#define XTSafeAreaBottomMargin  (XTIsIphoneX ? 34.0 : 0.0) // 安全区距下方距离
-#define XTSafeAreaHeight        (XTMainScreenHeight - XTSafeAreaTopMargin - XTSafeAreaBottomMargin)  // 安全区高度
-#define XTNonTopLevelViewHeight  (XTIsIphoneX ? XTSafeAreaHeight - XTNavigationBarHeight : XTMainScreenHeight - XTStatusBarHeight - XTNavigationBarHeight) // 非顶层视图高度
+// 是否全面屏设备
+#define XTIsNotchedScreen [XTAppUtils isNotchedScreen]
+// 状态栏高度
+#define XTStatusBarHeight (UIApplication.sharedApplication.statusBarHidden ? 0 : UIApplication.sharedApplication.statusBarFrame.size.height)
+// 导航栏高度
+#define XTNavigationBarHeight 44.0
+// 代表(状态栏+导航栏)，这里用于获取其高度
+#define XTNavigationContentTop (XTStatusBarHeight + XTNavigationBarHeight)
+// 全面屏手机底部安全区域的高度
+#define XTSafeAreaBottomInsetForDeviceWithNotch [XTAppUtils safeAreaBottomInsetForDeviceWithNotch]
+// 非顶层视图高度
+#define XTNonTopLevelViewHeight (XTMainScreenHeight - XTNavigationContentTop - XTSafeAreaBottomInsetForDeviceWithNotch)
 /******* 屏幕尺寸 *******/
 
 /******* 屏幕系数 *******/

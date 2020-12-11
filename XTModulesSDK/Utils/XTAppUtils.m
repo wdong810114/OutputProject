@@ -139,3 +139,93 @@
 }
 
 @end
+
+@implementation XTAppUtils (UIHelper)
+
+static NSInteger is58InchScreen = -1;
++ (BOOL)is58InchScreen
+{
+    if (is58InchScreen < 0) {
+        is58InchScreen = (XTMainScreenWidth == 375 && XTMainScreenHeight == 812) ? 1 : 0;
+    }
+    return is58InchScreen > 0;
+}
+
+static NSInteger isNotchedScreen = -1;
++ (BOOL)isNotchedScreen
+{
+    if (@available(iOS 11, *)) {
+        if (isNotchedScreen < 0) {
+            if (@available(iOS 12.0, *)) {
+                SEL peripheryInsetsSelector = NSSelectorFromString([NSString stringWithFormat:@"_%@%@", @"periphery", @"Insets"]);
+                UIEdgeInsets peripheryInsets = UIEdgeInsetsZero;
+                [[UIScreen mainScreen] xtui_performSelector:peripheryInsetsSelector withPrimitiveReturnValue:&peripheryInsets];
+                if (peripheryInsets.bottom <= 0) {
+                    UIWindow *window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+                    peripheryInsets = window.safeAreaInsets;
+                    if (peripheryInsets.bottom <= 0) {
+                        UIViewController *viewController = [UIViewController new];
+                        window.rootViewController = viewController;
+                        if (CGRectGetMinY(viewController.view.frame) > 20) {
+                            peripheryInsets.bottom = 1;
+                        }
+                    }
+                }
+                isNotchedScreen = peripheryInsets.bottom > 0 ? 1 : 0;
+            } else {
+                isNotchedScreen = [XTAppUtils is58InchScreen] ? 1 : 0;
+            }
+        }
+    } else {
+        isNotchedScreen = 0;
+    }
+    
+    return isNotchedScreen > 0;
+}
+
++ (CGFloat)safeAreaBottomInsetForDeviceWithNotch
+{
+    if (@available(iOS 11, *)) {
+        return [UIApplication sharedApplication].delegate.window.safeAreaInsets.bottom;
+    }
+    
+    return 0.0;
+}
+
+@end
+
+@implementation NSObject (XTUI)
+
+- (void)xtui_performSelector:(SEL)selector withPrimitiveReturnValue:(void *)returnValue
+{
+    [self xtui_performSelector:selector withPrimitiveReturnValue:returnValue arguments:nil];
+}
+
+- (void)xtui_performSelector:(SEL)selector withPrimitiveReturnValue:(void *)returnValue arguments:(void *)firstArgument, ...
+{
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[self methodSignatureForSelector:selector]];
+    [invocation setTarget:self];
+    [invocation setSelector:selector];
+    
+    if (firstArgument) {
+        va_list valist;
+        va_start(valist, firstArgument);
+        [invocation setArgument:firstArgument atIndex:2];// 0->self, 1->_cmd
+        
+        void *currentArgument;
+        NSInteger index = 3;
+        while ((currentArgument = va_arg(valist, void *))) {
+            [invocation setArgument:currentArgument atIndex:index];
+            index++;
+        }
+        va_end(valist);
+    }
+    
+    [invocation invoke];
+    
+    if (returnValue) {
+        [invocation getReturnValue:returnValue];
+    }
+}
+
+@end
