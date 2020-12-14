@@ -167,6 +167,13 @@
         return NO;
     }
     
+    if (XTLifePaymentTypeGas == self.lifePaymentType) {
+        if (_money.floatValue < [self.payBillModel.arrearage floatValue]) {
+            [self showToastWithText:@"充值金额不得小于当前欠费金额"];
+            return NO;
+        }
+    }
+    
     return YES;
 }
 
