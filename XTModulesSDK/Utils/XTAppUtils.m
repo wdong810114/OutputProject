@@ -186,7 +186,9 @@ static NSInteger isNotchedScreen = -1;
 + (CGFloat)safeAreaBottomInsetForDeviceWithNotch
 {
     if (@available(iOS 11, *)) {
-        return [UIApplication sharedApplication].delegate.window.safeAreaInsets.bottom;
+        UIEdgeInsets safeAreaInsets = [UIApplication sharedApplication].delegate.window.safeAreaInsets;
+        NSLog(@"window.safeAreaInsets：%@", NSStringFromUIEdgeInsets(safeAreaInsets));
+        return safeAreaInsets.bottom;
     }
     
     return 0.0;

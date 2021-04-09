@@ -8,7 +8,7 @@
 
 #import "XTAppUtils.h"
 
-#define XTIsModulesOutput  1 // 是否模块外放
+#define XTIsModulesOutput 1 // 是否模块外放
 
 /******* 屏幕尺寸 *******/
 #define XTMainScreenBounds  [UIScreen mainScreen].bounds // 屏幕界限
