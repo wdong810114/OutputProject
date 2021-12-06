@@ -224,7 +224,8 @@
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message
 {
     if ([message.name isEqualToString:@"tokenError"]) {
-        [XTNotificationCenter postNotificationName:XTUserTokenInvalidNotification object:nil];
+        id object = [XTModulesManager sharedManager].sourceVC;
+        [XTNotificationCenter postNotificationName:XTUserTokenInvalidNotification object:object];
     } else {
     }
 }

@@ -163,7 +163,8 @@ NSString * const XTBusinessDataErrorDomain = @"XTBusinessDataErrorDomain";
                 completionBlock(nil, businessDataError);
                 
                 if (XTUserTokenInvalidErrorCode == code) {
-                    [XTNotificationCenter postNotificationName:XTUserTokenInvalidNotification object:nil];
+                    id object = [XTModulesManager sharedManager].sourceVC;
+                    [XTNotificationCenter postNotificationName:XTUserTokenInvalidNotification object:object];
                 }
             }
         } else {
